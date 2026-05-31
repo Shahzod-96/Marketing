@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elites LC - Iyun 2026 Kontent Kalendari</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);min-height:100vh;color:#fff;padding:20px}
+.header{text-align:center;padding:30px 20px;margin-bottom:20px}
+.header h1{font-size:2.5rem;background:linear-gradient(90deg,#f7971e,#ffd200);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header .sub{font-size:1.1rem;color:#ccc;margin-top:5px}
+.header .month{font-size:1.8rem;color:#ffd200;margin-top:10px;font-weight:bold}
+.strategy{background:rgba(255,255,255,0.05);border-radius:16px;padding:25px;margin-bottom:30px;border:1px solid rgba(255,255,255,0.1)}
+.strategy h2{color:#ffd200;margin-bottom:15px;font-size:1.4rem}
+.strategy ul{list-style:none;padding:0}
+.strategy li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#ccc;font-size:0.95rem}
+.strategy li::before{content:"✅ ";margin-right:5px}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-top:20px}
+.pillar{background:rgba(255,255,255,0.08);border-radius:12px;padding:15px;text-align:center;border:1px solid rgba(247,151,30,0.3)}
+.pillar .emoji{font-size:2rem;margin-bottom:8px}
+.pillar .name{font-weight:bold;color:#ffd200;margin-bottom:5px;font-size:0.9rem}
+.pillar .desc{font-size:0.8rem;color:#bbb}
+.legend{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px 0}
+.legend span{padding:5px 12px;border-radius:20px;font-size:0.75rem;font-weight:bold}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:30px}
+.day-header{background:rgba(247,151,30,0.3);padding:10px 5px;text-align:center;font-weight:bold;border-radius:8px;font-size:0.8rem}
+.day{background:rgba(255,255,255,0.05);border-radius:10px;padding:8px;min-height:110px;cursor:pointer;transition:all 0.3s;border:1px solid rgba(255,255,255,0.08);position:relative}
+.day:hover{transform:translateY(-2px);border-color:#ffd200;box-shadow:0 5px 20px rgba(247,151,30,0.2)}
+.day.empty{background:transparent;border:none;cursor:default;min-height:0}
+.day .num{font-size:0.75rem;color:#888;margin-bottom:4px}
+.day .type{font-size:0.6rem;padding:2px 5px;border-radius:4px;display:inline-block;margin-bottom:4px;font-weight:bold}
+.day .title{font-size:0.7rem;color:#eee;line-height:1.3}
+.type-edu{background:#4CAF50;color:#fff}
+.type-motivation{background:#9C27B0;color:#fff}
+.type-social{background:#2196F3;color:#fff}
+.type-sales{background:#FF5722;color:#fff}
+.type-trust{background:#FF9800;color:#fff}
+.type-rest{background:#607D8B;color:#fff}
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:1000;justify-content:center;align-items:center;padding:20px;overflow-y:auto}
+.modal-overlay.active{display:flex}
+.modal{background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:20px;padding:30px;max-width:700px;width:100%;max-height:85vh;overflow-y:auto;border:2px solid rgba(247,151,30,0.4);position:relative}
+.modal-close{position:absolute;top:15px;right:20px;font-size:2rem;cursor:pointer;color:#ffd200;background:none;border:none}
+.modal h3{color:#ffd200;font-size:1.4rem;margin-bottom:5px}
+.modal .modal-date{font-size:0.85rem;color:#888;margin-bottom:15px}
+.modal .section{margin-top:15px}
+.modal .section h4{color:#f7971e;margin-bottom:8px;font-size:1.1rem;border-bottom:1px solid rgba(247,151,30,0.2);padding-bottom:5px}
+.modal .section p,.modal .section li{color:#ddd;line-height:1.8;font-size:0.95rem}
+.modal ul{padding-left:20px;margin:8px 0}
+.hook-box{background:rgba(247,151,30,0.1);border-left:4px solid #ffd200;padding:12px 15px;margin:10px 0;border-radius:0 8px 8px 0}
+.hook-box strong{color:#ffd200}
+.cta-box{background:rgba(76,175,80,0.1);border-left:4px solid #4CAF50;padding:12px 15px;margin:10px 0;border-radius:0 8px 8px 0}
+.cta-box strong{color:#4CAF50}
+.tip-box{background:rgba(33,150,243,0.1);border-left:4px solid #2196F3;padding:12px 15px;margin:10px 0;border-radius:0 8px 8px 0}
+.tip-box strong{color:#2196F3}
+@media(max-width:768px){.calendar{gap:2px}.day{min-height:85px;padding:5px}.day .title{font-size:0.6rem}.header h1{font-size:1.6rem}.modal{padding:20px;margin:10px}}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>ELITES LEARNING CENTER</h1>
+<p class="sub">Instagram Reels Kontent Strategiyasi</p>
+<p class="month">📅 IYUN 2026 - Oylik Kalendar</p>
+</div>
+
+<div class="strategy">
+<h2>📊 Strategiya Asoslari</h2>
+<ul>
+<li>Haftada 5 ta Reels joylash (Dush-Juma), Dam olish kunlari Story + Engagement</li>
+<li>Har bir Reels birinchi 1-3 sekundda HOOK bilan boshlanadi</li>
+<li>Kontent formulasi: 40% Ta'lim + 20% Motivatsiya + 20% Ishonch + 10% Sotuv + 10% Ijtimoiy</li>
+<li>Optimal vaqt: 07:00-09:00 yoki 19:00-21:00 (O'zbekiston vaqti)</li>
+<li>Har bir Reels oxirida CTA: "LINK bio'da" yoki "DM yozing"</li>
+<li>Trending audio ishlatish, lekin original voiceover ustunlik qiladi</li>
+</ul>
+<div class="pillars">
+<div class="pillar"><div class="emoji">📚</div><div class="name">TA'LIM</div><div class="desc">Grammatika, so'z boyligi, IELTS tips, xatolar tahlili</div></div>
+<div class="pillar"><div class="emoji">🔥</div><div class="name">MOTIVATSIYA</div><div class="desc">Success stories, natijalar, hayotiy hikoyalar</div></div>
+<div class="pillar"><div class="emoji">🤝</div><div class="name">ISHONCH</div><div class="desc">O'quvchi fikrlari, jarayon, behind-the-scenes</div></div>
+<div class="pillar"><div class="emoji">💰</div><div class="name">SOTUV</div><div class="desc">Chegirmalar, ro'yxatga olish, takliflar</div></div>
+<div class="pillar"><div class="emoji">🎭</div><div class="name">IJTIMOIY</div><div class="desc">Trend, challenge, hazil, relatable content</div></div>
+</div>
+</div>
+
+<div class="legend">
+<span class="type-edu">📚 Ta'lim</span>
+<span class="type-motivation">🔥 Motivatsiya</span>
+<span class="type-trust">🤝 Ishonch</span>
+<span class="type-sales">💰 Sotuv</span>
+<span class="type-social">🎭 Ijtimoiy</span>
+<span class="type-rest">😴 Dam olish</span>
+</div>
+
+<div class="calendar">
+<div class="day-header">DU</div>
+<div class="day-header">SE</div>
+<div class="day-header">CHO</div>
+<div class="day-header">PA</div>
+<div class="day-header">JU</div>
+<div class="day-header">SHA</div>
+<div class="day-header">YA</div>
+
+<div class="day" onclick="openModal(1)"><div class="num">1</div><span class="type type-edu">📚 Ta'lim</span><div class="title">5 ta eng ko'p ishlatiladigan ingliz so'zi</div></div>
+<div class="day" onclick="openModal(2)"><div class="num">2</div><span class="type type-motivation">🔥 Motivatsiya</span><div class="title">Ingliz tilisiz kelajak yo'q - haqiqat</div></div>
+<div class="day" onclick="openModal(3)"><div class="num">3</div><span class="type type-social">🎭 Ijtimoiy</span><div class="title">O'zbek vs Ingliz - qiziq farqlar</div></div>
+<div class="day" onclick="openModal(4)"><div class="num">4</div><span class="type type-edu">📚 Ta'lim</span><div class="title">IELTS Speaking: 3 ta sir</div></div>
+<div class="day" onclick="openModal(5)"><div class="num">5</div><span class="type type-trust">🤝 Ishonch</span><div class="title">O'quvchi natijasi: 0 dan 6.5 gacha</div></div>
+<div class="day" onclick="openModal(6)"><div class="num">6</div><span class="type type-rest">😴 Dam</span><div class="title">Story: Hafta savollari</div></div>
+<div class="day" onclick="openModal(7)"><div class="num">7</div><span class="type type-rest">😴 Dam</span><div class="title">Story: Eng yaxshi komment</div></div>
+
+<div class="day" onclick="openModal(8)"><div class="num">8</div><span class="type type-edu">📚 Ta'lim</span><div class="title">3 xato - hamma qiladi!</div></div>
+<div class="day" onclick="openModal(9)"><div class="num">9</div><span class="type type-sales">💰 Sotuv</span><div class="title">Yozgi intensiv kurs - chegirma!</div></div>
+<div class="day" onclick="openModal(10)"><div class="num">10</div><span class="type type-edu">📚 Ta'lim</span><div class="title">Pronunciation: 5 qiyin so'z</div></div>
+<div class="day" onclick="openModal(11)"><div class="num">11</div><span class="type type-motivation">🔥 Motivatsiya</span><div class="title">Teacher story: qanday boshlagan?</div></div>
+<div class="day" onclick="openModal(12)"><div class="num">12</div><span class="type type-trust">🤝 Ishonch</span><div class="title">Dars jarayoni - behind the scenes</div></div>
+<div class="day" onclick="openModal(13)"><div class="num">13</div><span class="type type-rest">😴 Dam</span><div class="title">Story: Quiz - tarjima qil!</div></div>
+<div class="day" onclick="openModal(14)"><div class="num">14</div><span class="type type-rest">😴 Dam</span><div class="title">Story: Poll - qaysi mavzu?</div></div>
+
+<div class="day" onclick="openModal(15)"><div class="num">15</div><span class="type type-edu">📚 Ta'lim</span><div class="title">Listening skill - 1 hafta plan</div></div>
+<div class="day" onclick="openModal(16)"><div class="num">16</div><span class="type type-social">🎭 Ijtimoiy</span><div class="title">Teacher parody - "again" xatosi</div></div>
+<div class="day" onclick="openModal(17)"><div class="num">17</div><span class="type type-edu">📚 Ta'lim</span><div class="title">Writing task 2: template</div></div>
+<div class="day" onclick="openModal(18)"><div class="num">18</div><span class="type type-motivation">🔥 Motivatsiya</span><div class="title">Grant yutgan o'quvchi hikoyasi</div></div>
+<div class="day" onclick="openModal(19)"><div class="num">19</div><span class="type type-sales">💰 Sotuv</span><div class="title">Bepul sinov darsi - bugun!</div></div>
+<div class="day" onclick="openModal(20)"><div class="num">20</div><span class="type type-rest">😴 Dam</span><div class="title">Story: This or That</div></div>
+<div class="day" onclick="openModal(21)"><div class="num">21</div><span class="type type-rest">😴 Dam</span><div class="title">Story: Meme + Reaction</div></div>
+
+<div class="day" onclick="openModal(22)"><div class="num">22</div><span class="type type-trust">🤝 Ishonch</span><div class="title">Ota-ona fikri: "Bolam o'zgardi"</div></div>
+<div class="day" onclick="openModal(23)"><div class="num">23</div><span class="type type-edu">📚 Ta'lim</span><div class="title">Vocabulary hack: 20 so'z/kun</div></div>
+<div class="day" onclick="openModal(24)"><div class="num">24</div><span class="type type-social">🎭 Ijtimoiy</span><div class="title">Inglizcha ordering - kafe skit</div></div>
+<div class="day" onclick="openModal(25)"><div class="num">25</div><span class="type type-edu">📚 Ta'lim</span><div class="title">Reading: skimming vs scanning</div></div>
+<div class="day" onclick="openModal(26)"><div class="num">26</div><span class="type type-motivation">🔥 Motivatsiya</span><div class="title">30 kunlik challenge natijasi</div></div>
+<div class="day" onclick="openModal(27)"><div class="num">27</div><span class="type type-rest">😴 Dam</span><div class="title">Story: Eng yaxshi progress</div></div>
+<div class="day" onclick="openModal(28)"><div class="num">28</div><span class="type type-rest">😴 Dam</span><div class="title">Story: Next week teaser</div></div>
+
+<div class="day" onclick="openModal(29)"><div class="num">29</div><span class="type type-sales">💰 Sotuv</span><div class="title">Iyul kursiga early bird!</div></div>
+<div class="day" onclick="openModal(30)"><div class="num">30</div><span class="type type-trust">🤝 Ishonch</span><div class="title">Oy yakunlari - natijalar</div></div>
+<div class="day empty"></div>
+<div class="day empty"></div>
+<div class="day empty"></div>
+<div class="day empty"></div>
+<div class="day empty"></div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+<div class="modal" id="modalContent">
+<button class="modal-close" onclick="closeModalBtn()">&times;</button>
+<h3 id="modalTitle"></h3>
+<div class="modal-date" id="modalDate"></div>
+<div id="modalBody"></div>
+</div>
+</div>
+
+<script>
+const scripts = {
+1: {
+title: "5 ta eng ko'p ishlatiladigan ingliz so'zi",
+date: "1 Iyun, Dushanba",
+type: "Ta'lim",
+body: `
+<div class="section">
+<h4>🎬 Video Script (45-60 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "5 ta so'zni bilsang, ingliz tilining 30% ini tushunaversansan. Qaysi 5 ta? Ko'ramiz..."</div>
+<p><strong>ASOSIY QISM (3-50 sek):</strong></p>
+<ul>
+<li><strong>1. GET</strong> - "I get it" (tushunyapman), "Get out" (chiq), "Get up" (tur)</li>
+<li><strong>2. MAKE</strong> - "Make money" (pul topmoq), "Make a decision" (qaror qabul qilmoq)</li>
+<li><strong>3. TAKE</strong> - "Take a break" (dam olmoq), "Take time" (vaqt olmoq)</li>
+<li><strong>4. COME</strong> - "Come on" (qani), "Come back" (qaytmoq)</li>
+<li><strong>5. GO</strong> - "Go ahead" (davom et), "Let it go" (qo'y)</li>
+</ul>
+<div class="cta-box"><strong>CTA (50-60 sek):</strong> "Bu 5 ta so'zni eslab qol va DM yoz - men senga yana 20 ta shunday so'z yuboraman! Bio'dagi linkdan bepul darsga yozil 👇"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Ekranda har bir so'zni katta qilib yozing. Trending audio past qo'ying, voiceover ustida. Subtitle majburiy. Oxirida "Save qil!" degan text.</div>
+</div>`
+},
+2: {
+title: "Ingliz tilisiz kelajak yo'q - haqiqat",
+date: "2 Iyun, Seshanba",
+type: "Motivatsiya",
+body: `
+<div class="section">
+<h4>🎬 Video Script (30-45 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "2030 yilda O'zbekistonda ingliz tilini bilmaganlar ishsiz qoladi. Bu mening fikrim emas - bu statistika."</div>
+<p><strong>ASOSIY QISM (3-35 sek):</strong></p>
+<ul>
+<li>"Hozir IT kompaniyalarning 80% ingliz tili talab qiladi"</li>
+<li>"Grant imkoniyatlarining 95% ingliz tilida"</li>
+<li>"Oylik farqi: ingliz bilgan - 5-15 mln, bilmagan - 2-3 mln"</li>
+<li>"Sen hali ham 'keyin boshlayman' deyapsanmi?"</li>
+</ul>
+<div class="cta-box"><strong>CTA (35-45 sek):</strong> "Bugun boshlash uchun hech narsa kerak emas. Faqat DM yoz 'START' - biz senga yo'l xarita beramiz. Yoki bio'dagi linkdan bepul konsultatsiyaga yozil!"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Dramatic music, statistikani ekranga chiqaring. Teacher kameraga jiddiy qarab gapiradi. Oxirida motivatsion muzika kuchayadi.</div>
+</div>`
+},
+3: {
+title: "O'zbek vs Ingliz - qiziq farqlar",
+date: "3 Iyun, Chorshanba",
+type: "Ijtimoiy/Trend",
+body: `
+<div class="section">
+<h4>🎬 Video Script (30-40 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "O'zbek tilida 1 so'z bor, ingliz tilida 15 ta variant bor 😂 Ko'ramizmi?"</div>
+<p><strong>ASOSIY QISM (3-30 sek):</strong></p>
+<ul>
+<li>"O'zbekcha: YAXSHI → Inglizcha: Good, Great, Fine, Awesome, Amazing, Wonderful, Excellent, Superb, Fantastic, Terrific..."</li>
+<li>"O'zbekcha: YOMON → Inglizcha: Bad, Terrible, Awful, Horrible, Dreadful, Lousy..."</li>
+<li>"O'zbekcha: BORMOQ → Inglizcha: Go, Walk, Head, Travel, Move, Proceed..."</li>
+</ul>
+<div class="cta-box"><strong>CTA (30-40 sek):</strong> "Tag qil ingliz tili o'rganayotgan do'stingni! Yana shunday qiziq farqlar uchun follow bos 🔥"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Split screen - bir tomonda o'zbek bayrog'i, bir tomonda ingliz. Trending funny audio. Tez montaj. Oxirida "Part 2?" text.</div>
+</div>`
+},
+4: {
+title: "IELTS Speaking: 3 ta sir",
+date: "4 Iyun, Payshanba",
+type: "Ta'lim",
+body: `
+<div class="section">
+<h4>🎬 Video Script (45-60 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "IELTS Speaking'da 7.0 olish uchun 3 ta narsa kifoya. Hech kim bu haqda gapirmaydi..."</div>
+<p><strong>ASOSIY QISM (3-50 sek):</strong></p>
+<ul>
+<li><strong>Sir #1: FILLERS</strong> - "Well, Actually, To be honest, I'd say that..." - bu vaqt beradi va natural ko'rinadi</li>
+<li><strong>Sir #2: EXTEND</strong> - Har bir javobni 3 qadam: Answer → Reason → Example</li>
+<li><strong>Sir #3: PARAPHRASE</strong> - Savolni boshqa so'zlar bilan takrorla: "Do you like reading?" → "Am I into books? Absolutely!"</li>
+</ul>
+<div class="cta-box"><strong>CTA (50-60 sek):</strong> "Bu 3 ta sirni mashq qilmoqchimisiz? DM yozing 'SPEAKING' - biz 10 ta practice question yuboramiz! IELTS tayyorlanish kursi haqida - bio link 👇"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Teacher yuzma-yuz gapiradi. Har bir sirda ekranda raqam va text chiqadi. Professional, ishonchli ohang.</div>
+</div>`
+},
+5: {
+title: "O'quvchi natijasi: 0 dan 6.5 gacha",
+date: "5 Iyun, Juma",
+type: "Ishonch/Social Proof",
+body: `
+<div class="section">
+<h4>🎬 Video Script (45-60 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "6 oy oldin bu o'quvchi 'Hello' ham deya olmasdi. Bugun IELTS 6.5! Qanday qildi?"</div>
+<p><strong>ASOSIY QISM (3-50 sek):</strong></p>
+<ul>
+<li>O'quvchining eski video/rasmi (ruxsat bilan) - "Bu Sardor, 6 oy oldin"</li>
+<li>"Har kuni 1 soat, hech qachon darsni qoldirmadi"</li>
+<li>"Bizning metodika: 70% speaking practice + 30% grammar"</li>
+<li>O'quvchining hozirgi gapirishi yoki sertifikati</li>
+<li>"Sardorning gap'i: 'Eng qiyin narsa - boshlash edi'"</li>
+</ul>
+<div class="cta-box"><strong>CTA (50-60 sek):</strong> "Siz ham Sardordek bo'lishingiz mumkin. Bepul diagnostik testga yoziling - bio'dagi link! Yoki DM: 'TEST'"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Before/After format. Emotional muzika. O'quvchining real video/audio. Sertifikat rasmini ko'rsating. Ishonchli va samimiy.</div>
+</div>`
+},
+6: {
+title: "Story: Hafta savollari",
+date: "6 Iyun, Shanba (Dam olish)",
+type: "Engagement",
+body: `
+<div class="section">
+<h4>📱 Story Strategiyasi (Reels emas)</h4>
+<p><strong>Bugun Reels joylanmaydi.</strong> Faqat Story orqali engagement oshiramiz:</p>
+<ul>
+<li><strong>Story 1:</strong> Quiz sticker - "Bu so'zning tarjimasi nima? OPPORTUNITY = ?" (4 variant)</li>
+<li><strong>Story 2:</strong> Poll - "Ingliz tilini qayerda ko'proq ishlatasan? A) Internet B) Ish C) Sayohat D) Film"</li>
+<li><strong>Story 3:</strong> Question box - "Ingliz tili haqida qanday savolingiz bor? Yozing!"</li>
+<li><strong>Story 4:</strong> Countdown - "Dushanba kuni KATTA yangilik bor! ⏰"</li>
+</ul>
+<div class="tip-box"><strong>📌 Maqsad:</strong> DM'lar oshadi, algorithm sizni ko'taradi, haftaning eng faol followerlarini aniqlaysiz. Javob berganlarni follow back qiling!</div>
+</div>`
+},
+7: {
+title: "Story: Eng yaxshi komment",
+date: "7 Iyun, Yakshanba (Dam olish)",
+type: "Engagement",
+body: `
+<div class="section">
+<h4>📱 Story Strategiyasi</h4>
+<p><strong>Bugun Reels joylanmaydi.</strong> Community building:</p>
+<ul>
+<li><strong>Story 1:</strong> Hafta davomida eng ko'p like olgan Reels'ni repost qiling</li>
+<li><strong>Story 2:</strong> Eng yaxshi komment yozgan followerni tag qiling va minnatdorchilik bildiring</li>
+<li><strong>Story 3:</strong> "Ertaga yangi hafta boshlanadi - tayyor misiz?" motivation post</li>
+<li><strong>Story 4:</strong> Kelasi hafta kontent teaser - "Ertaga IELTS haqida muhim sir aytaman..."</li>
+</ul>
+<div class="tip-box"><strong>📌 Maqsad:</strong> Followerlar bilan shaxsiy aloqa. Ularni e'tirof etish. Dushanba uchun intizorlik yaratish.</div>
+</div>`
+},
+8: {
+title: "3 xato - hamma qiladi!",
+date: "8 Iyun, Dushanba",
+type: "Ta'lim",
+body: `
+<div class="section">
+<h4>🎬 Video Script (40-50 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "Bu 3 ta xatoni 99% o'zbeklar qiladi. Senchi? Tekshiramiz..."</div>
+<p><strong>ASOSIY QISM (3-40 sek):</strong></p>
+<ul>
+<li><strong>Xato #1:</strong> "I am agree" ❌ → "I agree" ✅ (Agree - bu verb, 'am' kerak emas!)</li>
+<li><strong>Xato #2:</strong> "I have 20 years" ❌ → "I am 20 years old" ✅ (Yosh = BE, ega bo'lish emas!)</li>
+<li><strong>Xato #3:</strong> "He don't like" ❌ → "He doesn't like" ✅ (3-shaxs = does!)</li>
+</ul>
+<div class="cta-box"><strong>CTA (40-50 sek):</strong> "Agar 1 tasini ham qilayotgan bo'lsang - tezda to'g'rilash kerak! Save qil va do'stingni tag qil! Batafsil - bio link"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Ekranda ❌ va ✅ belgisi bilan. Qizil/Yashil rang. Tez tempo. Sound effect har bir xatoda. "Part 2 kerakmi?" oxirida.</div>
+</div>`
+},
+9: {
+title: "Yozgi intensiv kurs - chegirma!",
+date: "9 Iyun, Seshanba",
+type: "Sotuv",
+body: `
+<div class="section">
+<h4>🎬 Video Script (30-45 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "Yoz - bu ingliz tilini o'rganish uchun IDEAL vaqt. Va biz bugun maxsus taklif qilyapmiz..."</div>
+<p><strong>ASOSIY QISM (3-35 sek):</strong></p>
+<ul>
+<li>"Yozgi intensiv kurs: 2 oy = 6 oylik natija"</li>
+<li>"Har kuni 2 soat, kichik guruhlar (max 8 kishi)"</li>
+<li>"Native speaker bilan haftada 2 marta practice"</li>
+<li>"BUGUNDAN 5 kun ichida ro'yxatdan o'tsangiz - 20% chegirma!"</li>
+<li>"Faqat 15 ta o'rin qoldi!"</li>
+</ul>
+<div class="cta-box"><strong>CTA (35-45 sek):</strong> "Hoziroq DM yozing 'SUMMER' yoki bio'dagi linkdan ro'yxatdan o'ting! O'rinlar cheklangan ⏰"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Urgency yarating! Timer/countdown ekranda. Kurs muhiti, baxtli o'quvchilar video. Energik muzika. FOMO (Fear of Missing Out) ishlatish.</div>
+</div>`
+},
+10: {
+title: "Pronunciation: 5 qiyin so'z",
+date: "10 Iyun, Chorshanba",
+type: "Ta'lim",
+body: `
+<div class="section">
+<h4>🎬 Video Script (40-55 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "Bu 5 ta so'zni 90% odamlar NOTO'G'RI talaffuz qiladi. Hatto teacherlar ham! 👀"</div>
+<p><strong>ASOSIY QISM (3-45 sek):</strong></p>
+<ul>
+<li><strong>1. WEDNESDAY</strong> - "Vednesday" ❌ → "WENZ-day" ✅</li>
+<li><strong>2. COMFORTABLE</strong> - "Komforteybl" ❌ → "KUMF-ter-bl" ✅</li>
+<li><strong>3. VEGETABLE</strong> - "Vegeteybl" ❌ → "VEJ-tuh-bl" ✅</li>
+<li><strong>4. FEBRUARY</strong> - "Februvari" ❌ → "FEB-roo-eri" ✅</li>
+<li><strong>5. ENTREPRENEUR</strong> - "Enterprenyor" ❌ → "On-truh-pruh-NUR" ✅</li>
+</ul>
+<div class="cta-box"><strong>CTA (45-55 sek):</strong> "Nechta to'g'ri bilding? Kommentda yoz! Save qil - keyin takrorlaysan. Pronunciation kursimiz haqida - DM: 'SPEAK'"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Teacher og'zi yaqindan ko'rinadi (lip movement). Slow motion takrorlash. Subtitle bilan phonetic yozuv. ASMR style audio.</div>
+</div>`
+},
+11: {
+title: "Teacher story: qanday boshlagan?",
+date: "11 Iyun, Payshanba",
+type: "Motivatsiya",
+body: `
+<div class="section">
+<h4>🎬 Video Script (45-60 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "Men 5 yil oldin ingliz tilida bir jumla ham tuza olmasdim. Bugun 100+ o'quvchiga o'rgatyapman. Bu mening hikoyam..."</div>
+<p><strong>ASOSIY QISM (3-50 sek):</strong></p>
+<ul>
+<li>"Maktabda ingliz tilidan 3 olardim..."</li>
+<li>"Bir kun grant imkoniyatini ingliz tili bilmaganligi uchun boy berdim"</li>
+<li>"Shu kuni qaror qildim - 6 oyda o'rganaman"</li>
+<li>"Har kuni 3 soat - film, kitob, speaking practice"</li>
+<li>"1 yilda IELTS 7.5 oldim va teacher bo'ldim"</li>
+<li>"Agar men qila olsam - sen ham albatta qila olasan!"</li>
+</ul>
+<div class="cta-box"><strong>CTA (50-60 sek):</strong> "Sening hikoyangni yozishga yordam beraman. Boshlash uchun - DM yoz yoki bio link!"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Personal, samimiy. Eski rasmlar/videolar. Emotional background music (piano). Face-to-camera, ko'z kontakti. Vulnerability = Trust.</div>
+</div>`
+},
+12: {
+title: "Dars jarayoni - behind the scenes",
+date: "12 Iyun, Juma",
+type: "Ishonch",
+body: `
+<div class="section">
+<h4>🎬 Video Script (30-45 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "Elites'da 1 kun qanday o'tadi? Ko'rsataman 👀"</div>
+<p><strong>ASOSIY QISM (3-35 sek):</strong></p>
+<ul>
+<li>Ertalab dars tayyorlash - teacher rejalashtiryapti</li>
+<li>O'quvchilar kelishi - salomlashish, energiya</li>
+<li>Dars jarayoni - interactive, kulgi, speaking practice</li>
+<li>O'yin orqali o'rganish - games, quiz</li>
+<li>Dars oxiri - homework, selfie, baxtli yuzlar</li>
+</ul>
+<div class="cta-box"><strong>CTA (35-45 sek):</strong> "Bu muhitning bir qismi bo'lmoqchimisiz? Bepul sinov darsiga keling! DM: 'VISIT' yoki bio link 👇"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Vlog style. Tez montaj. Upbeat music. Real dars, staged emas! O'quvchilar ruxsati bilan. Muhit va atmosferani ko'rsating.</div>
+</div>`
+},
+13: {
+title: "Story: Quiz - tarjima qil!",
+date: "13 Iyun, Shanba (Dam olish)",
+type: "Engagement",
+body: `
+<div class="section">
+<h4>📱 Story Strategiyasi</h4>
+<ul>
+<li><strong>Story 1:</strong> "PROCRASTINATION = ? tarjima qil!" (Quiz sticker)</li>
+<li><strong>Story 2:</strong> "OVERWHELMED = ? (Ko'pchilik bilmaydi!)" (Quiz sticker)</li>
+<li><strong>Story 3:</strong> "Bugun nechanchi so'z o'rganding?" (Slider sticker: 0-10)</li>
+<li><strong>Story 4:</strong> Javoblarni share qiling + eng yaxshi javobni tag qiling</li>
+</ul>
+<div class="tip-box"><strong>📌 Maqsad:</strong> Engagement rate oshirish. Har bir story interaction = algorithm boost. 24 soat ichida 5-6 story joylang.</div>
+</div>`
+},
+14: {
+title: "Story: Poll - qaysi mavzu?",
+date: "14 Iyun, Yakshanba (Dam olish)",
+type: "Engagement",
+body: `
+<div class="section">
+<h4>📱 Story Strategiyasi</h4>
+<ul>
+<li><strong>Story 1:</strong> Poll - "Kelasi hafta nima haqida Reels qilay? A) IELTS Writing B) Business English"</li>
+<li><strong>Story 2:</strong> "Ingliz tilida eng qiyin nima? A) Grammar B) Speaking C) Listening D) Vocabulary" (Quiz)</li>
+<li><strong>Story 3:</strong> Motivatsion quote + "Agree?" reaction sticker</li>
+<li><strong>Story 4:</strong> Kelasi hafta content teaser - countdown sticker</li>
+</ul>
+<div class="tip-box"><strong>📌 Maqsad:</strong> Auditoriyani kelasi hafta kontentga tayyorlash. Ularning ehtiyojlarini bilish. Community his qildirish.</div>
+</div>`
+},
+15: {
+title: "Listening skill - 1 hafta plan",
+date: "15 Iyun, Dushanba",
+type: "Ta'lim",
+body: `
+<div class="section">
+<h4>🎬 Video Script (50-60 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "1 haftada listening'ingni 2 baravar yaxshilash mumkin. Bu plan bilan:"</div>
+<p><strong>ASOSIY QISM (3-50 sek):</strong></p>
+<ul>
+<li><strong>Day 1-2:</strong> Podcast tinglash (15 min/kun) - tushunmasang ham davom et!</li>
+<li><strong>Day 3-4:</strong> Film subtitle bilan ko'rish → keyin subtitlesiz</li>
+<li><strong>Day 5:</strong> TED Talk - 1 ta gapni 5 marta takrorla (shadowing)</li>
+<li><strong>Day 6:</strong> Ingliz tilida YouTube - tezlikni 0.75x qo'y</li>
+<li><strong>Day 7:</strong> IELTS listening practice test</li>
+</ul>
+<div class="cta-box"><strong>CTA (50-60 sek):</strong> "Bu planni save qil va 1 haftadan natijani DM qil! Eng yaxshi podcast ro'yxati uchun - DM: 'LISTEN'"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Calendar/checklist visual ekranda. Har bir kun alohida frame. Fast-paced montaj. Save-worthy content!</div>
+</div>`
+},
+16: {
+title: "Teacher parody - 'again' xatosi",
+date: "16 Iyun, Seshanba",
+type: "Ijtimoiy/Hazil",
+body: `
+<div class="section">
+<h4>🎬 Video Script (20-30 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-2 sek):</strong> "Har bir ingliz tili teacherining og'riq nuqtasi 😂"</div>
+<p><strong>ASOSIY QISM (2-25 sek):</strong></p>
+<ul>
+<li><strong>Scene 1:</strong> Teacher: "OK, repeat after me: 'I HAVE BEEN studying'"</li>
+<li><strong>Scene 2:</strong> Student: "I has been study" 😐</li>
+<li><strong>Scene 3:</strong> Teacher: (patience face) "Again..."</li>
+<li><strong>Scene 4:</strong> Student: "I have been studied?" 😅</li>
+<li><strong>Scene 5:</strong> Teacher: (dying inside) - trending sound effect</li>
+<li><strong>Scene 6:</strong> "Elites'da biz sabr bilan o'rgatamiz 😂💪"</li>
+</ul>
+<div class="cta-box"><strong>CTA (25-30 sek):</strong> "Sizda ham shunday teacher bormi? Tag qiling! 😂"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Trending audio ishlatish. Comedy timing! Quick cuts. Relatable = Sharable. Comment + Share oshirish maqsad.</div>
+</div>`
+},
+17: {
+title: "Writing Task 2: Template",
+date: "17 Iyun, Chorshanba",
+type: "Ta'lim",
+body: `
+<div class="section">
+<h4>🎬 Video Script (50-60 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "IELTS Writing Task 2 da 7.0 olish uchun BU template yetarli. Save qil!"</div>
+<p><strong>ASOSIY QISM (3-50 sek):</strong></p>
+<ul>
+<li><strong>Introduction (2 jumla):</strong> "It is often argued that... While some believe..., I firmly believe that..."</li>
+<li><strong>Body 1 (5 jumla):</strong> "Firstly... This is because... For example... As a result... Therefore..."</li>
+<li><strong>Body 2 (5 jumla):</strong> "Furthermore... This means that... To illustrate... Consequently... Hence..."</li>
+<li><strong>Conclusion (2 jumla):</strong> "In conclusion... I believe that... overall..."</li>
+</ul>
+<div class="cta-box"><strong>CTA (50-60 sek):</strong> "To'liq template PDF uchun DM yozing 'WRITING' - bepul yuboramiz! IELTS kursimiz haqida - bio link"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Ekranda template yozilgan holda. Highlighter effect. Sekin, tushunarli gapirish. Bu SAVE magnet - juda ko'p save oladi!</div>
+</div>`
+},
+18: {
+title: "Grant yutgan o'quvchi hikoyasi",
+date: "18 Iyun, Payshanba",
+type: "Motivatsiya",
+body: `
+<div class="section">
+<h4>🎬 Video Script (45-60 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "Bizning o'quvchi $20,000 grant yutdi. Ingliz tili uning hayotini o'zgartirdi. Mana hikoya:"</div>
+<p><strong>ASOSIY QISM (3-50 sek):</strong></p>
+<ul>
+<li>"Nilufar 1 yil oldin Elites'ga keldi - maqsadi: chet elda o'qish"</li>
+<li>"6 oyda IELTS 6.5 oldi"</li>
+<li>"Application yozishda biz yordam berdik"</li>
+<li>"Bugun u Malayziyada to'liq grant bilan o'qiyapti!"</li>
+<li>O'quvchining video xabari: "Rahmat Elites jamoasi!"</li>
+</ul>
+<div class="cta-box"><strong>CTA (50-60 sek):</strong> "Keyingi grant winner SEN bo'lishing mumkin! Hoziroq IELTS tayyorlanishni boshlang. DM: 'GRANT' yoki bio link!"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Haqiqiy o'quvchi (ruxsat bilan). Video message/voice note. Sertifikat/acceptance letter ko'rsating. Emotional storytelling.</div>
+</div>`
+},
+19: {
+title: "Bepul sinov darsi - bugun!",
+date: "19 Iyun, Juma",
+type: "Sotuv",
+body: `
+<div class="section">
+<h4>🎬 Video Script (30-40 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "BUGUN bepul sinov darsi! Hech narsa to'lamaysiz. Faqat keling va ko'ring..."</div>
+<p><strong>ASOSIY QISM (3-30 sek):</strong></p>
+<ul>
+<li>"Har hafta juma kuni - bepul ochiq dars"</li>
+<li>"45 daqiqa: Speaking practice + Grammar game"</li>
+<li>"Hech qanday majburiyat yo'q - yoqsa qolasiz, yoqmasa ketasiz"</li>
+<li>"Bugun soat 18:00 da - manzil: bio'da"</li>
+<li>"Oldingi ochiq darsdan kadrlar..." (happy students)</li>
+</ul>
+<div class="cta-box"><strong>CTA (30-40 sek):</strong> "O'rningizni band qiling! DM yozing 'FREE' yoki bio'dagi linkdan ro'yxatdan o'ting. O'rinlar cheklangan - faqat 20 ta!"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Energik, qisqa. Oldingi dars videolari. Happy faces. Scarcity (cheklangan o'rin). Bugun post qiling, ertaga emas!</div>
+</div>`
+},
+20: {
+title: "Story: This or That",
+date: "20 Iyun, Shanba (Dam olish)",
+type: "Engagement",
+body: `
+<div class="section">
+<h4>📱 Story Strategiyasi</h4>
+<ul>
+<li><strong>Story 1:</strong> "THIS or THAT? 🤔 American English vs British English?" (Poll)</li>
+<li><strong>Story 2:</strong> "Film bilan o'rganish vs Kitob bilan o'rganish?" (Poll)</li>
+<li><strong>Story 3:</strong> "IELTS vs CEFR - qaysi biri yaxshi?" (Poll + explanation)</li>
+<li><strong>Story 4:</strong> "Ertalab o'rganish vs Kechqurun o'rganish?" (Poll)</li>
+<li><strong>Story 5:</strong> Natijalarni share qiling + izoh bering</li>
+</ul>
+<div class="tip-box"><strong>📌 Maqsad:</strong> Polls = eng yuqori engagement. Har bir javob = interaction signal. Algorithm loves it!</div>
+</div>`
+},
+21: {
+title: "Story: Meme + Reaction",
+date: "21 Iyun, Yakshanba (Dam olish)",
+type: "Engagement",
+body: `
+<div class="section">
+<h4>📱 Story Strategiyasi</h4>
+<ul>
+<li><strong>Story 1:</strong> English learning meme + "Bu senga tegishlimi?" 😂</li>
+<li><strong>Story 2:</strong> "Me trying to speak English" - relatable video/meme</li>
+<li><strong>Story 3:</strong> Haftalik natijalar - eng ko'p ko'rilgan Reels screenshot</li>
+<li><strong>Story 4:</strong> "Ertadan yangi hafta! Tayyor misiz? 🔥" + motivation</li>
+</ul>
+<div class="tip-box"><strong>📌 Maqsad:</strong> Yengil, hazilkash content. DM replies oshirish. Followerlar bilan "do'st" bo'lish.</div>
+</div>`
+},
+22: {
+title: "Ota-ona fikri: 'Bolam o'zgardi'",
+date: "22 Iyun, Dushanba",
+type: "Ishonch",
+body: `
+<div class="section">
+<h4>🎬 Video Script (40-50 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "Ota-onalar shuni aytishadi: 'Bolam Elites'ga borgandan keyin boshqa odam bo'ldi.' Nima uchun?"</div>
+<p><strong>ASOSIY QISM (3-40 sek):</strong></p>
+<ul>
+<li>Ota-onaning video review'i (yoki voice message)</li>
+<li>"Bolam endi o'zi kitob o'qiydi"</li>
+<li>"Ingliz tilida film ko'rishni boshladi"</li>
+<li>"Confidence oshdi - oldinda gapira olmardi"</li>
+<li>"Eng muhimi - o'rganishni yoqtira boshladi!"</li>
+</ul>
+<div class="cta-box"><strong>CTA (40-50 sek):</strong> "Bolangizning kelajagini bugun o'zgartiring. Bepul konsultatsiya uchun DM yozing yoki bio link"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Real ota-ona video/audio. Subtitle qo'shing. Trust-building = conversion. Bu turdagi content eng ko'p save oladi ota-onalardan.</div>
+</div>`
+},
+23: {
+title: "Vocabulary hack: 20 so'z/kun",
+date: "23 Iyun, Seshanba",
+type: "Ta'lim",
+body: `
+<div class="section">
+<h4>🎬 Video Script (45-55 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "Kuniga 20 ta yangi so'z yodlash mumkin - hech kim ishonmaydi, lekin bu REAL method:"</div>
+<p><strong>ASOSIY QISM (3-45 sek):</strong></p>
+<ul>
+<li><strong>Step 1: CHUNKING</strong> - 20 so'zni 4 ta guruhga bo'l (5 tadan)</li>
+<li><strong>Step 2: ASSOCIATION</strong> - Har bir so'zni rasm bilan bog'la (mental image)</li>
+<li><strong>Step 3: USE IT</strong> - Har bir so'z bilan 1 jumla yoz</li>
+<li><strong>Step 4: SPACED REPETITION</strong> - 1 soatdan keyin, 1 kundan keyin, 1 haftadan keyin takrorla</li>
+<li><strong>Misol:</strong> "SERENDIPITY = kutilmagan yoqimli hodisa. Rasm: Yo'lda 100$ topib olish 💰"</li>
+</ul>
+<div class="cta-box"><strong>CTA (45-55 sek):</strong> "30 kunlik vocabulary challenge boshlayotganmiz! Qo'shilish uchun DM: 'VOCAB' - har kuni 20 ta so'z + flashcard yuboramiz!"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Visual memory palace ko'rsating. Animation/doodle style. Slow enough to understand. High save potential!</div>
+</div>`
+},
+24: {
+title: "Inglizcha ordering - kafe skit",
+date: "24 Iyun, Chorshanba",
+type: "Ijtimoiy/Skit",
+body: `
+<div class="section">
+<h4>🎬 Video Script (25-35 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-2 sek):</strong> "O'zbek bola birinchi marta ingliz tilida buyurtma bersa 😂"</div>
+<p><strong>ASOSIY QISM (2-28 sek):</strong></p>
+<ul>
+<li><strong>Scene 1:</strong> (Kafe) Waiter: "What can I get you?"</li>
+<li><strong>Scene 2:</strong> Student: "I want... uhh... one coffee... hot... no cold... wait..."</li>
+<li><strong>Scene 3:</strong> (Inner monologue) "Issiq deyishni bilaman... HOT! yo'q WARM? yo'q..."</li>
+<li><strong>Scene 4:</strong> Student: "Give me that one!" (barmog'i bilan ko'rsatadi)</li>
+<li><strong>Scene 5:</strong> "Elites'dan keyin:" - Student: "Could I have an iced latte with oat milk, please? Thank you!"</li>
+</ul>
+<div class="cta-box"><strong>CTA (28-35 sek):</strong> "Senchi, kafeda inglizcha gapira olasanmi? 😂 Tag qil shu holatdagi do'stingni!"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Comedy skit. 2 kishi kerak (yoki o'zing 2 rol). Trending audio. Before/After format. SHARE magnet!</div>
+</div>`
+},
+25: {
+title: "Reading: Skimming vs Scanning",
+date: "25 Iyun, Payshanba",
+type: "Ta'lim",
+body: `
+<div class="section">
+<h4>🎬 Video Script (40-50 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "IELTS Reading'da vaqt yetmayaptimi? Bu 2 ta texnikani bilsang - 10 daqiqa tejaysan!"</div>
+<p><strong>ASOSIY QISM (3-40 sek):</strong></p>
+<ul>
+<li><strong>SKIMMING (Umumiy tushunish):</strong></li>
+<li>"Faqat 1-chi va oxirgi jumlani o'qi har paragrafda"</li>
+<li>"Sarlavha va rasmlarni ko'z yugurtir"</li>
+<li>"2-3 daqiqada butun matnni 'tushun'"</li>
+<li><strong>SCANNING (Aniq ma'lumot izlash):</strong></li>
+<li>"Savoldagi kalit so'zni toping"</li>
+<li>"Matndagi SHU so'zni qidiring (raqam, ism, sana)"</li>
+<li>"Atrofidagi 1-2 jumlani o'qing = javob!"</li>
+</ul>
+<div class="cta-box"><strong>CTA (40-50 sek):</strong> "Practice material uchun DM: 'READING'. Save qil - imtihonda esga tushadi! 💪"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Ekranda haqiqiy matn ko'rsating + highlight. Split screen: Skimming (tez) vs Scanning (aniq). Useful = Saves.</div>
+</div>`
+},
+26: {
+title: "30 kunlik challenge natijasi",
+date: "26 Iyun, Juma",
+type: "Motivatsiya",
+body: `
+<div class="section">
+<h4>🎬 Video Script (40-55 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "30 kun ingliz tilini har kuni o'rgansang nima bo'ladi? Mana REAL natija:"</div>
+<p><strong>ASOSIY QISM (3-45 sek):</strong></p>
+<ul>
+<li><strong>Day 1 vs Day 30:</strong> Speaking comparison video</li>
+<li>"30 kun oldin: 'My name is... I am... like...' (qiynaladi)"</li>
+<li>"30 kundan keyin: 'I've been studying English for a month and I can already express my thoughts clearly!'"</li>
+<li><strong>Natijalar:</strong> +200 yangi so'z, Speaking confidence 3x, Listening tushunish 60%→85%</li>
+<li>"SIR: Consistency > Intensity. Har kuni 30 daqiqa > Haftada 1 marta 5 soat"</li>
+</ul>
+<div class="cta-box"><strong>CTA (45-55 sek):</strong> "Iyul oyida 30 KUNLIK CHALLENGE boshlayapmiz! Qo'shilish BEPUL. DM: '30DAY'. O'rinlar cheklangan!"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Before/After format. Real student transformation. Numbers and data. Timer/progress bar visual. Motivational music crescendo.</div>
+</div>`
+},
+27: {
+title: "Story: Eng yaxshi progress",
+date: "27 Iyun, Shanba (Dam olish)",
+type: "Engagement",
+body: `
+<div class="section">
+<h4>📱 Story Strategiyasi</h4>
+<ul>
+<li><strong>Story 1:</strong> Hafta ichida eng progress qilgan o'quvchini tag qiling + tabriklar</li>
+<li><strong>Story 2:</strong> "Bu haftaning TOP 3 Reels'i" - ekranda statistika ko'rsating</li>
+<li><strong>Story 3:</strong> "Iyun oyi yakunlanmoqda - siz nechta yangi so'z o'rgandingiz?" (Slider)</li>
+<li><strong>Story 4:</strong> Kelasi hafta katta announcement teaser</li>
+</ul>
+<div class="tip-box"><strong>📌 Maqsad:</strong> Hafta yakunini celebrate qilish. O'quvchilarni recognize qilish = loyalty. Kelasi hafta uchun hype.</div>
+</div>`
+},
+28: {
+title: "Story: Next week teaser",
+date: "28 Iyun, Yakshanba (Dam olish)",
+type: "Engagement",
+body: `
+<div class="section">
+<h4>📱 Story Strategiyasi</h4>
+<ul>
+<li><strong>Story 1:</strong> "Ertaga KATTA yangilik! 🔥" (Countdown sticker)</li>
+<li><strong>Story 2:</strong> "Iyul oyi uchun maxsus loyiha tayyorlayapmiz..."</li>
+<li><strong>Story 3:</strong> "Kimdir bilmoqchimi? DM yozing 👀" (DM trigger)</li>
+<li><strong>Story 4:</strong> Relaxing Sunday content - "Dam oling, ertadan ishlaymiz! 💪"</li>
+</ul>
+<div class="tip-box"><strong>📌 Maqsad:</strong> Dushanba uchun anticipation. DM'lar yig'ish. Followerlarni "qaytib kelishga" undash.</div>
+</div>`
+},
+29: {
+title: "Iyul kursiga Early Bird!",
+date: "29 Iyun, Dushanba",
+type: "Sotuv",
+body: `
+<div class="section">
+<h4>🎬 Video Script (35-45 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "Iyul kursiga joylar tugamoqda! Hozir ro'yxatdan o'tsangiz - MAXSUS narx 👇"</div>
+<p><strong>ASOSIY QISM (3-35 sek):</strong></p>
+<ul>
+<li>"Iyul oyida yangi guruhlar ochilmoqda:"</li>
+<li>"🔸 Beginner (0 dan boshlash) - Dush/Chor/Juma"</li>
+<li>"🔸 Intermediate (B1-B2) - Sesh/Pay/Shan"</li>
+<li>"🔸 IELTS Intensive (6.5+ maqsad) - Har kuni"</li>
+<li>"Early bird narxi: 30 iyungacha ro'yxatdan o'tsangiz - 25% chegirma!"</li>
+<li>"Har bir guruhda MAX 8 kishi - individual yondashuv"</li>
+</ul>
+<div class="cta-box"><strong>CTA (35-45 sek):</strong> "Hoziroq DM yozing o'z levelingizni yoki bio'dagi linkdan bepul level test topshiring! ⏰ Chegirma ertaga tugaydi!"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Urgency + Scarcity. Countdown timer ekranda. Narxlarni aniq ko'rsating. Testimonial clips qo'shing. Action-oriented!</div>
+</div>`
+},
+30: {
+title: "Oy yakunlari - natijalar",
+date: "30 Iyun, Seshanba",
+type: "Ishonch",
+body: `
+<div class="section">
+<h4>🎬 Video Script (45-60 sekund)</h4>
+<div class="hook-box"><strong>HOOK (0-3 sek):</strong> "Iyun oyida Elites'da nima bo'ldi? Raqamlar gapiradi 📊"</div>
+<p><strong>ASOSIY QISM (3-50 sek):</strong></p>
+<ul>
+<li>"Bu oyda bizda:"</li>
+<li>"✅ 25+ yangi o'quvchi qo'shildi"</li>
+<li>"✅ 3 ta o'quvchi IELTS 6.5+ oldi"</li>
+<li>"✅ 1 ta o'quvchi chet elga grant yutdi"</li>
+<li>"✅ 500+ soat dars o'tildi"</li>
+<li>"✅ 100% o'quvchilar progress qildi"</li>
+<li>O'quvchilar + Teacher bir joyda - video montaj</li>
+<li>"Iyul oyida yanada kuchli bo'lamiz! Siz ham qo'shilasizmi?"</li>
+</ul>
+<div class="cta-box"><strong>CTA (50-60 sek):</strong> "Iyul kurslariga joylar cheklangan! Bugun oxirgi kun - early bird narxi. DM: 'JULY' yoki bio link!"</div>
+<div class="tip-box"><strong>📌 Texnik maslahat:</strong> Montaj - oy davomidagi eng yaxshi momentlar. Upbeat music. Numbers on screen. Celebration mood. End-of-month wrap-up.</div>
+</div>`
+}
+};
+
+function openModal(day) {
+    const data = scripts[day];
+    if (!data) return;
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalDate').textContent = data.date + ' | ' + data.type;
+    document.getElementById('modalBody').innerHTML = data.body;
+    document.getElementById('modalOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+    if (e.target === document.getElementById('modalOverlay')) {
+        document.getElementById('modalOverlay').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function closeModalBtn() {
+    document.getElementById('modalOverlay').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.getElementById('modalOverlay').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
+
+<div class="strategy" style="margin-top:30px">
+<h2>📈 Muhim KPI'lar (Oylik maqsadlar)</h2>
+<ul>
+<li>Followers o'sishi: +500-1000 ta/oy</li>
+<li>Har bir Reels: min 1000 view, 50+ like, 10+ comment</li>
+<li>DM'lar: kuniga 5-10 ta yangi murojaat</li>
+<li>Save rate: 3-5% (ta'limiy kontentda 5-8%)</li>
+<li>Share rate: 2-3% (hazilkash kontentda 5%+)</li>
+<li>Story engagement: 10-15% (poll/quiz interaction)</li>
+<li>Conversion: oyiga 15-25 yangi o'quvchi</li>
+</ul>
+</div>
+
+<div class="strategy">
+<h2>🏆 Top O'quv Markazlardan O'rganilgan Strategiyalar</h2>
+<ul>
+<li><strong>EIT LC (Samarqand):</strong> Consistent posting + IELTS tips = trust building. Ular har kuni 1 ta foydali tip beradi</li>
+<li><strong>Innovative Centre:</strong> Before/After transformations - o'quvchi natijalarini ko'rsatish eng kuchli social proof</li>
+<li><strong>GEC (Genius English):</strong> Reels + Carousel kombinatsiyasi. Carousel = save, Reels = reach</li>
+<li><strong>BBC Learning English:</strong> Micro-learning format - 1 post = 1 bilim. Oddiy, tushunarli, save-worthy</li>
+<li><strong>YES Education Center:</strong> Community building - o'quvchilar o'zlari content yaratadi (UGC)</li>
+</ul>
+</div>
+
+<div class="strategy">
+<h2>⏰ Optimal Posting Vaqtlari (O'zbekiston)</h2>
+<ul>
+<li><strong>Eng yaxshi vaqt:</strong> 07:00-08:00 (ertalab), 12:00-13:00 (tushlik), 19:00-21:00 (kechqurun)</li>
+<li><strong>Eng yaxshi kunlar:</strong> Seshanba, Chorshanba, Payshanba (eng yuqori engagement)</li>
+<li><strong>Dushanba:</strong> Yangi hafta energiyasi - motivatsion/ta'limiy content</li>
+<li><strong>Juma:</strong> Conversion kuni - sotuv/CTA kuchliroq ishlaydi</li>
+<li><strong>Weekend:</strong> Story only - followerlar relax holatda, engagement suhbat orqali</li>
+</ul>
+</div>
+
+<div style="text-align:center;padding:30px;color:#666;font-size:0.85rem">
+<p>© 2026 Elites Learning Center | Kontent Strategiyasi</p>
+<p>Har bir kontent ustiga bosing - to'liq video script ochiladi</p>
+</div>
+
+</body>
+</html>
