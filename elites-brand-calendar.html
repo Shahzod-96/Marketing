@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELITES Learning Center — Brand Kontent Kalendari | Iyun 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0e1a;--bg2:#111827;--card:#1a2035;--gold:#ffd200;--orange:#f7971e;--txt:#f0f0f0;--txt2:#a0aec0;--border:#2d3748;--green:#48bb78;--grad:linear-gradient(135deg,#ffd200,#f7971e)}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden}
+.nav{position:sticky;top:0;z-index:1000;background:rgba(10,14,26,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:12px 0}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 20px;flex-wrap:wrap;gap:10px}
+.nav-brand{font-weight:800;font-size:1.2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap}
+.nav-links a{color:var(--txt2);text-decoration:none;font-size:.78rem;padding:4px 10px;border-radius:4px;transition:.3s}
+.nav-links a:hover{color:var(--gold);background:rgba(255,210,0,.1)}
+section{max-width:1200px;margin:0 auto;padding:60px 20px}
+h2{font-size:1.8rem;margin-bottom:24px;text-align:center}
+.grid{display:grid;gap:16px}
+.card{background:var(--card);padding:24px;border-radius:12px;border:1px solid var(--border)}
+.tag{display:inline-block;padding:4px 10px;border-radius:6px;font-size:.75rem;font-weight:600}
+.tag-brand{background:rgba(255,210,0,.15);color:var(--gold)}
+.tag-edu{background:rgba(99,179,237,.15);color:#63b3ed}
+.tag-trust{background:rgba(72,187,120,.15);color:var(--green)}
+.tag-sales{background:rgba(247,151,30,.15);color:var(--orange)}
+.tag-story{background:rgba(183,148,244,.15);color:#b794f4}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-header{text-align:center;font-size:.75rem;color:var(--txt2);padding:8px;font-weight:600}
+.cal-day{background:var(--card);border-radius:8px;padding:8px;min-height:90px;cursor:pointer;border:1px solid var(--border);transition:.3s;position:relative}
+.cal-day:hover{border-color:var(--gold);transform:translateY(-2px)}
+.cal-day .num{font-size:.8rem;font-weight:700;color:var(--gold)}
+.cal-day .label{font-size:.65rem;color:var(--txt2);margin-top:4px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.cal-day .type-dot{position:absolute;top:8px;right:8px;width:8px;height:8px;border-radius:50%}
+.cal-day.brand .type-dot{background:var(--gold)}
+.cal-day.edu .type-dot{background:#63b3ed}
+.cal-day.trust .type-dot{background:var(--green)}
+.cal-day.sales .type-dot{background:var(--orange)}
+.cal-day.story .type-dot{background:#b794f4}
+.boost-badge{background:var(--orange);color:#000;font-size:.6rem;padding:2px 5px;border-radius:3px;font-weight:700;margin-top:4px;display:inline-block}
+.modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);overflow-y:auto;padding:20px}
+.modal-box{max-width:720px;margin:40px auto;background:var(--bg2);border-radius:16px;border:1px solid var(--border);padding:32px;position:relative}
+.modal-close{position:absolute;top:12px;right:16px;background:none;border:none;color:var(--txt2);font-size:1.8rem;cursor:pointer;line-height:1}
+.modal-close:hover{color:var(--gold)}
+.modal-title{font-size:1.3rem;font-weight:700;margin-bottom:16px;padding-right:30px}
+.modal-script{white-space:pre-wrap;font-size:.85rem;line-height:1.7;color:var(--txt2);background:var(--bg);padding:20px;border-radius:10px;border:1px solid var(--border)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat-card{background:var(--card);padding:16px;border-radius:10px;text-align:center;border:1px solid var(--border)}
+.stat-num{font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.8rem;color:var(--txt2);margin-top:4px}
+@media(max-width:768px){
+.cal-grid{grid-template-columns:repeat(7,1fr);gap:2px}
+.cal-day{min-height:60px;padding:4px}
+.cal-day .label{display:none}
+.nav-links{display:none}
+section{padding:40px 12px}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><div class="nav-brand">ELITES CALENDAR</div><div class="nav-links"><a href="#muammo">Muammo</a><a href="#strategiya">Strategiya</a><a href="#ustunlar">Ustunlar</a><a href="#funnel">Funnel</a><a href="#kalendar">Kalendar</a><a href="#reklama">Reklama</a><a href="#growth">Growth</a><a href="#kpi">KPI</a></div></div></nav>
+
+<header style="text-align:center;padding:60px 20px 40px;background:linear-gradient(180deg,rgba(26,32,53,.8),var(--bg))">
+<div style="display:inline-block;padding:6px 16px;background:rgba(255,210,0,.1);border:1px solid var(--gold);border-radius:20px;font-size:.8rem;color:var(--gold);margin-bottom:16px">📅 IYUN 2026 — BRAND KONTENT REJASI</div>
+<h1 style="font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:8px"><span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">ELITES</span> Learning Center</h1>
+<p style="color:var(--txt2);font-size:1.1rem;max-width:600px;margin:0 auto">Surxondaryodagi eng kuchli ingliz tili markazi<br>30+ o'qituvchi • 700+ o'quvchi • 2 filial • IELTS 9.0 natija</p>
+<div style="margin-top:24px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+<span style="background:var(--card);padding:8px 16px;border-radius:8px;font-size:.85rem;border:1px solid var(--border)">📍 Termiz</span>
+<span style="background:var(--card);padding:8px 16px;border-radius:8px;font-size:.85rem;border:1px solid var(--border)">📸 @elites_learning_center</span>
+<span style="background:var(--card);padding:8px 16px;border-radius:8px;font-size:.85rem;border:1px solid var(--border)">👥 5,443 followers</span>
+</div>
+</header>
+
+<section id="muammo">
+<h2>🔴 Muammo va Yechim</h2>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+<div class="card"><h3 style="color:#fc8181;margin-bottom:8px">❌ Eski yondashuv</h3><p style="color:var(--txt2)">"Dilshod 9.0 teacher" — personal brand. Markaz emas, shaxs reklama qilingan. 30+ teacher bor lekin faqat 1 kishi kadrda.</p></div>
+<div class="card" style="border-color:var(--gold)"><h3 style="color:var(--gold);margin-bottom:8px">✅ Yangi yondashuv</h3><p style="color:var(--txt2)">"ELITES = eng kuchli markaz". BRAND qahramon. 9.0 natija = TIZIM isboti. Turli teacherlar, jamoa kuchi, ko'lam ko'rsatiladi.</p></div>
+<div class="card"><h3 style="color:#63b3ed;margin-bottom:8px">🎯 Maqsad</h3><p style="color:var(--txt2)">Har bir video → yangi o'quvchi. Brand recognition: "Elites = Surxondaryoda #1". Ko'proq talaba yozilishi.</p></div>
+</div>
+</section>
+
+<section id="strategiya">
+<h2>🎯 Brand Strategiya</h2>
+<div class="card" style="border-color:var(--gold);max-width:800px;margin:0 auto;text-align:center">
+<p style="font-size:1.4rem;font-weight:700;margin-bottom:16px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">"ELITES = Surxondaryoda eng kuchli markaz"</p>
+<p style="color:var(--txt2);margin-bottom:20px">BRAND qahramon — shaxs emas. Dilshod = isbotlardan biri. 9.0 natija = TIZIM sifati</p>
+<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+<span class="tag tag-brand">JAMOA (30+ teacher)</span>
+<span class="tag tag-brand">TIZIM (metodologiya)</span>
+<span class="tag tag-brand">KO'LAM (700+ / 2 filial)</span>
+<span class="tag tag-brand">ISBOT (9.0 natija)</span>
+<span class="tag tag-brand">SAT #1 Surxondaryo</span>
+</div>
+</div>
+</section>
+
+<section id="ustunlar">
+<h2>📊 Kontent Ustunlari — 5 Reel/hafta</h2>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+<div class="card" style="border-left:4px solid var(--gold)"><h3 style="font-size:.95rem;margin-bottom:6px">🏢 BRAND (2/hafta)</h3><p style="color:var(--txt2);font-size:.85rem">Markaz hayoti, jamoa, tizim, ko'lam. ELITES = qahramon</p></div>
+<div class="card" style="border-left:4px solid #63b3ed"><h3 style="font-size:.95rem;margin-bottom:6px">📚 EDU (2/hafta)</h3><p style="color:var(--txt2);font-size:.85rem">Foydali tips, grammar, vocabulary. Turli o'qituvchilar</p></div>
+<div class="card" style="border-left:4px solid var(--green)"><h3 style="font-size:.95rem;margin-bottom:6px">🌟 TRUST (1/hafta)</h3><p style="color:var(--txt2);font-size:.85rem">Natijalar, testimoniallar, ota-onalar</p></div>
+<div class="card" style="border-left:4px solid var(--orange)"><h3 style="font-size:.95rem;margin-bottom:6px">💰 SALES (1/2 hafta)</h3><p style="color:var(--txt2);font-size:.85rem">To'g'ridan-to'g'ri CTA, chegirma, sinov darsi</p></div>
+<div class="card" style="border-left:4px solid #b794f4"><h3 style="font-size:.95rem;margin-bottom:6px">📱 STORY (Sha-Ya)</h3><p style="color:var(--txt2);font-size:.85rem">Polllar, quizlar, teaserlar, behind scenes</p></div>
+</div>
+</section>
+
+<section id="funnel">
+<h2>🔻 Kontent Funneli</h2>
+<div style="max-width:600px;margin:0 auto">
+<div style="background:rgba(255,210,0,.08);border:1px solid var(--gold);padding:18px 24px;border-radius:12px 12px 0 0;text-align:center"><strong style="color:var(--gold)">TOP — Xabardorlik (BRAND Reels + Boost)</strong><br><span style="color:var(--txt2);font-size:.9rem">Yangi odamlar ELITES haqida bilib oladi. Reach + impressions</span></div>
+<div style="background:rgba(247,151,30,.08);border:1px solid var(--orange);padding:18px 24px;text-align:center;margin-top:-1px"><strong style="color:var(--orange)">MIDDLE — Ishonch (EDU + TRUST Reels)</strong><br><span style="color:var(--txt2);font-size:.9rem">Foydali kontent + natijalar = "Bu markazga ishonsa bo'ladi"</span></div>
+<div style="background:rgba(72,187,120,.08);border:1px solid var(--green);padding:18px 24px;border-radius:0 0 12px 12px;text-align:center;margin-top:-1px"><strong style="color:var(--green)">BOTTOM — Harakat (SALES + DM)</strong><br><span style="color:var(--txt2);font-size:.9rem">DM keyword → Sinov darsi → Ro'yxatga olish. Konversiya</span></div>
+</div>
+</section>
+
+<section id="kalendar">
+<h2>📅 Iyun 2026 — Kontent Kalendari</h2>
+<p style="text-align:center;color:var(--txt2);margin-bottom:8px">Har bir kunga bosing — to'liq skript ochiladi</p>
+<div style="display:flex;justify-content:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
+<span class="tag tag-brand">🏢 Brand</span><span class="tag tag-edu">📚 Edu</span><span class="tag tag-trust">🌟 Trust</span><span class="tag tag-sales">💰 Sales</span><span class="tag tag-story">📱 Story</span>
+</div>
+<div class="cal-grid" style="margin-bottom:8px">
+<div class="cal-header">DU</div><div class="cal-header">SE</div><div class="cal-header">CHO</div><div class="cal-header">PA</div><div class="cal-header">JU</div><div class="cal-header">SHA</div><div class="cal-header">YA</div>
+</div>
+<div class="cal-grid" id="calGrid"></div>
+<p style="text-align:center;color:var(--txt2);font-size:.8rem;margin-top:16px">📌 HAFTA 1: "ELITES kim?" | HAFTA 2: "Nega aynan ELITES?" | HAFTA 3: "ELITES muhiti" | HAFTA 4: "Natijalar & Harakat"</p>
+</section>
+
+<section id="reklama">
+<h2>💰 Reklama Byudjeti — $55/oy</h2>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+<div class="card"><h3 style="color:var(--gold);margin-bottom:8px">Hafta 1 — $17</h3><p style="color:var(--txt2);font-size:.9rem">Day 1: $10 (Intro markaz)<br>Day 3: $7 (Teachers montaj)</p></div>
+<div class="card"><h3 style="color:var(--gold);margin-bottom:8px">Hafta 2 — $8</h3><p style="color:var(--txt2);font-size:.9rem">Day 8: $8 (9.0 system reel)</p></div>
+<div class="card"><h3 style="color:var(--gold);margin-bottom:8px">Hafta 3 — $5</h3><p style="color:var(--txt2);font-size:.9rem">Day 15: $5 (1 kun hayot)</p></div>
+<div class="card"><h3 style="color:var(--gold);margin-bottom:8px">Hafta 4 — $25</h3><p style="color:var(--txt2);font-size:.9rem">Day 22: $10 (2-filial)<br>Day 26: $15 (Iyul intensiv)</p></div>
+</div>
+<p style="text-align:center;margin-top:16px;color:var(--txt2);font-size:.85rem">🎯 Target: Termiz + Surxondaryo, 15-25 yosh, O'zbek tili, "IELTS", "English" interests</p>
+</section>
+
+<section id="growth">
+<h2>📈 O'sish Strategiyasi</h2>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+<div class="card"><h3 style="color:var(--gold);margin-bottom:12px">🔄 Kontent tizimi</h3><ul style="color:var(--txt2);font-size:.9rem;list-style:none;display:flex;flex-direction:column;gap:6px"><li>✅ 5 Reel/hafta (Du-Ju)</li><li>✅ Stories dam olish kunlari (Sha-Ya)</li><li>✅ Har kuni TURLI teacher kadrda</li><li>✅ 1 mobilograf — max 1-2 soat/kun</li><li>✅ Faqat markaz ichida suratga olish</li></ul></div>
+<div class="card"><h3 style="color:var(--gold);margin-bottom:12px">🎯 Target auditoriya</h3><ul style="color:var(--txt2);font-size:.9rem;list-style:none;display:flex;flex-direction:column;gap:6px"><li>👤 15-25 yoshlilar (asosiy)</li><li>📍 Termiz, Surxondaryo viloyati</li><li>🎓 IELTS/SAT kerak bo'lganlar</li><li>👨‍👩‍👧 Ota-onalar (bolalar kursi uchun)</li><li>🏫 Maktab bitiruvchilari</li></ul></div>
+<div class="card"><h3 style="color:var(--gold);margin-bottom:12px">🚀 Organik o'sish</h3><ul style="color:var(--txt2);font-size:.9rem;list-style:none;display:flex;flex-direction:column;gap:6px"><li>📌 #elites #termiz #ielts #surxondaryo</li><li>📌 Mahalliy bloggerlar bilan collab</li><li>📌 O'quvchilar stories repost</li><li>📌 DM keyword → avtomatik javob</li><li>📌 Commenting strategy (niche pages)</li></ul></div>
+</div>
+</section>
+
+<section id="kpi">
+<h2>📊 KPI — Oy Oxiri Maqsadlari</h2>
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-num">7,000+</div><div class="stat-label">Followers (5,443 → 7K)</div></div>
+<div class="stat-card"><div class="stat-num">50K+</div><div class="stat-label">Oylik Reach</div></div>
+<div class="stat-card"><div class="stat-num">100+</div><div class="stat-label">DM so'rovlari</div></div>
+<div class="stat-card"><div class="stat-num">30+</div><div class="stat-label">Yangi o'quvchilar</div></div>
+<div class="stat-card"><div class="stat-num">5%+</div><div class="stat-label">Engagement rate</div></div>
+<div class="stat-card"><div class="stat-num">22</div><div class="stat-label">Reels nashr etilgan</div></div>
+</div>
+</section>
+
+<footer style="text-align:center;padding:40px 20px;border-top:1px solid var(--border);margin-top:20px">
+<p style="color:var(--gold);font-weight:700;font-size:1.1rem;margin-bottom:8px">ELITES Learning Center</p>
+<p style="color:var(--txt2);font-size:.85rem">Termiz, Surxondaryo | @elites_learning_center | 30+ teachers | 700+ students | 2 filial</p>
+<p style="color:var(--txt2);font-size:.75rem;margin-top:12px">Brand Kontent Kalendari — Iyun 2026 | Mobilograf uchun tayyor skriptlar</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal()">&times;</button>
+<div id="modalDay" style="font-size:.85rem;color:var(--gold);margin-bottom:4px"></div>
+<div id="modalTitle" class="modal-title"></div>
+<div id="modalTags" style="margin-bottom:16px"></div>
+<div id="modalScript" class="modal-script"></div>
+</div>
+</div>
+
+<script>
+const days=[
+{day:1,week:1,type:'brand',boost:'$10',emoji:'🏢',title:"ELITES — Surxondaryodagi eng kuchli markaz",script:"🎬 FORMAT: Montaj + Voiceover\n⏱ DAVOMIYLIK: 35 sekund\n📍 QAERDA: Butun markaz — sinf, reception, koridor\n👤 KIMLAR: 5-6 turli teacher + talabalar (montaj)\n\n🪝 HOOK (birinchi 3 sekund):\n\"Surxondaryoda ENG KUCHLI ingliz tili markazi qayerda?\"\n\n📝 MAZMUN:\n• Wide shot: markaz binosi, ELITES logo\n• Montaj: to'la sinflar, faol darslar\n• 5-6 turli o'qituvchi kadrda (har biri 2 sek)\n• Raqamlar ekranda: 700+ o'quvchi, 30+ teacher, 2 filial, IELTS 9.0\n• Final: barcha teachers bir kadrda\n\n📣 CTA:\n\"Bepul sinov darsiga yozing — DM: START\"\nDM keyword: START\n\n✏️ CAPTION:\nELITES Learning Center — Surxondaryodagi eng kuchli markaz! 🏆\n\n✅ 30+ professional o'qituvchi\n✅ 700+ o'quvchi bizga ishonadi\n✅ 2 ta filial Termizda\n✅ IELTS 9.0 natija — tizimimiz kuchi!\n\nBepul sinov darsiga yoziling 👇\nDM: \"START\"\n\n#elites #termiz #ielts #inglizTili #surxondaryo #learningcenter\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Wide + Medium montaj (har biri 2-3 sek)\n- Harakat: Sekin pan + statik kadrlar\n- Yorug'lik: Deraza yoni + sinf chiroqlari\n- Maxsus: Matn/raqamlar overlay qo'shish, Trending motivational audio"},
+
+{day:2,week:1,type:'edu',emoji:'📚',title:"Ingliz tilida eng ko'p qilinadigan 3 xato",script:"🎬 FORMAT: Talking Head + Doska\n⏱ DAVOMIYLIK: 30 sekund\n📍 QAERDA: Sinf — doska oldida\n👤 KIMLAR: Teacher #1 (Dilshoddan boshqa)\n\n🪝 HOOK (birinchi 3 sekund):\n\"Bu 3 xatoni 90% o'zbeklar qiladi!\"\n\n📝 MAZMUN:\n• Xato 1: \"I am agree\" → \"I agree\"\n• Xato 2: \"He don't\" → \"He doesn't\"\n• Xato 3: \"informations\" → \"information\"\n• Har birini doskada yozib tuzatadi\n\n📣 CTA:\n\"Yana bunday tips uchun follow qiling! ✅\"\nDM keyword: TIPS\n\n✏️ CAPTION:\nBu 3 xatoni 90% o'zbeklar qiladi! 😱\n\n❌ I am agree → ✅ I agree\n❌ He don't → ✅ He doesn't\n❌ informations → ✅ information\n\nSiz ham qilganmisiz? 👀 Commentda yozing!\n\nBepul darslarga yoziling: DM \"TIPS\"\n\n#inglizTili #ielts #grammar #elites #termiz #xatolar\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium (bel dan yuqori + doska ko'rinadi)\n- Harakat: Statik tripod\n- Yorug'lik: Sinf chiroqlari yaxshi yoqilgan\n- Maxsus: Original ovoz, xato/to'g'ri matn overlay"},
+
+{day:3,week:1,type:'brand',boost:'$7',emoji:'🏢',title:"30+ professional o'qituvchi. Hammasi pedagog diplomli.",script:"🎬 FORMAT: Montaj\n⏱ DAVOMIYLIK: 25 sekund\n📍 QAERDA: Turli sinflar + koridor\n👤 KIMLAR: 6-8 turli o'qituvchi\n\n🪝 HOOK (birinchi 3 sekund):\n\"ELITES'da 30+ o'qituvchi ishlaydi. Hammasi PROFESSIONAL.\"\n\n📝 MAZMUN:\n• Har bir teacher kameraga qarab qo'l silkiydi (2 sek)\n• Orasida: dars jarayoni kadrlari\n• Matn overlay: \"Pedagog diplomli\", \"IELTS certified\", \"Native speaker\"\n• Final: \"Bizda TIZIM bor, 1 kishi emas\"\n\n📣 CTA:\n\"Qaysi teacher bilan o'qimoqchisiz? DM: TEACHER\"\nDM keyword: TEACHER\n\n✏️ CAPTION:\nELITES'da 30+ professional o'qituvchi! 👨‍🏫👩‍🏫\n\n✅ Hammasi pedagog diplomli\n✅ IELTS/CEFR sertifikatli\n✅ Native speaker ham bor! 🇲🇦\n✅ Kichik guruhlar (15 kishi)\n\nBu 1 kishining ishi emas — bu TIZIM kuchi! 💪\n\nDM: \"TEACHER\" — sizga mos teacher topamiz\n\n#elites #teachers #termiz #pedagog #inglizTili #team\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium close-up har bir teacher uchun\n- Harakat: Sekin yurish koridorda + statik sinflarda\n- Yorug'lik: Natural + sinf chiroqlari\n- Maxsus: Trending upbeat audio, ism matn overlay"},
+
+{day:4,week:1,type:'trust',emoji:'🌟',title:"O'quvchimiz natijasi: 4.5 dan 7.0 ga!",script:"🎬 FORMAT: Talking Head (talaba)\n⏱ DAVOMIYLIK: 35 sekund\n📍 QAERDA: Reception yoki sinf\n👤 KIMLAR: 1 talaba (natijasi bor)\n\n🪝 HOOK (birinchi 3 sekund):\n\"6 oy oldin IELTS 4.5 edi. Hozir — 7.0! 🎉\"\n\n📝 MAZMUN:\n• Talaba o'zini tanishtiradi\n• Oldingi va hozirgi balli aytadi\n• \"Elites'da nima farq?\" — tizim, individual yondashuv\n• Sertifikatni ko'rsatadi\n\n📣 CTA:\n\"Siz ham bunday natijaga erishmoqchimisiz? DM: NATIJA\"\nDM keyword: NATIJA\n\n✏️ CAPTION:\n4.5 dan 7.0 ga — 6 oyda! 🎯🔥\n\nBizning o'quvchimiz natijasi:\n📌 Oldin: IELTS 4.5\n📌 Keyin: IELTS 7.0\n📌 Vaqt: 6 oy\n\nELITES tizimi ishlaydi! Siz ham tayyormisiz? 💪\n\nDM: \"NATIJA\" — bepul konsultatsiya\n\n#ielts #natija #success #elites #termiz #inglizTili\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium (talaba yuzdan)\n- Harakat: Statik tripod\n- Yorug'lik: Deraza yoni (natural light)\n- Maxsus: Sertifikat close-up insert, original ovoz"},
+
+{day:5,week:1,type:'edu',emoji:'📚',title:"IELTS Speaking'da 7.0 olish — 3 ta qoida",script:"🎬 FORMAT: Talking Head + Doska\n⏱ DAVOMIYLIK: 35 sekund\n📍 QAERDA: Sinf\n👤 KIMLAR: Teacher #2\n\n🪝 HOOK (birinchi 3 sekund):\n\"Speaking'da 7.0 olish juda OSON — shu 3 qoidani bilsang!\"\n\n📝 MAZMUN:\n• Qoida 1: \"Extend your answers\" — 1 gap emas, 3 gap ayt\n• Qoida 2: \"Use linking words\" — However, Moreover, In addition\n• Qoida 3: \"Paraphrase the question\" — examiner so'zini takrorlamang\n• Har birini misol bilan ko'rsatadi\n\n📣 CTA:\n\"Speaking practice kerakmi? DM: SPEAK\"\nDM keyword: SPEAK\n\n✏️ CAPTION:\nIELTS Speaking 7.0 — shu 3 qoidani bilsang BAS! ✅\n\n1️⃣ Javobni KENGAYTIR (1 gap emas, 3 gap!)\n2️⃣ Linking words ishlat (However, Moreover...)\n3️⃣ Savolni PARAPHRASE qil\n\nPractice qilmoqchimisiz?\nDM: \"SPEAK\" — bepul Speaking session!\n\n#ielts #speaking #tips #elites #termiz\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium (doska + teacher)\n- Harakat: Statik tripod\n- Yorug'lik: Sinf chiroqlari\n- Maxsus: Doskada 3 qoida yoziladi, original ovoz"},
+
+{day:6,week:1,type:'story',emoji:'📱',title:"Poll + Quiz (engagement)",script:"📱 STORY REJASI:\n\nStory 1: Poll — \"IELTS sizga kerakmi?\" HA / YO'Q (Poll sticker)\nStory 2: Quiz — \"'Information' so'zining to'g'ri ko'pligi qaysi?\"\n  A) informations  B) information  C) the informations (Quiz sticker)\nStory 3: Emoji Slider — \"IELTS ga qanchalik tayyorsiz? 0-100\" (Emoji slider — 🔥)\nStory 4: Markaz ichidan live moment — \"Shanba ham dars bor! 💪\" + Countdown to Monday reel (Countdown sticker)\n\n📌 Maqsad: Engagement oshirish, algoritmga signal berish\n📌 Vaqt: Ertalab 9:00 — 11:00 orasida post"},
+
+{day:7,week:1,type:'story',emoji:'📱',title:"Teaser + Repost eng yaxshi Reel",script:"📱 STORY REJASI:\n\nStory 1: Hafta davomidagi eng ko'p ko'rilgan Reelni story'ga repost + \"Buni ko'rdingizmi?\" matni\nStory 2: Behind the scenes — mobilograf ishlayotgan payt (Boomerang/short clip)\nStory 3: Teaser — \"Kelasi hafta — IELTS 9.0 SIRRI ochiladi 👀\" (Countdown sticker to Monday)\nStory 4: Motivation — \"Success is not given, it's earned\" + ELITES logo (Text + GIF sticker)\n\n📌 Maqsad: Anticipation yaratish, kelasi haftaga qiziqtirish\n📌 Vaqt: Tushdan keyin 14:00-16:00"}
+];
+
+// WEEK 2
+days.push(
+{day:8,week:2,type:'brand',boost:'$8',emoji:'🏢',title:"Nega Elites'da IELTS 9.0 natija bor?",script:"🎬 FORMAT: Montaj + Voiceover\n⏱ DAVOMIYLIK: 40 sekund\n📍 QAERDA: Sinflar, koridor\n👤 KIMLAR: Turli teacherlar + talabalar (montaj)\n\n🪝 HOOK (birinchi 3 sekund):\n\"IELTS 9.0 — bu 1 kishi emas, bu TIZIM natijasi!\"\n\n📝 MAZMUN:\n• Kadr 1: Professional teacherlar (montaj)\n• Kadr 2: Kichik guruhlar (15 kishi) — individual e'tibor\n• Kadr 3: Dars jarayoni — interactive metodika\n• Kadr 4: Natijalar doskasi — sertifikatlar\n• Voiceover: \"30+ pedagog diplomli teacher. Kichik guruhlar. Zamonaviy metodika. Natija — 9.0\"\n\n📣 CTA:\n\"Siz ham shu tizimda o'qing! DM: SYSTEM\"\nDM keyword: SYSTEM\n\n✏️ CAPTION:\nIELTS 9.0 — bu 1 kishining ishi EMAS! 🎯\n\nBu TIZIM natijasi:\n✅ 30+ professional pedagog\n✅ Kichik guruhlar (15 kishi)\n✅ Zamonaviy metodika\n✅ Individual yondashuv\n\nSiz ham shu tizimda o'qimoqchimisiz?\nDM: \"SYSTEM\"\n\n#ielts #elites #system #termiz #natija #9band\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Wide + Medium aralash montaj\n- Harakat: Sekin tracking shot koridorda\n- Yorug'lik: Natural + artificial mix\n- Maxsus: Voiceover qo'shiladi, stats overlay, motivational audio"},
+
+{day:9,week:2,type:'edu',emoji:'📚',title:"5 ta so'zni hamma NOTO'G'RI aytadi",script:"🎬 FORMAT: Talking Head\n⏱ DAVOMIYLIK: 30 sekund\n📍 QAERDA: Sinf\n👤 KIMLAR: Teacher #3 (yoki Brahim — pronunciation expert)\n\n🪝 HOOK (birinchi 3 sekund):\n\"Bu 5 so'zni SIZ ham noto'g'ri aytasiz! 😱\"\n\n📝 MAZMUN:\n• Wednesday — /ˈwenzdeɪ/ (Venzday, Vednesday emas)\n• Comfortable — /ˈkʌmftəbl/ (3 bo'g'in, 4 emas)\n• Vegetable — /ˈvedʒtəbl/ (3 bo'g'in)\n• February — /ˈfebruəri/ (birinchi R tushib ketadi)\n• Chocolate — /ˈtʃɒklət/ (2 bo'g'in!)\n\n📣 CTA:\n\"Pronunciation kursimiz bor! DM: SPEAK\"\nDM keyword: SPEAK\n\n✏️ CAPTION:\nBu 5 so'zni 99% odamlar NOTO'G'RI aytadi! 🗣️\n\n1. Wednesday — VENZday ✅\n2. Comfortable — KUMF-tuh-bl ✅\n3. Vegetable — VEJ-tuh-bl ✅\n4. February — FEB-ru-ary ✅\n5. Chocolate — CHOK-let ✅\n\nSiz qanday aytasiz? 👀\n\n#pronunciation #english #elites #termiz #speaking\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Close-up (yuz, lab harakati ko'rinsin)\n- Harakat: Statik\n- Yorug'lik: Yaxshi yoritilgan sinf\n- Maxsus: So'zlar matn overlay, original ovoz muhim"},
+
+{day:10,week:2,type:'trust',emoji:'🌟',title:"Ota-onalar nima deydi?",script:"🎬 FORMAT: Montaj (telefon videolari)\n⏱ DAVOMIYLIK: 30 sekund\n📍 QAERDA: Ota-onalar uyidan (ular yuborganlar) + markaz\n👤 KIMLAR: 2-3 ota-ona (telefon video)\n\n🪝 HOOK (birinchi 3 sekund):\n\"Ota-onalar ELITES haqida nima deydi? 👨‍👩‍👧\"\n\n📝 MAZMUN:\n• Ota-ona 1: \"Bolam 3 oyda gap boshladiq\" (5 sek)\n• Ota-ona 2: \"Professional teacherlar, xavfsiz muhit\" (5 sek)\n• Ota-ona 3: \"Natijani ko'ryapmiz, raxmat ELITES\" (5 sek)\n• Final: ELITES logo + raqamlar\n\n📣 CTA:\n\"Farzandingiz uchun eng yaxshisini tanlang! DM: KIDS\"\nDM keyword: KIDS\n\n✏️ CAPTION:\nOta-onalar ELITES haqida nima deydi? 👨‍👩‍👧‍👦\n\n\"Bolam ingliz tilida gap boshladiq!\"\n\"Professional teacherlar, xavfsiz muhit\"\n\"Natijani ko'ryapmiz!\"\n\nFarzandingiz kelajagi uchun eng yaxshisini tanlang ❤️\nDM: \"KIDS\"\n\n#elites #parents #kids #english #termiz #testimonial\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Ota-onalar o'zi yuborganlari + markaz B-roll\n- Harakat: Statik\n- Yorug'lik: Turli (ular yuborganlar)\n- Maxsus: Subtitles qo'shish muhim, soft background music"},
+
+{day:11,week:2,type:'brand',emoji:'🏢',title:"Bolalar ingliz tilida KUYLAYDI! 🎵",script:"🎬 FORMAT: Sinfda real moment\n⏱ DAVOMIYLIK: 20 sekund\n📍 QAERDA: Bolalar sinfi\n👤 KIMLAR: Brahim + bolalar guruhi\n\n🪝 HOOK (birinchi 3 sekund):\n\"ELITES'da bolalar ingliz tilida KUYLAYDI! 🎵\"\n\n📝 MAZMUN:\n• Bolalar doira bo'lib o'tirishgan\n• Brahim gitara/qo'l bilan ritm beradi\n• Hammasi birga inglizcha qo'shiq kuylaydi\n• Bolalar kulishadi, qo'l chapak\n• Natural, real moment — staged emas\n\n📣 CTA:\n\"Bolangiz ham shu muhitda o'ssin! DM: KIDS\"\nDM keyword: KIDS\n\n✏️ CAPTION:\nBolalar ingliz tilida KUYLAYDI! 🎵😍\n\nBrahim teacher bilan bolalar guruhi 🇲🇦\n\n✅ O'yin orqali o'rganish\n✅ Native speaker bilan\n✅ 5-12 yosh\n\nBolangiz ham shu muhitda bo'lsin! ❤️\nDM: \"KIDS\"\n\n#kids #english #elites #termiz #children #fun\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Wide (butun sinf) + Medium (Brahim + bolalar)\n- Harakat: Statik yoki juda sekin pan\n- Yorug'lik: Sinf chiroqlari + deraza\n- Maxsus: Original ovoz MUHIM (qo'shiq eshitilsin), trending kids audio qo'shish mumkin"},
+
+{day:12,week:2,type:'sales',emoji:'💰',title:"Bepul SINOV DARSI — har hafta Juma!",script:"🎬 FORMAT: Talking Head (energetic)\n⏱ DAVOMIYLIK: 20 sekund\n📍 QAERDA: Reception yoki sinf\n👤 KIMLAR: Teacher #4 (energetic, yosh)\n\n🪝 HOOK (birinchi 3 sekund):\n\"BEPUL sinov darsi — bu JUMA! Joylar CHEKLANGAN! ⚡\"\n\n📝 MAZMUN:\n• \"Har juma — bepul sinov darsi\"\n• \"O'zingiz kelib ko'ring — dars sifatini his qiling\"\n• \"15 kishilik guruh — joy tez tugaydi\"\n• \"DM yozing yoki qo'ng'iroq qiling\"\n\n📣 CTA:\n\"Joyingizni band qiling! DM: SINOV\"\nDM keyword: SINOV\n\n✏️ CAPTION:\n🔥 BEPUL SINOV DARSI — bu JUMA!\n\n📅 Har hafta Juma kuni\n⏰ 15:00\n📍 ELITES markazi\n👥 15 kishilik guruh — joy cheklangan!\n\nO'zingiz kelib ko'ring!\nDM: \"SINOV\" — joyingizni band qiling\n\n#bepul #sinov #elites #termiz #ielts #english\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium (teacher energetic gapiryapti)\n- Harakat: Statik\n- Yorug'lik: Yaxshi yoritilgan\n- Maxsus: Urgency music, countdown matn, original ovoz"},
+
+{day:13,week:2,type:'story',emoji:'📱',title:"Open day moments + student selfies",script:"📱 STORY REJASI:\n\nStory 1: Juma sinov darsi — talabalar kelayotgani (Behind scenes + Location sticker)\nStory 2: Dars jarayonidan — talabalar kulayapti, faol (Boomerang/Short clip)\nStory 3: Yangi talabalar selfie — \"Bugun birinchi darsimiz!\" (Mention sticker)\nStory 4: Repost — talabalar o'z storylarini tag qilganlari (Repost)\n\n📌 Maqsad: Social proof, FOMO yaratish\n📌 Vaqt: Juma kuni real-time post"},
+
+{day:14,week:2,type:'story',emoji:'📱',title:"This or That pollari",script:"📱 STORY REJASI:\n\nStory 1: \"IELTS yoki General English?\" (Poll sticker)\nStory 2: \"Ertalab o'qish yoki Kechqurun?\" (Poll sticker)\nStory 3: \"Online yoki Offline?\" (Poll sticker)\nStory 4: \"Speaking yoki Writing qiyin?\" (Poll sticker) + \"Ikkalasini ham ELITES'da o'rganasiz! 💪\"\n\n📌 Maqsad: Audience preferences bilish + engagement\n📌 Vaqt: Kunduzi 12:00-14:00"}
+);
+
+// WEEK 3
+days.push(
+{day:15,week:3,type:'brand',boost:'$5',emoji:'🏢',title:"ELITES'da 1 KUN — hayot montaji",script:"🎬 FORMAT: Montaj (Day in the Life)\n⏱ DAVOMIYLIK: 40 sekund\n📍 QAERDA: Butun markaz — reception, sinflar, koridor\n👤 KIMLAR: Turli teacherlar, talabalar, reception (montaj)\n\n🪝 HOOK (birinchi 3 sekund):\n\"ELITES'da 1 KUN qanday o'tadi? 👀\"\n\n📝 MAZMUN:\n• 08:00 — Markaz ochiladi, reception tayyorlanadi\n• 09:00 — Birinchi darslar boshlanadi (3-4 sinf parallel)\n• 12:00 — Tanaffus, talabalar gaplashadi\n• 15:00 — Yangi guruhlar keladi\n• 18:00 — Oxirgi darslar, yorug' muhit\n• KO'LAM ko'rsatish: bir vaqtda 5+ sinf ishlayapti!\n\n📣 CTA:\n\"Siz ham shu muhitning bir qismi bo'ling! DM: JOIN\"\nDM keyword: JOIN\n\n✏️ CAPTION:\nELITES'da 1 KUN ☀️➡️🌙\n\n08:00 — Eshiklar ochiladi\n09:00 — 5+ sinf bir vaqtda ishlaydi!\n12:00 — Break time ☕\n15:00 — Yangi guruhlar\n18:00 — Oxirgi darslar\n\n700+ o'quvchi har kuni shu muhitda! 💪\nDM: \"JOIN\"\n\n#elites #dayinthelife #termiz #center #english\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Wide panorama + medium moments\n- Harakat: Sekin tracking shot (koridorda yurish)\n- Yorug'lik: Natural morning → artificial evening\n- Maxsus: Vaqt timestamps overlay, trending \"day in my life\" audio"},
+
+{day:16,week:3,type:'edu',emoji:'📚',title:"Writing Task 2 — tayyor template",script:"🎬 FORMAT: Screen recording + Voiceover\n⏱ DAVOMIYLIK: 35 sekund\n📍 QAERDA: Stol ustida (screen recording)\n👤 KIMLAR: Teacher #5 (ovozi) — yuzini ko'rsatish shart emas\n\n🪝 HOOK (birinchi 3 sekund):\n\"IELTS Writing Task 2 — shu TEMPLATE bilan 7.0 olasiz!\"\n\n📝 MAZMUN:\n• Introduction: Paraphrase + Thesis (2 jumla)\n• Body 1: Topic sentence + Explanation + Example\n• Body 2: Topic sentence + Explanation + Example\n• Conclusion: Restate + Final thought\n• \"Bu templateni saqlang — har doim ishlaydi!\"\n\n📣 CTA:\n\"To'liq template uchun DM: WRITING\"\nDM keyword: WRITING\n\n✏️ CAPTION:\nIELTS Writing Task 2 — TAYYOR TEMPLATE! 📝\n\n✅ Introduction: Paraphrase + Thesis\n✅ Body 1: Topic + Explain + Example\n✅ Body 2: Topic + Explain + Example  \n✅ Conclusion: Restate + Final thought\n\nShu template = 7.0 kafolat! 🎯\nDM: \"WRITING\" — PDF yuboramiz\n\n#ielts #writing #template #elites #termiz #tips\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Screen recording (laptop/telefon ekrani)\n- Harakat: Statik (ekran yozuvi)\n- Yorug'lik: —\n- Maxsus: Voiceover qo'shiladi, template matn animatsiya, clear font"},
+
+{day:17,week:3,type:'trust',emoji:'🌟',title:"700+ o'quvchi — ular nima deydi?",script:"🎬 FORMAT: Montaj (quick testimonials)\n⏱ DAVOMIYLIK: 30 sekund\n📍 QAERDA: Sinf, koridor, reception\n👤 KIMLAR: 5-6 turli talaba (har biri 1 jumla)\n\n🪝 HOOK (birinchi 3 sekund):\n\"700+ o'quvchi ELITES haqida nima deydi? 👇\"\n\n📝 MAZMUN:\n• Talaba 1: \"Eng yaxshi decision!\" (3 sek)\n• Talaba 2: \"Teacherlar juda professional\" (3 sek)\n• Talaba 3: \"3 oyda natija ko'rdim\" (3 sek)\n• Talaba 4: \"Muhit zo'r, do'stlar topdim\" (3 sek)\n• Talaba 5: \"IELTS 7.0 oldim!\" (3 sek)\n• Talaba 6: \"Hamma kelsin!\" + kulish (3 sek)\n\n📣 CTA:\n\"Siz ham 700+ oilaning bir qismi bo'ling! DM: JOIN\"\nDM keyword: JOIN\n\n✏️ CAPTION:\n700+ o'quvchi — ULAR NIMA DEYDI? 🗣️\n\n\"Eng yaxshi qarorim!\"\n\"Professional teacherlar!\"\n\"3 oyda natija!\"\n\"Muhit zo'r!\"\n\"IELTS 7.0!\" \n\nSiz ham qo'shiling! 💪\nDM: \"JOIN\"\n\n#elites #testimonial #students #termiz #success\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Close-up (har bir talaba yuzi)\n- Harakat: Statik, tez kesimlar\n- Yorug'lik: Turli joylar — natural\n- Maxsus: Har bir talaba 1 jumla, quick cuts, energetic audio"},
+
+{day:18,week:3,type:'brand',emoji:'🏢',title:"SAT kurs — Surxondaryoda FAQAT Elites'da!",script:"🎬 FORMAT: Talking Head + B-roll\n⏱ DAVOMIYLIK: 30 sekund\n📍 QAERDA: Sinf\n👤 KIMLAR: SAT teacher\n\n🪝 HOOK (birinchi 3 sekund):\n\"SAT kursi — Surxondaryoda FAQAT Elites'da! 🎓\"\n\n📝 MAZMUN:\n• SAT nima? Chet elda grant olish uchun kerak\n• Nega muhim? Top universitetlar talab qiladi\n• Elites'da: Professional SAT prep\n• \"Surxondaryoda boshqa hech kim o'qitmaydi\"\n\n📣 CTA:\n\"SAT haqida batafsil — DM: SAT\"\nDM keyword: SAT\n\n✏️ CAPTION:\n🎓 SAT kursi — Surxondaryoda FAQAT ELITES'da!\n\n❓ SAT nima?\n→ Chet el universitetlariga kirish imtihoni\n\n❓ Nega kerak?\n→ Harvard, MIT, top universitetlar talab qiladi\n\n❓ Qayerda tayyorlanish?\n→ Surxondaryoda FAQAT ELITES'da! 🏆\n\nDM: \"SAT\" — batafsil ma'lumot\n\n#sat #elites #termiz #abroad #grant #university\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium (teacher) + B-roll (dars)\n- Harakat: Statik\n- Yorug'lik: Sinf chiroqlari\n- Maxsus: SAT logo/rasm overlay, original ovoz, professional tone"},
+
+{day:19,week:3,type:'edu',emoji:'📚',title:"Listening'ni 1 haftada yaxshilash — 5 QADAM",script:"🎬 FORMAT: Talking Head + Doska\n⏱ DAVOMIYLIK: 35 sekund\n📍 QAERDA: Sinf\n👤 KIMLAR: Teacher #6\n\n🪝 HOOK (birinchi 3 sekund):\n\"Listening band score'ni 1 HAFTADA oshirish mumkin!\"\n\n📝 MAZMUN:\n• Qadam 1: Har kuni 30 min BBC/podcast tinglang\n• Qadam 2: Keywords yozib boring (note-taking)\n• Qadam 3: Speed x1.25 da tinglash mashq qiling\n• Qadam 4: Cambridge practice testlar ishlang\n• Qadam 5: Transcript bilan solishtiring\n\n📣 CTA:\n\"Listening kursimizga yoziling! DM: LISTEN\"\nDM keyword: LISTEN\n\n✏️ CAPTION:\nListening band 1 haftada oshirish — 5 QADAM! 🎧\n\n1️⃣ Har kuni 30 min tinglash\n2️⃣ Note-taking (keywords)\n3️⃣ Speed x1.25 da mashq\n4️⃣ Cambridge tests\n5️⃣ Transcript comparison\n\nAmalda qilsangiz — natija 100%! ✅\nDM: \"LISTEN\"\n\n#ielts #listening #tips #elites #termiz #study\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium (teacher + doska)\n- Harakat: Statik tripod\n- Yorug'lik: Sinf chiroqlari\n- Maxsus: 5 qadam doskada yoziladi, numbered overlay"},
+
+{day:20,week:3,type:'story',emoji:'📱',title:"Student achievement + polls",script:"📱 STORY REJASI:\n\nStory 1: Talaba sertifikat oldi — tabriklaymiz! 🎉 (Photo + Congrats GIF sticker)\nStory 2: \"Keyingi maqsadingiz nima?\" — 6.5 / 7.0 / 7.5+ (Poll sticker)\nStory 3: Fun fact — \"IELTS imtihon 2 soat 45 minut davom etadi! 😱\" (Text + Emoji sticker)\nStory 4: \"Siz qaysi band?\" — Comment slider 1-9 (Emoji slider sticker 🎯)\n\n📌 Maqsad: Celebration + engagement\n📌 Vaqt: Ertalab talaba kelganda + tushdan keyin"},
+
+{day:21,week:3,type:'story',emoji:'📱',title:"Hafta recap + keyingi hafta teaser",script:"📱 STORY REJASI:\n\nStory 1: \"Bu hafta nima qildik?\" — 3 ta reel screenshot montaj (Repost carousel)\nStory 2: Eng yaxshi comment screenshot — \"Siz ham yozing!\" (Question sticker)\nStory 3: Teaser — \"Keyingi hafta: 2-FILIAL haqida KATTA yangilik! 🚀\" (Countdown sticker)\nStory 4: Motivation quote — \"Every expert was once a beginner\" + ELITES branding\n\n📌 Maqsad: Hafta yakunlash + anticipation\n📌 Vaqt: Kechqurun 18:00-20:00"}
+);
+
+// WEEK 4
+days.push(
+{day:22,week:4,type:'brand',boost:'$10',emoji:'🏢',title:"2-FILIAL ochildi! Elites o'smoqda 🚀",script:"🎬 FORMAT: Tour montaj + Talking Head\n⏱ DAVOMIYLIK: 40 sekund\n📍 QAERDA: 2-filial (yangi bino)\n👤 KIMLAR: Istalgan teacher guide sifatida\n\n🪝 HOOK (birinchi 3 sekund):\n\"ELITES 2-FILIAL OCHILDI! Tur qilamiz 👀🚀\"\n\n📝 MAZMUN:\n• Reception — zamonaviy, keng\n• Sinflar — 6-8 ta sinf, hammasi jihozlangan\n• Koridor — talabalar uchun dam olish zona\n• Teacher stollar — professional muhit\n• \"Bu o'sish belgisi — 700+ o'quvchi sig'mayapti!\"\n\n📣 CTA:\n\"2-filialda joy band qiling! DM: FILIAL2\"\nDM keyword: FILIAL2\n\n✏️ CAPTION:\n🚀 2-FILIAL OCHILDI!\n\nELITES o'smoqda — 700+ o'quvchi sig'mayapti! 😅\n\n✅ Yangi zamonaviy bino\n✅ 6-8 ta keng sinf\n✅ Professional jihozlar\n✅ Qulay lokatsiya\n\nIkkinchi filialda joylar CHEKLANGAN!\nDM: \"FILIAL2\" — hoziroq yoziling\n\n#elites #newbranch #termiz #growth #english\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Wide (binoni tashqaridan) + tracking shot ichkarida\n- Harakat: Sekin yurish — room to room\n- Yorug'lik: Kunduzi — natural + chiroqlar\n- Maxsus: Tour style, teacher gapirib yuradi, upbeat music"},
+
+{day:23,week:4,type:'edu',emoji:'📚',title:"Vocabulary — kuniga 20 so'z metodi",script:"🎬 FORMAT: Talking Head + Doska\n⏱ DAVOMIYLIK: 30 sekund\n📍 QAERDA: Sinf\n👤 KIMLAR: Teacher #7\n\n🪝 HOOK (birinchi 3 sekund):\n\"Kuniga 20 so'z yodlash — bu METOD bilan oson!\"\n\n📝 MAZMUN:\n• Qadam 1: Ertalab 20 so'z tanlang (mavzu bo'yicha)\n• Qadam 2: Har birini JUMLA ichida yozing\n• Qadam 3: Kunduzi 3 marta takrorlang (spaced repetition)\n• Qadam 4: Kechqurun test — nechta eslaysiz?\n• \"1 oyda = 600 yangi so'z! 🤯\"\n\n📣 CTA:\n\"Vocabulary list kerakmi? DM: WORDS\"\nDM keyword: WORDS\n\n✏️ CAPTION:\nKuniga 20 so'z = oyiga 600 so'z! 🤯📚\n\nMETOD:\n1️⃣ 20 so'z tanlang (1 mavzu)\n2️⃣ Jumla ichida yozing\n3️⃣ 3x takrorlang (spaced repetition)\n4️⃣ Kechqurun test\n\n1 oyda vocabulary 3x oshadi! 📈\nDM: \"WORDS\" — tayyor list yuboramiz\n\n#vocabulary #english #method #elites #termiz #study\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium (teacher + doska)\n- Harakat: Statik\n- Yorug'lik: Sinf chiroqlari\n- Maxsus: Doskada yozadi, raqamlar overlay"},
+
+{day:24,week:4,type:'trust',emoji:'🌟',title:"Elites'dan GRANT yutgan o'quvchi",script:"🎬 FORMAT: Talking Head (talaba)\n⏱ DAVOMIYLIK: 40 sekund\n📍 QAERDA: Reception yoki sinf\n👤 KIMLAR: Grant yutgan talaba\n\n🪝 HOOK (birinchi 3 sekund):\n\"ELITES'dan o'qib — CHET ELGA GRANT yutdim! 🎓✈️\"\n\n📝 MAZMUN:\n• Talaba o'zini tanishtiradi — ism, qayerga grant\n• IELTS/SAT balli aytadi\n• \"Elites'da nima o'rgandim?\" — til + confidence + strategy\n• \"Hozir [davlat]da o'qiyapman\"\n• \"Elites'siz bu mumkin emas edi\"\n\n📣 CTA:\n\"Siz ham grant olmoqchimisiz? DM: GRANT\"\nDM keyword: GRANT\n\n✏️ CAPTION:\n🎓 ELITES'dan GRANT yutgan o'quvchimiz!\n\n📌 Kim: [Talaba ismi]\n📌 Qayerga: [Davlat/Universitet]\n📌 IELTS: [Ball]\n📌 Tayyorlanish: ELITES Learning Center\n\n\"Elites'siz bu mumkin emas edi\" ❤️\n\nSiz ham xohlaysizmi? 🌍\nDM: \"GRANT\"\n\n#grant #abroad #elites #success #termiz #scholarship\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium (talaba gapiryapti)\n- Harakat: Statik tripod\n- Yorug'lik: Natural + sinf chirog'i\n- Maxsus: Original ovoz, universitet rasmi/logosi overlay, emotional music"},
+
+{day:25,week:4,type:'brand',emoji:'🏢',title:"Boshqa markazlar vs ELITES — FARQ nima?",script:"🎬 FORMAT: Matn animatsiya + B-roll\n⏱ DAVOMIYLIK: 25 sekund\n📍 QAERDA: Markaz ichida (B-roll)\n👤 KIMLAR: Montaj (kadrda odam shart emas, matn asosiy)\n\n🪝 HOOK (birinchi 3 sekund):\n\"Boshqa markazlar vs ELITES — FARQNI ko'ring! 👀\"\n\n📝 MAZMUN:\n• Oddiy markaz: Talaba-teacher (diplomi yo'q)\n• ELITES: 30+ PEDAGOG diplomli teacher\n• Oddiy markaz: Eng yuqori natija 6.5\n• ELITES: IELTS 9.0 natija\n• Oddiy markaz: 1 filial, 50 o'quvchi\n• ELITES: 2 filial, 700+ o'quvchi\n• Oddiy markaz: SAT yo'q\n• ELITES: SAT #1 Surxondaryoda\n\n📣 CTA:\n\"Eng yaxshisini tanlang! DM: BEST\"\nDM keyword: BEST\n\n✏️ CAPTION:\nBoshqa markazlar vs ELITES 🏆\n\n❌ Talaba-teacher → ✅ Pedagog diplomli\n❌ Max 6.5 → ✅ IELTS 9.0\n❌ 50 o'quvchi → ✅ 700+\n❌ SAT yo'q → ✅ SAT #1\n❌ 1 filial → ✅ 2 filial\n\nFarq aniq! Eng yaxshisini tanlang 💪\nDM: \"BEST\"\n\n#elites #best #termiz #comparison #ielts #quality\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: B-roll markaz ichida + matn animatsiya\n- Harakat: Sekin pan\n- Yorug'lik: Sinf + koridor\n- Maxsus: Split-screen matn (chap/o'ng), competitive audio, NO boshqa markaz nomi!"},
+
+{day:26,week:4,type:'sales',boost:'$15',emoji:'💰',title:"IYUL INTENSIV — 25% chegirma! Joylar cheklangan!",script:"🎬 FORMAT: Talking Head (energetic) + Matn\n⏱ DAVOMIYLIK: 25 sekund\n📍 QAERDA: Reception\n👤 KIMLAR: Teacher #8 (yoki admin — energetic)\n\n🪝 HOOK (birinchi 3 sekund):\n\"IYUL INTENSIV — 25% CHEGIRMA! ⚡ Faqat 3 KUN qoldi!\"\n\n📝 MAZMUN:\n• \"Iyul oyida INTENSIV kurs boshlanadi\"\n• \"25% chegirma — faqat shu hafta yozilganlarga!\"\n• \"Har kuni 2 soat — 1 oyda natija!\"\n• \"Joylar CHEKLANGAN — 15 kishilik guruh\"\n• Countdown: 3 kun qoldi!\n\n📣 CTA:\n\"Hoziroq yozing! DM: INTENSIV\"\nDM keyword: INTENSIV\n\n✏️ CAPTION:\n⚡ IYUL INTENSIV — 25% CHEGIRMA!\n\n📅 Iyul 1 dan boshlanadi\n⏰ Har kuni 2 soat\n👥 15 kishilik guruh\n💰 25% chegirma — FAQAT shu hafta!\n\n⏳ 3 KUN QOLDI!\n\nDM: \"INTENSIV\" — joyingizni band qiling!\n\n#intensiv #chegirma #elites #termiz #ielts #summer\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium (teacher gapiryapti)\n- Harakat: Statik\n- Yorug'lik: Yaxshi yoritilgan reception\n- Maxsus: URGENCY! Countdown matn, qizil/sariq ranglar, tez tempo music"},
+
+{day:27,week:4,type:'story',emoji:'📱',title:"Countdown + urgency + DM screenshots",script:"📱 STORY REJASI:\n\nStory 1: Countdown — \"INTENSIV ro'yxati 3 KUNDA yopiladi! ⏰\" (Countdown sticker)\nStory 2: DM screenshots — \"Shu hafta 30+ kishi yozildi!\" (censor names, show volume) \nStory 3: \"Joylar qoldi: 5/15 ⚠️\" — urgency graphic (Text + Warning sticker)\nStory 4: Repost — Day 26 reel + \"Hali yozilmadingizmi? 👇 DM: INTENSIV\" (Swipe up/Link sticker)\n\n📌 Maqsad: FOMO + urgency = konversiya\n📌 Vaqt: Ertalab + kechqurun (2 marta)"},
+
+{day:28,week:4,type:'story',emoji:'📱',title:"Testimonial reposts + motivatsiya",script:"📱 STORY REJASI:\n\nStory 1: Talaba review screenshot — \"@talaba_username shunday dedi...\" (Repost + Mention)\nStory 2: Ota-ona xabar screenshot — \"Raxmat ELITES!\" (Text highlight)\nStory 3: Motivatsiya — \"Kelajagingiz bugun boshlanadi!\" + markaz surati (Text + Location sticker)\nStory 4: \"Yangi hafta — yangi maqsadlar! Elites bilan birga 🚀\" (GIF + Countdown)\n\n📌 Maqsad: Social proof + positive vibes\n📌 Vaqt: Tushdan keyin"}
+);
+
+// WEEK 5
+days.push(
+{day:29,week:5,type:'brand',emoji:'🏢',title:"Elites JAMOASI — biz kimlar?",script:"🎬 FORMAT: Fun montaj\n⏱ DAVOMIYLIK: 30 sekund\n📍 QAERDA: Koridor, sinflar, reception\n👤 KIMLAR: 10-15 teacher (fun intro)\n\n🪝 HOOK (birinchi 3 sekund):\n\"ELITES jamoasi — biz KIMLARMIZ? 👋😄\"\n\n📝 MAZMUN:\n• Har bir teacher kameraga qarab:\n  - Ism + fani (2 sek)\n  - Qo'l silkish yoki fun harakat\n• Tez montaj — energetic, qiziqarli\n• Oxirida hammasi bir kadrda: \"Biz ELITES!\"\n• Fun, professional, team spirit\n\n📣 CTA:\n\"Qaysi teacher bilan o'qimoqchisiz? Commentda yozing! 👇\"\nDM keyword: TEACHER\n\n✏️ CAPTION:\nELITES JAMOASI! 👨‍🏫👩‍🏫🤝\n\n30+ professional o'qituvchi — har biri expert!\n\n🇺🇿 O'zbek teacherlar\n🇲🇦 Native speaker\n📚 IELTS, General, SAT, Kids\n\nQaysi teacher bilan o'qimoqchisiz? 👇 Commentda yozing!\n\n#elites #team #teachers #termiz #english #family\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Medium (har bir teacher alohida)\n- Harakat: Statik (teacherlar kameraga yaqinlashadi)\n- Yorug'lik: Koridor — natural, sinflar — artificial\n- Maxsus: Fun transitions, trending audio (team reveal), ism captions"},
+
+{day:30,week:5,type:'trust',emoji:'🌟',title:"IYUN NATIJALARI — oylik hisobot",script:"🎬 FORMAT: Montaj + Matn overlay\n⏱ DAVOMIYLIK: 35 sekund\n📍 QAERDA: Markaz (montaj kadrlari)\n👤 KIMLAR: Montaj — talabalar, teacherlar, moments\n\n🪝 HOOK (birinchi 3 sekund):\n\"IYUN oyi NATIJALARI — raqamlar gapiradi! 📊\"\n\n📝 MAZMUN:\n• Yangi o'quvchilar soni (raqam)\n• IELTS natijalar (eng yuqori balllar)\n• Eng yaxshi momentlar montaji (haftalik reellardan)\n• \"Rahmat 700+ oilaga!\"\n• \"IYUL — yanada kuchliroq bo'lamiz!\"\n\n📣 CTA:\n\"Iyulda biz bilan bo'ling! DM: IYUL\"\nDM keyword: IYUL\n\n✏️ CAPTION:\n📊 IYUN NATIJALARI:\n\n✅ [X] yangi o'quvchi qo'shildi\n✅ [X] ta IELTS natija chiqdi\n✅ Eng yuqori: [X.X] band\n✅ 2-filial to'la ishlayapti!\n\nRahmat har biringizga! ❤️\n\nIYULDA yanada kuchliroq! 💪\nDM: \"IYUL\" — yangi guruhlar\n\n#elites #results #june #termiz #success #ielts\n\n🎥 MOBILOGRAF UCHUN:\n- Kadr turi: Montaj — turli kadrlar oylik archive'dan\n- Harakat: Dynamic cuts\n- Yorug'lik: Aralash\n- Maxsus: Raqamlar animatsiya, celebratory audio, confetti effect"}
+);
+
+// Calendar rendering
+function renderCalendar(){
+  const grid=document.getElementById('calGrid');
+  grid.innerHTML='';
+  for(let i=0;i<30;i++){
+    const d=days[i];
+    const cell=document.createElement('div');
+    cell.className='cal-day '+d.type;
+    cell.onclick=()=>openModal(i);
+    let boostHtml=d.boost?'<div class="boost-badge">BOOST '+d.boost+'</div>':'';
+    cell.innerHTML=`<div class="num">${d.emoji} ${d.day}</div><div class="label">${d.title}</div>${boostHtml}<div class="type-dot"></div>`;
+    grid.appendChild(cell);
+  }
+}
+
+function openModal(idx){
+  const d=days[idx];
+  const modal=document.getElementById('modal');
+  const weekNames=['','HAFTA 1: "ELITES kim?"','HAFTA 2: "Nega aynan ELITES?"','HAFTA 3: "ELITES muhiti"','HAFTA 4: "Natijalar & Harakat"','HAFTA 5'];
+  const typeNames={brand:'🏢 BRAND',edu:'📚 EDU',trust:'🌟 TRUST',sales:'💰 SALES',story:'📱 STORY'};
+  const typeColors={brand:'var(--gold)',edu:'#63b3ed',trust:'var(--green)',sales:'var(--orange)',story:'#b794f4'};
+  
+  document.getElementById('modalDay').innerHTML=`Kun ${d.day} — ${weekNames[d.week]} | ${d.boost?'💰 Boost: '+d.boost:'Organik'}`;
+  document.getElementById('modalTitle').innerHTML=`${d.emoji} ${d.title}`;
+  document.getElementById('modalTitle').style.color=typeColors[d.type];
+  document.getElementById('modalTags').innerHTML=`<span class="tag tag-${d.type}">${typeNames[d.type]}</span>`;
+  document.getElementById('modalScript').textContent=d.script;
+  modal.style.display='block';
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+  document.body.style.overflow='';
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+renderCalendar();
+</script>
+</body>
+</html>
