@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELITES Learning Center - Ultimate SMM Strategy & Iyun 2026 Kontent Kalendar</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg-dark:#0a0e1a;--bg-card:#111827;--bg-card2:#1a2236;--gold:#ffd200;--orange:#f7971e;--green:#10b981;--red:#ef4444;--blue:#3b82f6;--purple:#8b5cf6;--pink:#ec4899;--text:#e2e8f0;--text-muted:#94a3b8;--border:#1e293b;--gradient:linear-gradient(135deg,#ffd200,#f7971e)}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg-dark);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:var(--gold);text-decoration:none;transition:color .3s}
+a:hover{color:var(--orange)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{font-weight:700}
+h2{font-size:2rem;margin-bottom:1rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+h3{font-size:1.4rem;margin-bottom:.8rem;color:var(--gold)}
+section{padding:80px 0}
+.section-sub{color:var(--text-muted);font-size:1.1rem;margin-bottom:2rem}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:1000;background:rgba(10,14,26,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 0}
+nav .container{display:flex;align-items:center;gap:20px;overflow-x:auto;white-space:nowrap}
+nav a{font-size:.85rem;padding:6px 14px;border-radius:20px;transition:all .3s;color:var(--text-muted)}
+nav a:hover,nav a.active{background:var(--gradient);color:#000;font-weight:600}
+nav .logo{font-weight:800;font-size:1rem;color:var(--gold);margin-right:auto;flex-shrink:0}
+
+/* HEADER */
+header{background:linear-gradient(180deg,#0f1629 0%,var(--bg-dark) 100%);padding:100px 0 60px;text-align:center;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(255,210,0,.05) 0%,transparent 50%);animation:pulse 8s infinite}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+header h1{font-size:clamp(1.8rem,4vw,3.2rem);margin-bottom:1rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .subtitle{font-size:clamp(1rem,2vw,1.4rem);color:var(--text-muted);margin-bottom:2rem}
+header .stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:2rem}
+header .stat{text-align:center}
+header .stat-num{font-size:2rem;font-weight:800;color:var(--gold)}
+header .stat-label{font-size:.85rem;color:var(--text-muted)}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:1.5rem}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(255,210,0,.08)}
+.card-icon{font-size:2rem;margin-bottom:12px}
+.card h4{color:var(--gold);margin-bottom:8px}
+.card p{color:var(--text-muted);font-size:.9rem}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.75rem;font-weight:600}
+.badge-gold{background:rgba(255,210,0,.15);color:var(--gold)}
+.badge-green{background:rgba(16,185,129,.15);color:var(--green)}
+.badge-blue{background:rgba(59,130,246,.15);color:var(--blue)}
+.badge-purple{background:rgba(139,92,246,.15);color:var(--purple)}
+.badge-red{background:rgba(239,68,68,.15);color:var(--red)}
+.badge-pink{background:rgba(236,72,153,.15);color:var(--pink)}
+.badge-orange{background:rgba(247,151,30,.15);color:var(--orange)}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;margin-top:1rem}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}
+th{background:var(--bg-card2);color:var(--gold);font-weight:600;font-size:.85rem;text-transform:uppercase}
+td{font-size:.9rem;color:var(--text-muted)}
+tr:hover td{color:var(--text)}
+
+/* FUNNEL */
+.funnel{display:flex;flex-direction:column;align-items:center;gap:0;margin:2rem 0}
+.funnel-step{padding:20px 40px;text-align:center;font-weight:600;clip-path:polygon(5% 0%,95% 0%,100% 100%,0% 100%);transition:transform .3s}
+.funnel-step:hover{transform:scale(1.03)}
+
+/* CALENDAR */
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:1.5rem}
+.cal-header{background:var(--bg-card2);padding:10px;text-align:center;font-weight:700;font-size:.8rem;color:var(--gold);border-radius:8px}
+.cal-day{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:10px;min-height:100px;cursor:pointer;transition:all .3s;position:relative}
+.cal-day:hover{border-color:var(--gold);transform:scale(1.02);box-shadow:0 4px 20px rgba(255,210,0,.1)}
+.cal-day .day-num{font-size:1.2rem;font-weight:700;color:var(--gold)}
+.cal-day .day-type{font-size:.7rem;margin-top:4px;line-height:1.3}
+.cal-day.weekend{background:var(--bg-card2);border-color:var(--border);opacity:.85}
+.cal-day.boost::after{content:'ADS';position:absolute;top:6px;right:6px;background:var(--gradient);color:#000;font-size:.6rem;font-weight:800;padding:2px 6px;border-radius:8px}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:2000;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto}
+.modal-overlay.active{display:flex}
+.modal{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;max-width:800px;width:100%;padding:40px;position:relative;margin:40px auto;animation:slideUp .3s ease}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:16px;right:20px;font-size:1.8rem;cursor:pointer;color:var(--text-muted);transition:color .3s;background:none;border:none}
+.modal-close:hover{color:var(--gold)}
+.modal h2{font-size:1.5rem;margin-bottom:.5rem}
+.modal .meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.script-section{margin-top:1.5rem;padding:16px;background:var(--bg-card2);border-radius:12px;border-left:4px solid var(--gold)}
+.script-section h4{color:var(--orange);margin-bottom:8px}
+.hook-box{background:rgba(255,210,0,.08);border:1px solid rgba(255,210,0,.2);border-radius:8px;padding:14px;margin:10px 0;font-style:italic}
+.cta-box{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:8px;padding:14px;margin:10px 0;color:var(--green)}
+.target-box{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:14px;margin:10px 0}
+.tech-box{background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);border-radius:8px;padding:14px;margin:10px 0}
+
+/* GROWTH HACKS */
+.hack-list{list-style:none;padding:0}
+.hack-list li{padding:12px 16px;border-left:3px solid var(--gold);margin-bottom:10px;background:var(--bg-card);border-radius:0 8px 8px 0}
+.hack-list li strong{color:var(--gold)}
+
+/* FOOTER */
+footer{background:var(--bg-card);border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--text-muted)}
+footer .brand{font-size:1.4rem;font-weight:800;color:var(--gold);margin-bottom:8px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .calendar-grid{grid-template-columns:repeat(7,1fr);gap:3px}
+  .cal-day{padding:6px;min-height:70px}
+  .cal-day .day-type{font-size:.6rem}
+  .modal{padding:20px;margin:10px}
+  header .stats{gap:20px}
+  nav .container{gap:10px}
+  section{padding:50px 0}
+  .funnel-step{padding:14px 20px;font-size:.85rem}
+}
+@media(max-width:480px){
+  .calendar-grid{grid-template-columns:repeat(7,1fr);gap:2px}
+  .cal-day{min-height:55px;padding:4px}
+  .cal-day .day-num{font-size:.9rem}
+  .cal-day .day-type{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="container">
+<h1>🏆 ELITES LEARNING CENTER</h1>
+<p class="subtitle">Ultimate SMM Strategy & Iyun 2026 Kontent Kalendar</p>
+<p style="color:var(--orange);font-size:1.1rem;font-weight:600;">90 kunda Surxondaryoda #1 bo'lish rejasi</p>
+<div class="stats">
+<div class="stat"><div class="stat-num">9.0</div><div class="stat-label">IELTS Score</div></div>
+<div class="stat"><div class="stat-num">700+</div><div class="stat-label">O'quvchilar</div></div>
+<div class="stat"><div class="stat-num">2</div><div class="stat-label">Filiallar</div></div>
+<div class="stat"><div class="stat-num">5,443</div><div class="stat-label">Followers</div></div>
+</div>
+</div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+<div class="container">
+<span class="logo">ELITES</span>
+<a href="#muammo">Muammo</a>
+<a href="#strategy">90-Day Strategy</a>
+<a href="#pillars">Content Pillars</a>
+<a href="#funnel">Funnel</a>
+<a href="#calendar">Kalendar</a>
+<a href="#ads">Ad Targeting</a>
+<a href="#hacks">Growth Hacks</a>
+<a href="#kpi">KPI</a>
+</div>
+</nav>
+
+<!-- MUAMMO & YECHIM -->
+<section id="muammo">
+<div class="container">
+<h2>⚡ Muammo & Yechim</h2>
+<p class="section-sub">Surxondaryoning eng kuchli o'quv markazi — lekin buni hali hamma bilmaydi</p>
+
+<div class="card-grid">
+<div class="card" style="border-color:var(--red)">
+<div class="card-icon">🚨</div>
+<h4>MUAMMO</h4>
+<p>Surxondaryo aholisining faqat <strong style="color:var(--red)">30%</strong> Dilshod Ismatov va uning 9.0 balini biladi. Brand tanilmagan. Raqobatchilar kuchsiz o'qituvchilari bilan ko'proq reklama qilishmoqda.</p>
+</div>
+<div class="card" style="border-color:var(--green)">
+<div class="card-icon">🎯</div>
+<h4>MAQSAD</h4>
+<p>90 kun ichida <strong style="color:var(--green)">90%+</strong> target audience "Elites = 9.0 teacher" deb bilishi kerak. Surxondaryoda #1 markaz sifatida tan olinish.</p>
+</div>
+<div class="card" style="border-color:var(--gold)">
+<div class="card-icon">⚔️</div>
+<h4>QUROLLARIMIZ</h4>
+<p>Dilshod 9.0, Brahim native teacher, pedagogika diplomlari, SAT birinchi, 2 filial, 700+ o'quvchi natijalari</p>
+</div>
+</div>
+
+<h3 style="margin-top:2.5rem">🏹 Raqobatchilar HECH BIRIDA yo'q:</h3>
+<div class="card-grid">
+<div class="card"><div class="card-icon">🥇</div><h4>IELTS 9.0 Teacher</h4><p>Dilshod Ismatov — Surxondaryoda YAGONA. Reading 9, Listening 9, Speaking 9, Writing 8. 28 yosh. Oktyabr 2024.</p></div>
+<div class="card"><div class="card-icon">🇲🇦</div><h4>Native-like Speaker</h4><p>Brahim — Marokashlik. Speaking + Kids English. Real accent, real experience.</p></div>
+<div class="card"><div class="card-icon">🎓</div><h4>Pedagog Diplomlar</h4><p>BARCHA o'qituvchilar — Pedagogika diplomi. Raqobatchilar talaba-teacher ishlatadi.</p></div>
+<div class="card"><div class="card-icon">📐</div><h4>SAT Preparation</h4><p>Surxondaryoda BIRINCHI va YAGONA SAT tayyorgarlik kursi.</p></div>
+<div class="card"><div class="card-icon">🏢</div><h4>2 Filial</h4><p>Termiz shahrida 2 ta zamonaviy filial. O'sish davom etmoqda.</p></div>
+<div class="card"><div class="card-icon">📊</div><h4>700+ O'quvchi</h4><p>Natijalar gapiradi. 0 dan 6.5+ ga yetgan o'nlab o'quvchilar.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 90-DAY STRATEGY -->
+<section id="strategy" style="background:var(--bg-card)">
+<div class="container">
+<h2>📅 90 Kunlik Strategiya</h2>
+<p class="section-sub">3 bosqich: Portlash → Ishonch → Konversiya</p>
+
+<table>
+<thead><tr><th>Faza</th><th>Kunlar</th><th>Maqsad</th><th>Asosiy Kontent</th><th>KPI</th></tr></thead>
+<tbody>
+<tr><td><span class="badge badge-red">🔥 PHASE 1</span></td><td>1-30 kun</td><td>PORTLASH — Hammaga bildirish</td><td>Dilshod 9.0 reveal, Brahim intro, viral skits, student results</td><td>10K+ reach/reel, 1000 new followers</td></tr>
+<tr><td><span class="badge badge-blue">💎 PHASE 2</span></td><td>31-60 kun</td><td>ISHONCH — Nima uchun Elites?</td><td>Testimonials, behind scenes, parent reviews, free classes</td><td>200+ DMs/hafta, 50 free trial signups</td></tr>
+<tr><td><span class="badge badge-green">💰 PHASE 3</span></td><td>61-90 kun</td><td>KONVERSIYA — Pul topish</td><td>Urgency offers, limited seats, results montage, LIVE sessions</td><td>150+ yangi o'quvchi, 2x revenue</td></tr>
+</tbody>
+</table>
+
+<div class="card-grid" style="margin-top:2rem">
+<div class="card">
+<h4>📱 Posting Chastotasi</h4>
+<p><strong>Dushanba-Juma:</strong> 1 Reel/kun (5 ta/hafta)<br>
+<strong>Shanba-Yakshanba:</strong> Stories only (quiz, poll, repost)<br>
+<strong>Jami:</strong> 22 Reel + 8 Story kun = oyiga 30 kun kontent</p>
+</div>
+<div class="card">
+<h4>⏰ Optimal Vaqtlar (UZT)</h4>
+<p><strong>Ertalab:</strong> 07:00 - 08:00 (talabalar yo'lda)<br>
+<strong>Tushlik:</strong> 12:30 - 13:30 (break time)<br>
+<strong>Kechqurun:</strong> 19:00 - 21:00 (eng faol vaqt ⭐)</p>
+</div>
+<div class="card">
+<h4>💵 Reklama Byudjeti</h4>
+<p><strong>Boshlang'ich:</strong> $50-100/oy<br>
+<strong>Boost reellar:</strong> Eng yaxshi 4-5 ta reel/oy<br>
+<strong>Maqsad:</strong> Reach + Profile visits<br>
+<strong>Agar natija yaxshi:</strong> $300 gacha oshirish</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTENT PILLARS -->
+<section id="pillars">
+<div class="container">
+<h2>🎯 Kontent Ustunlari (Content Pillars)</h2>
+<p class="section-sub">Har bir post 5 ustundan biriga tegishli</p>
+
+<div class="card-grid">
+<div class="card" style="border-top:3px solid var(--gold)">
+<div class="card-icon">🏆</div>
+<h4>Teacher Brand — 30%</h4>
+<p>Dilshod & Brahim shaxsiy brendi. 9.0 story, native speaker, professional tashqi ko'rinish. MAQSAD: Yuzlarini hamma tanishi.</p>
+<span class="badge badge-gold">~7 post/oy</span>
+</div>
+<div class="card" style="border-top:3px solid var(--blue)">
+<div class="card-icon">📚</div>
+<h4>Education Value — 30%</h4>
+<p>IELTS tips, vocabulary, grammar, pronunciation. SAVE + SHARE qilinadigan kontent. Expertise ko'rsatish.</p>
+<span class="badge badge-blue">~7 post/oy</span>
+</div>
+<div class="card" style="border-top:3px solid var(--green)">
+<div class="card-icon">🌟</div>
+<h4>Trust & Results — 20%</h4>
+<p>O'quvchi natijalari, testimonials, ota-ona fikrlari, before/after. ISHONCH quriladi.</p>
+<span class="badge badge-green">~5 post/oy</span>
+</div>
+<div class="card" style="border-top:3px solid var(--purple)">
+<div class="card-icon">🎭</div>
+<h4>Viral/Entertainment — 10%</h4>
+<p>Skit'lar, comedy, trending audio, relatable content. TARQALADI va yangi odamlarga yetadi.</p>
+<span class="badge badge-purple">~2-3 post/oy</span>
+</div>
+<div class="card" style="border-top:3px solid var(--orange)">
+<div class="card-icon">💰</div>
+<h4>Sales/CTA — 10%</h4>
+<p>Chegirmalar, open day, registration, urgency. TO'G'RIDAN-TO'G'RI sotish. Kam lekin kuchli.</p>
+<span class="badge badge-orange">~2 post/oy</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MARKETING FUNNEL -->
+<section id="funnel" style="background:var(--bg-card)">
+<div class="container">
+<h2>🔻 Marketing Funnel</h2>
+<p class="section-sub">Reels'dan to'lovgacha bo'lgan yo'l</p>
+
+<div class="funnel">
+<div class="funnel-step" style="width:90%;background:linear-gradient(135deg,var(--red),#ff6b6b);color:#fff;border-radius:12px 12px 0 0">
+🎬 REELS VIRAL — Explore'ga tushish (10,000+ ko'rish)
+</div>
+<div class="funnel-step" style="width:75%;background:linear-gradient(135deg,var(--orange),#ffba08);color:#000">
+👤 PROFILE VISIT — Bio o'qish, highlights ko'rish
+</div>
+<div class="funnel-step" style="width:60%;background:linear-gradient(135deg,var(--blue),#60a5fa);color:#fff">
+💬 DM / COMMENT — Savol berish, qiziqish
+</div>
+<div class="funnel-step" style="width:45%;background:linear-gradient(135deg,var(--purple),#a78bfa);color:#fff">
+🎁 FREE CLASS — Bepul sinov darsi, tajriba
+</div>
+<div class="funnel-step" style="width:30%;background:linear-gradient(135deg,var(--green),#34d399);color:#000;border-radius:0 0 12px 12px">
+✅ ENROLLMENT — 350-450K so'm/oy to'lov
+</div>
+</div>
+
+<div class="card-grid" style="margin-top:2rem">
+<div class="card"><h4>Konversiya Hisob-kitobi</h4><p>10,000 view → 500 profile visit (5%) → 50 DM (10%) → 15 free class (30%) → 8 enrollment (53%)<br><br><strong style="color:var(--green)">1 ta boost reel = ~8 yangi o'quvchi = 3.2M so'm/oy revenue</strong></p></div>
+<div class="card"><h4>ROI Kalkulyatsiya</h4><p>Reklama: $10 (130,000 so'm)<br>Yangi o'quvchilar: 8 ta<br>Oylik daromad: 8 × 400K = 3,200,000 so'm<br><br><strong style="color:var(--gold)">ROI: 2,400%+ 🚀</strong></p></div>
+</div>
+</div>
+</section>
+
+<!-- CALENDAR SECTION -->
+<section id="calendar">
+<div class="container">
+<h2>📅 Iyun 2026 — Kontent Kalendar</h2>
+<p class="section-sub">Har bir kunga bosing — to'liq cinematic script ochiladi</p>
+
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem">
+<span class="badge badge-gold">🏆 Brand (30%)</span>
+<span class="badge badge-blue">📚 Edu (30%)</span>
+<span class="badge badge-green">🌟 Trust (20%)</span>
+<span class="badge badge-purple">🎭 Viral (10%)</span>
+<span class="badge badge-orange">💰 Sales (10%)</span>
+<span class="badge badge-pink">📱 Story</span>
+</div>
+
+<div class="calendar-grid">
+<div class="cal-header">DU</div>
+<div class="cal-header">SE</div>
+<div class="cal-header">CHO</div>
+<div class="cal-header">PA</div>
+<div class="cal-header">JU</div>
+<div class="cal-header">SHA</div>
+<div class="cal-header">YA</div>
+
+<!-- Week 1 -->
+<div class="cal-day boost" onclick="showScript(1)"><div class="day-num">1</div><div class="day-type"><span class="badge badge-gold">🏆</span><br>9.0 Reveal</div></div>
+<div class="cal-day" onclick="showScript(2)"><div class="day-num">2</div><div class="day-type"><span class="badge badge-blue">📚</span><br>3 so'z</div></div>
+<div class="cal-day boost" onclick="showScript(3)"><div class="day-num">3</div><div class="day-type"><span class="badge badge-gold">🏆</span><br>Dilshod story</div></div>
+<div class="cal-day" onclick="showScript(4)"><div class="day-num">4</div><div class="day-type"><span class="badge badge-purple">🎭</span><br>Viral skit</div></div>
+<div class="cal-day" onclick="showScript(5)"><div class="day-num">5</div><div class="day-type"><span class="badge badge-green">🌟</span><br>0→6.5</div></div>
+<div class="cal-day weekend" onclick="showScript(6)"><div class="day-num">6</div><div class="day-type"><span class="badge badge-pink">📱</span><br>Quiz</div></div>
+<div class="cal-day weekend" onclick="showScript(7)"><div class="day-num">7</div><div class="day-type"><span class="badge badge-pink">📱</span><br>Repost</div></div>
+
+<!-- Week 2 -->
+<div class="cal-day boost" onclick="showScript(8)"><div class="day-num">8</div><div class="day-type"><span class="badge badge-gold">🏆</span><br>Brahim</div></div>
+<div class="cal-day" onclick="showScript(9)"><div class="day-num">9</div><div class="day-type"><span class="badge badge-blue">📚</span><br>Speaking 7.0</div></div>
+<div class="cal-day" onclick="showScript(10)"><div class="day-num">10</div><div class="day-type"><span class="badge badge-green">🌟</span><br>Ota-ona</div></div>
+<div class="cal-day" onclick="showScript(11)"><div class="day-num">11</div><div class="day-type"><span class="badge badge-blue">📚</span><br>5 xato</div></div>
+<div class="cal-day" onclick="showScript(12)"><div class="day-num">12</div><div class="day-type"><span class="badge badge-orange">💰</span><br>Free class</div></div>
+<div class="cal-day weekend" onclick="showScript(13)"><div class="day-num">13</div><div class="day-type"><span class="badge badge-pink">📱</span><br>Open day</div></div>
+<div class="cal-day weekend" onclick="showScript(14)"><div class="day-num">14</div><div class="day-type"><span class="badge badge-pink">📱</span><br>Polls</div></div>
+
+<!-- Week 3 -->
+<div class="cal-day boost" onclick="showScript(15)"><div class="day-num">15</div><div class="day-type"><span class="badge badge-gold">🏆</span><br>Pedagoglar</div></div>
+<div class="cal-day" onclick="showScript(16)"><div class="day-num">16</div><div class="day-type"><span class="badge badge-purple">🎭</span><br>Examiner 😂</div></div>
+<div class="cal-day" onclick="showScript(17)"><div class="day-num">17</div><div class="day-type"><span class="badge badge-blue">📚</span><br>Writing 7.0</div></div>
+<div class="cal-day" onclick="showScript(18)"><div class="day-num">18</div><div class="day-type"><span class="badge badge-gold">🏆</span><br>Brahim+Kids</div></div>
+<div class="cal-day" onclick="showScript(19)"><div class="day-num">19</div><div class="day-type"><span class="badge badge-green">🌟</span><br>Behind scenes</div></div>
+<div class="cal-day weekend" onclick="showScript(20)"><div class="day-num">20</div><div class="day-type"><span class="badge badge-pink">📱</span><br>Kids</div></div>
+<div class="cal-day weekend" onclick="showScript(21)"><div class="day-num">21</div><div class="day-type"><span class="badge badge-pink">📱</span><br>Recap</div></div>
+
+<!-- Week 4 -->
+<div class="cal-day boost" onclick="showScript(22)"><div class="day-num">22</div><div class="day-type"><span class="badge badge-gold">🏆</span><br>SAT 🚀</div></div>
+<div class="cal-day" onclick="showScript(23)"><div class="day-num">23</div><div class="day-type"><span class="badge badge-blue">📚</span><br>Vocab metod</div></div>
+<div class="cal-day" onclick="showScript(24)"><div class="day-num">24</div><div class="day-type"><span class="badge badge-purple">🎭</span><br>Chet el 😂</div></div>
+<div class="cal-day" onclick="showScript(25)"><div class="day-num">25</div><div class="day-type"><span class="badge badge-green">🌟</span><br>2-filial tour</div></div>
+<div class="cal-day boost" onclick="showScript(26)"><div class="day-num">26</div><div class="day-type"><span class="badge badge-orange">💰</span><br>Early Bird</div></div>
+<div class="cal-day weekend" onclick="showScript(27)"><div class="day-num">27</div><div class="day-type"><span class="badge badge-pink">📱</span><br>Countdown</div></div>
+<div class="cal-day weekend" onclick="showScript(28)"><div class="day-num">28</div><div class="day-type"><span class="badge badge-pink">📱</span><br>Testimonial</div></div>
+
+<!-- Week 5 -->
+<div class="cal-day" onclick="showScript(29)"><div class="day-num">29</div><div class="day-type"><span class="badge badge-gold">🏆</span><br>LIVE e'lon</div></div>
+<div class="cal-day" onclick="showScript(30)"><div class="day-num">30</div><div class="day-type"><span class="badge badge-green">🌟</span><br>Oy yakuni</div></div>
+</div>
+</div>
+</section>
+
+<!-- AD TARGETING -->
+<section id="ads" style="background:var(--bg-card)">
+<div class="container">
+<h2>🎯 Ad Targeting & Byudjet</h2>
+<p class="section-sub">Qaysi reellarni boost qilish va qanday target qilish</p>
+
+<table>
+<thead><tr><th>Kun</th><th>Kontent</th><th>Byudjet</th><th>Objective</th><th>Audience</th><th>Davomiylik</th></tr></thead>
+<tbody>
+<tr><td>1-iyun</td><td>9.0 Reveal</td><td>$10</td><td>Reach</td><td>Surxondaryo, 16-35, Education</td><td>5 kun</td></tr>
+<tr><td>3-iyun</td><td>Dilshod Story</td><td>$7</td><td>Video Views</td><td>Surxondaryo, 16-30, IELTS interest</td><td>4 kun</td></tr>
+<tr><td>8-iyun</td><td>Brahim Reveal</td><td>$8</td><td>Reach</td><td>Surxondaryo, 18-40, Parents + Youth</td><td>5 kun</td></tr>
+<tr><td>15-iyun</td><td>Pedagoglar</td><td>$5</td><td>Engagement</td><td>Surxondaryo, 20-40, Education professionals</td><td>3 kun</td></tr>
+<tr><td>22-iyun</td><td>SAT Launch</td><td>$10</td><td>Reach + Profile Visits</td><td>Surxondaryo+Toshkent, 16-25, Study abroad</td><td>7 kun</td></tr>
+<tr><td>26-iyun</td><td>Early Bird Offer</td><td>$15</td><td>Messages (DM)</td><td>Surxondaryo, 16-30, English learning</td><td>5 kun</td></tr>
+<tr style="background:var(--bg-dark)"><td colspan="2"><strong>JAMI</strong></td><td><strong>$55</strong></td><td colspan="3">Byudjet doirasida — kerak bo'lsa $100 gacha oshirish mumkin</td></tr>
+</tbody>
+</table>
+
+<div class="card-grid" style="margin-top:2rem">
+<div class="card">
+<h4>🎯 Target Sozlamalari</h4>
+<p><strong>Lokatsiya:</strong> Surxondaryo viloyati (asosan Termiz)<br>
+<strong>Yosh:</strong> 16-35 (asosiy), 25-45 (ota-onalar uchun)<br>
+<strong>Tillar:</strong> O'zbek, Rus<br>
+<strong>Qiziqishlar:</strong> English language, IELTS, Study abroad, Education, Universities<br>
+<strong>Behavior:</strong> Engaged shoppers, Technology early adopters</p>
+</div>
+<div class="card">
+<h4>📊 A/B Test Rejasi</h4>
+<p><strong>Har bir boost reel:</strong> 2 ta audience test<br>
+<strong>A:</strong> Broad (faqat lokatsiya + yosh)<br>
+<strong>B:</strong> Narrow (lokatsiya + yosh + interests)<br>
+<strong>Winner:</strong> 48 soatdan keyin g'olibga ko'proq byudjet<br>
+<strong>Creative:</strong> First 3 sec hook variants</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- GROWTH HACKS -->
+<section id="hacks">
+<div class="container">
+<h2>🚀 Growth Hacks</h2>
+<p class="section-sub">Organik o'sish uchun maxfiy taktikalar</p>
+
+<div class="card-grid">
+<div class="card">
+<h4>👑 Dream 100 Strategy</h4>
+<ul class="hack-list">
+<li><strong>Mahalliy bloggerlar:</strong> Termiz/Surxondaryo bloggerlarini aniqlash, ular bilan collaboration, shoutout almashish</li>
+<li><strong>Maktab direktorlari:</strong> Har bir maktab direktori bilan tanishish, ular orqali reklama</li>
+<li><strong>Universitetlar:</strong> SamDU, TermDU student communities bilan partnership</li>
+<li><strong>Mahalla oqsoqollari:</strong> Har bir mahallada bitta "ambassador" topish</li>
+<li><strong>Chet elda o'qigan talabalar:</strong> Ularning success stories'ini ko'rsatish</li>
+</ul>
+</div>
+<div class="card">
+<h4>📢 STEPPS Framework (Jonah Berger)</h4>
+<ul class="hack-list">
+<li><strong>Social Currency:</strong> "Men 9.0 teacher'dan o'qiyapman" — bu maqtanadigan narsa</li>
+<li><strong>Triggers:</strong> Har safar "IELTS" eshitsa — "Elites" esiga tushsin</li>
+<li><strong>Emotion:</strong> Dilshod'ning struggle story — ko'z yoshi keladi</li>
+<li><strong>Public:</strong> Elites branded hoodie/t-shirt — ko'chada ko'rinib tursin</li>
+<li><strong>Practical Value:</strong> Har bir reel — foydali tips, SAVE qilishadi</li>
+<li><strong>Stories:</strong> Har bir o'quvchi — o'z success story'si bor</li>
+</ul>
+</div>
+<div class="card">
+<h4>🏘️ Mahalliy Taktikalar</h4>
+<ul class="hack-list">
+<li><strong>Referral Program:</strong> Har bir yangi o'quvchi olib kelsa — 1 oy 50% chegirma</li>
+<li><strong>School Visits:</strong> Maktablarga bepul master-class o'tkazish</li>
+<li><strong>Telegram Groups:</strong> Har bir mahallaning Telegram guruhiga kontent tarqatish</li>
+<li><strong>Local Events:</strong> Spelling Bee, English Day, Open Mic tashkil qilish</li>
+<li><strong>Wall of Fame:</strong> Eng yaxshi natijalarni ko'chaga banner qilish</li>
+<li><strong>Student UGC:</strong> O'quvchilarga TikTok challenge berish — viral qilish</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- KPI -->
+<section id="kpi" style="background:var(--bg-card)">
+<div class="container">
+<h2>📊 KPI — 30/60/90 Kun Maqsadlari</h2>
+<p class="section-sub">O'lchanadigan maqsadlar va tracking</p>
+
+<table>
+<thead><tr><th>Metrika</th><th>Hozir</th><th>30 kun</th><th>60 kun</th><th>90 kun</th></tr></thead>
+<tbody>
+<tr><td>Instagram Followers</td><td>5,443</td><td style="color:var(--gold)">7,000+</td><td style="color:var(--gold)">9,500+</td><td style="color:var(--gold)">13,000+</td></tr>
+<tr><td>O'rtacha Reel Views</td><td>~500</td><td style="color:var(--gold)">3,000+</td><td style="color:var(--gold)">8,000+</td><td style="color:var(--gold)">15,000+</td></tr>
+<tr><td>Haftalik DM'lar</td><td>~10</td><td style="color:var(--gold)">50+</td><td style="color:var(--gold)">150+</td><td style="color:var(--gold)">300+</td></tr>
+<tr><td>Yangi O'quvchilar/oy</td><td>~30</td><td style="color:var(--gold)">80+</td><td style="color:var(--gold)">120+</td><td style="color:var(--gold)">200+</td></tr>
+<tr><td>Brand Awareness*</td><td>30%</td><td style="color:var(--gold)">50%</td><td style="color:var(--gold)">70%</td><td style="color:var(--gold)">90%+</td></tr>
+<tr><td>Engagement Rate</td><td>~2%</td><td style="color:var(--gold)">5%+</td><td style="color:var(--gold)">7%+</td><td style="color:var(--gold)">8%+</td></tr>
+<tr><td>Revenue (oylik)</td><td>~250M</td><td style="color:var(--gold)">320M+</td><td style="color:var(--gold)">420M+</td><td style="color:var(--gold)">560M+</td></tr>
+<tr><td>Saves per Reel</td><td>~5</td><td style="color:var(--gold)">50+</td><td style="color:var(--gold)">100+</td><td style="color:var(--gold)">200+</td></tr>
+</tbody>
+</table>
+<p style="margin-top:1rem;font-size:.8rem;color:var(--text-muted)">*Brand Awareness — survey orqali o'lchanadi (100 ta random odam so'rov)</p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="brand">ELITES LEARNING CENTER 🏆</div>
+<p>@elites_learning_center | Termiz, Surxondaryo</p>
+<p style="margin-top:10px;font-size:.8rem">Ultimate SMM Strategy — 2026 | "90 kunda #1 bo'lamiz"</p>
+</div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeM()">
+<div class="modal">
+<button class="modal-close" onclick="closeM()">&times;</button>
+<div id="modalContent"></div>
+</div>
+</div>
+
+<script>
+const scripts = {
+1: {
+title: "🏆 Surxondaryoda IELTS 9.0 teacher BOR!",
+date: "1-Iyun, Dushanba",
+type: "BRAND",
+boost: "$10 — Reach — Surxondaryo, 16-35, Education interests — 5 kun",
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Kamera sekin bo'sh sinfxonani ko'rsatadi. Tong payti. Dilshod'ning silueti deraza oldida. Matn paydo bo'ladi: "Surxondaryoda bitta odam bor..."
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-3s):</strong> Wide shot — bo'sh sinfxona, tong nuri derazadan tushyapti. Slow motion. Dilshod'ning silueti.</li>
+<li><strong>Kadr 2 (3-6s):</strong> Close-up — Dilshod'ning qo'llari kitob varaqlamoqda. Dramatic music boshlandi.</li>
+<li><strong>Kadr 3 (6-10s):</strong> Medium shot — Dilshod kameraga qarab o'giriladi. Yuzida ishonch.</li>
+<li><strong>Kadr 4 (10-15s):</strong> INSERT — IELTS sertifikat CLOSE-UP. Light flare effect. "Reading: 9 | Listening: 9 | Speaking: 9 | Writing: 8 | OVERALL: 9.0"</li>
+<li><strong>Kadr 5 (15-22s):</strong> Dilshod kameraga: "Mening ismim Dilshod Ismatov. Men Surxondaryodagi YAGONA 9.0 IELTS egasiman. Va men sizga o'rgatmoqchiman."</li>
+<li><strong>Kadr 6 (22-28s):</strong> B-roll — talabalar bilan darsda, doska oldida, kulishyapti. Elites logo paydo bo'ladi.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Surxondaryoda bitta odam bor... u IELTS imtihonida 9.0 ball olgan. Reading — 9. Listening — 9. Speaking — 9. Bu Surxondaryo tarixida BIRINCHI. Uning ismi — Dilshod Ismatov. Va u hozir SIZGA o'rgatmoqchi. Elites Learning Center."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Ishonmaysizmi? DM yozing 'SERTIFIKAT' — biz sizga haqiqiy sertifikatni yuboramiz. Bio linkdan ro'yxatdan o'ting."
+</div>
+</div>
+
+<div class="target-box">
+<h4>🎯 TARGETING:</h4>
+<p><strong>Byudjet:</strong> $10 (5 kun)<br>
+<strong>Objective:</strong> Reach (maksimal odamga ko'rsatish)<br>
+<strong>Audience:</strong> Surxondaryo viloyati, 16-35 yosh, Interests: English language, IELTS, Education, Study abroad<br>
+<strong>Placement:</strong> Reels, Stories, Explore</p>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 25-30 soniya<br>
+<strong>Aspect Ratio:</strong> 9:16 (vertical)<br>
+<strong>Audio:</strong> Dramatic cinematic music (royalty-free), voice clear<br>
+<strong>Editing:</strong> Slow-motion opening, smooth transitions, text animations<br>
+<strong>Lighting:</strong> Natural tong nuri + ring light Dilshod yuziga<br>
+<strong>Muhim:</strong> Sertifikat ANIQ ko'rinishi kerak. Zoom in qiling.</p>
+</div>
+`
+},
+2: {
+title: "📚 3 so'zni 99% NOTO'G'RI aytadi",
+date: "2-Iyun, Seshanba",
+type: "EDU",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Dilshod kameraga jiddiy qarab: "Hozir 3 ta so'z aytaman. Agar bittasini ham TO'G'RI bilsang — RESPECT!" Qo'lini ko'taradi.
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-3s):</strong> Close-up Dilshod yuzi. Direct eye contact. Confident. "3 ta so'z. 99% noto'g'ri aytadi."</li>
+<li><strong>Kadr 2 (3-8s):</strong> Screen split — Chapda NOTO'G'RI (red X), O'ngda TO'G'RI (green ✓). So'z #1: COMFORTABLE. Noto'g'ri: "komfortabl" → To'g'ri: "KUMF-tuh-buhl"</li>
+<li><strong>Kadr 3 (8-14s):</strong> So'z #2: WEDNESDAY. Noto'g'ri: "vednesdi" → To'g'ri: "WENZ-day". Dilshod kulguli reaksiya beradi.</li>
+<li><strong>Kadr 4 (14-20s):</strong> So'z #3: ENTREPRENEUR. Noto'g'ri: "entreprenyur" → To'g'ri: "on-truh-pruh-NUR". Slow motion pronunciation.</li>
+<li><strong>Kadr 5 (20-25s):</strong> Dilshod: "Nechta to'g'ri bilding? Comment'da yoz! Va save qil — keyin takrorlaysan."</li>
+<li><strong>Kadr 6 (25-28s):</strong> Elites logo + "Har kuni yangi tips — follow qiling!"</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Hozir 3 ta so'z aytaman — 99 foiz odamlar noto'g'ri aytadi. Ready? Birinchi: COMFORTABLE — yo'q, 'komfortabl' emas! KUMF-tuh-buhl! Ikkinchi: WEDNESDAY — 'vednesdi' emas! WENZ-day! Uchinchi — eng qiyini: ENTREPRENEUR — on-truh-pruh-NUR! Nechta to'g'ri bilding? Comment yoz!"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Nechta to'g'ri bilding? Commentda yoz! 🔥 Save qil — keyin takrorlaysan. Follow — har kuni yangi tips!"
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 25-30 soniya<br>
+<strong>Audio:</strong> Upbeat background music, sound effects (ding for correct, buzz for wrong)<br>
+<strong>Editing:</strong> Split screen, bold text overlays, red/green colors<br>
+<strong>Lighting:</strong> Bright, clear face lighting<br>
+<strong>Muhim:</strong> Dilshod mimikasi — noto'g'ri aytilganda "cringe" qilsin. Engaging bo'lsin.</p>
+</div>
+`
+},
+3: {
+title: "🏆 Dilshod Ismatov: Qanday 9.0 ga erishdim?",
+date: "3-Iyun, Chorshanba",
+type: "BRAND",
+boost: "$7 — Video Views — Surxondaryo, 16-30, IELTS interest — 4 kun",
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Eski rasm — Dilshod yoshligida, oddiy kiyimda. Matn: "2 yil oldin bu odam ingliz tilida QIYNALardi." Dramatic pause. Keyin: "Bugun u Surxondaryodagi YAGONA 9.0."
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> Old photo/video of Dilshod. Sepia filter. Emotional piano music. "2 yil oldin..."</li>
+<li><strong>Kadr 2 (4-10s):</strong> Dilshod face-to-camera, hozirgi. "Mening oilam oddiy edi. Pul yo'q edi. Lekin orzu bor edi."</li>
+<li><strong>Kadr 3 (10-18s):</strong> B-roll: kitob o'qish, kechasi chiroq yonib turgan xona, yolg'iz mashq. "Har kuni 5 soat. Hech kim ishonmasdi."</li>
+<li><strong>Kadr 4 (18-25s):</strong> Emotional moment: "Natija chiqqan kuni... 9.0 ko'rdim. Ko'zlarimga ishonmadim." Sertifikat ko'rinadi.</li>
+<li><strong>Kadr 5 (25-35s):</strong> Dilshod hozir sinfda, talabalar bilan. "Endi men boshqalarga yordam bermoqchiman. Mening yo'limni qisqartirmoqchiman."</li>
+<li><strong>Kadr 6 (35-40s):</strong> Direct CTA: "Agar siz ham IELTS'da yuqori ball olmoqchi bo'lsangiz — men sizga yo'l ko'rsataman. DM yozing."</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Mening oilam oddiy edi. Chet elga chiqish — orzu edi. Ingliz tili — mening yagona yo'lim edi. 2 yil har kuni 5 soat. Hech kim ishonmasdi — 'Termizdan 9.0 chiqmaydi' deyishdi. Oktyabr 2024 — natija chiqdi. 9.0. Surxondaryoda birinchi. Endi men boshqalarga shu yo'lni ko'rsatmoqchiman. Elites Learning Center."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Uning sirlari bilan o'rganmoqchimisiz? DM yozing: 'DILSHOD' — biz sizga bepul konsultatsiya beramiz."
+</div>
+</div>
+
+<div class="target-box">
+<h4>🎯 TARGETING:</h4>
+<p><strong>Byudjet:</strong> $7 (4 kun)<br>
+<strong>Objective:</strong> Video Views (ThruPlay)<br>
+<strong>Audience:</strong> Surxondaryo, 16-30, IELTS, English learning, Study abroad<br>
+<strong>Placement:</strong> Reels, Feed, Stories</p>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 35-45 soniya (uzunroq — emotional content)<br>
+<strong>Audio:</strong> Emotional piano → triumphant music transition<br>
+<strong>Editing:</strong> Photo montage, slow zoom, color grade dark→bright transition<br>
+<strong>Muhim:</strong> EMOTION — bu reel yig'latishi kerak. Dilshod samimiy gapirsin.</p>
+</div>
+`
+},
+4: {
+title: "🎭 Surxondaryolik bola ingliz tilida gapirsa 😂",
+date: "4-Iyun, Payshanba",
+type: "VIRAL",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Surxondaryolik yigit aeroportda turibdi. Tourist so'raydi: "Excuse me, where is...?" Yigit panic face. Comedy zoom. 😂
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-3s):</strong> "BEFORE ELITES" matn. Yigit ko'chada ketayotgan, foreigner so'raydi "Excuse me..." Yigit qochib ketadi 😂</li>
+<li><strong>Kadr 2 (3-8s):</strong> Kafeda: "Can I have..." — yigit: "This... thing... hot water... brown..." (kofe buyurtma bera olmayapti)</li>
+<li><strong>Kadr 3 (8-12s):</strong> Telefonda: "Hello? I am... from... how say... Uzbekistan..." — awkward silence</li>
+<li><strong>Kadr 4 (12-15s):</strong> TRANSITION — "AFTER ELITES" matn. Dramatic music change. Shu yigit endi boshqacha.</li>
+<li><strong>Kadr 5 (15-22s):</strong> Same situations but NOW fluent: Airport — perfect directions. Cafe — smooth order. Phone — confident conversation.</li>
+<li><strong>Kadr 6 (22-27s):</strong> Yigit kameraga: "Elites'da 6 oy. That's it." Smile. Logo.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>Before: "Hmm... yes... no... sorry my English not good..." 😅<br>
+After: "Of course! The airport is straight ahead, take the second left. You can't miss it!" 😎<br>
+"Elites Learning Center — 6 oyda hayotingiz o'zgaradi."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Tag qil shu holatdagi do'stingni! 😂 Ularga Elites kerak! Bio linkdan — bepul test."
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 25-30 soniya<br>
+<strong>Audio:</strong> Trending comedy sound + dramatic transition music<br>
+<strong>Editing:</strong> Quick cuts, zoom effects, before/after split, meme-style captions<br>
+<strong>Aktyor:</strong> Charismatic talaba — overacting OK for comedy<br>
+<strong>Muhim:</strong> RELATABLE bo'lsin — hamma shu holatni boshdan kechirgan. Share qilishadi!</p>
+</div>
+`
+},
+5: {
+title: "🌟 Bu o'quvchi 0 dan 6.5 ga chiqdi — Elites'da",
+date: "5-Iyun, Juma",
+type: "TRUST",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Talabaning eski video/audio: "My name is... I am... student..." (juda zaif). Matn: "6 oy oldin." Keyin: "BUGUN:" — shu talaba ravon gapirmoqda.
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> "6 OY OLDIN" — talabaning birinchi kun videosi. Qiynalayapti. Oddiy gap ayta olmayapti.</li>
+<li><strong>Kadr 2 (4-8s):</strong> IELTS band score ko'rinadi: 4.0. Qizil rang.</li>
+<li><strong>Kadr 3 (8-14s):</strong> Montage — shu talaba Elites'da o'qiyapti. Dilshod bilan mashq. Kitob o'qish. Speaking practice.</li>
+<li><strong>Kadr 4 (14-20s):</strong> "BUGUN" — shu talaba IELTS natijasi: 6.5! Yashil rang. Baqiradi, xursand!</li>
+<li><strong>Kadr 5 (20-28s):</strong> Talaba kameraga: "Elites'ga kelmasam, hali ham 4.0 da edim. Dilshod aka menga SISTEMA berdi. Endi chet elga ketayapman!"</li>
+<li><strong>Kadr 6 (28-33s):</strong> Dilshod + talaba birga. "Keyingi navbat — SENDA." Logo.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>Talaba: "6 oy oldin men ingliz tilida hech narsa bilmasdim. IELTS'ni tushunmasdim. Elites'ga keldim — Dilshod aka menga aniq reja berdi. Har kuni mashq qildik. 6 oyda — 4.0 dan 6.5 ga chiqdim. Endi Koreaga o'qishga ketayapman. Rahmat Elites!"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Keyingi navbat SENDA. O'z darajangni bil — bepul test uchun DM yozing: 'TEST'. Yoki bio link."
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 30-35 soniya<br>
+<strong>Audio:</strong> Inspirational music buildup, real student voice<br>
+<strong>Editing:</strong> Before/after dramatic, score animation, confetti effect at reveal<br>
+<strong>Muhim:</strong> REAL talaba — scripted emas, natural gapirsin. Samimiylik ishonch quradi.</p>
+</div>
+`
+},
+6: {
+title: "📱 STORY DAY — Quiz & Polls",
+date: "6-Iyun, Shanba",
+type: "STORY",
+boost: null,
+body: `
+<div class="script-section">
+<h4>📱 STORIES REJASI (Shanba)</h4>
+
+<h4>Story #1 — Quiz Sticker:</h4>
+<p>"Tarjima qil: PROCRASTINATION = ?" <br>Variantlar: A) Ishchanlik B) Kechiktirish C) Ish tashlash D) Dangasalik<br>To'g'ri javob: B ✓</p>
+
+<h4>Story #2 — Poll:</h4>
+<p>"IELTS'ning eng QIYIN section'i qaysi?" <br>🔘 Reading 🔘 Listening 🔘 Writing 🔘 Speaking</p>
+
+<h4>Story #3 — Question Box:</h4>
+<p>"IELTS haqida savolingiz bormi? 👇 Yozing — Dilshod javob beradi!"</p>
+
+<h4>Story #4 — Countdown:</h4>
+<p>"Dushanbada YANGI REEL! 🔥 Notification on qiling!" + countdown sticker</p>
+
+<h4>Story #5 — Motivation:</h4>
+<p>Dilshod'dan quote: "Har kuni 1 soat — 1 yilda IELTS 7.0. Bugun boshlang."</p>
+
+<div class="cta-box">
+<strong>Maqsad:</strong> Engagement oshirish (poll/quiz = algorithm sevadi), DM'lar olish, Dushanba reelga hype yaratish.
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Vaqt:</strong> Stories'ni 2-3 soat oraliqda joylash (to'liq kun davomida)<br>
+<strong>Design:</strong> Brand colors (gold/dark), Dilshod rasmi fon, clean text<br>
+<strong>Muhim:</strong> Har bir story'da engagement element bo'lsin (tap, vote, type)</p>
+</div>
+`
+},
+7: {
+title: "📱 STORY DAY — Repost & Teaser",
+date: "7-Iyun, Yakshanba",
+type: "STORY",
+boost: null,
+body: `
+<div class="script-section">
+<h4>📱 STORIES REJASI (Yakshanba)</h4>
+
+<h4>Story #1 — Best Reel Repost:</h4>
+<p>Hafta davomida eng ko'p view olgan reelni story'ga repost: "Bu haftaning #1 reel'i! Ko'rdingizmi?" + link to reel</p>
+
+<h4>Story #2 — Active Followers Tag:</h4>
+<p>Eng ko'p comment/DM yozgan 3-5 followerni tag qilish: "Bu haftaning eng ACTIVE follower'lari! 🏆 Tashakkur!"</p>
+
+<h4>Story #3 — Meme:</h4>
+<p>IELTS related meme: "IELTS Writing Task 2 ko'rganda men:" + funny reaction GIF/photo</p>
+
+<h4>Story #4 — Next Week Teaser:</h4>
+<p>"Kelasi hafta — NATIVE SPEAKER Termizda?! 🇲🇦👀 Kim ekanini bilmoqchimisiz?" + blur photo of Brahim</p>
+
+<h4>Story #5 — Sunday Motivation:</h4>
+<p>"Yakshanba dam oling. Lekin Dushanba — ishga! 💪 ELITES'da sizni kutamiz."</p>
+
+<div class="cta-box">
+<strong>Maqsad:</strong> Community building, anticipation for next week, shareability.
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Vaqt:</strong> Ertalab 10:00 dan boshlab 3 soat oraliq<br>
+<strong>Design:</strong> Casual, fun vibe — weekend mood<br>
+<strong>Muhim:</strong> Teaser INTRIGUE yaratsin — hamma Dushanba kuni kim ekanini bilmoqchi bo'lsin</p>
+</div>
+`
+},
+8: {
+title: "🏆 NATIVE SPEAKER Termizda?! Tanishing: Brahim 🇲🇦",
+date: "8-Iyun, Dushanba",
+type: "BRAND",
+boost: "$8 — Reach — Surxondaryo, 18-40, Parents + Youth — 5 kun",
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Brahim Termiz ko'chalarida yurib ketayapti. Perfect English'da gapirmoqda (voiceover). Odamlar hayron qarayapti. "Wait... this guy is in TERMIZ?!"
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> Brahim Termiz bazarida, ko'chada yuradi. English gapiradi. Odamlar o'girilib qaraydi. "NATIVE SPEAKER... Termizda?"</li>
+<li><strong>Kadr 2 (4-8s):</strong> Brahim kameraga: "Hi! I'm Brahim from Morocco. And yes — I teach English right here in Termiz!" O'zbek tilida salomlashadi: "Assalomu alaykum!"</li>
+<li><strong>Kadr 3 (8-14s):</strong> Sinfda bolalar bilan — o'yinlar, kulgi, English songs. Natural, warm atmosphere.</li>
+<li><strong>Kadr 4 (14-20s):</strong> Brahim: "I teach kids and adults. Real English. Real pronunciation. Real communication."</li>
+<li><strong>Kadr 5 (20-26s):</strong> Kichkina bola Brahim bilan ingliz tilida gapiradi. Bola kulguli narsa aytadi. Cute moment.</li>
+<li><strong>Kadr 6 (26-30s):</strong> "ELITES Learning Center — Native teacher. Termizda. HA, haqiqiy." Logo + DM CTA</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>Brahim: "People always ask me — why Termiz? Because these kids deserve REAL English education. Not textbook English — REAL English. And I'm here to give them that. Come join us at Elites!"<br>
+O'zbek subtitle: "Nega Termizda? Chunki bu bolalar HAQIQIY ingliz tiliga loyiq."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Bolangiz uchun native teacher bilan kurs — DM yozing: 'KIDS'. Yoki kattalar uchun — DM: 'BRAHIM'"
+</div>
+</div>
+
+<div class="target-box">
+<h4>🎯 TARGETING:</h4>
+<p><strong>Byudjet:</strong> $8 (5 kun)<br>
+<strong>Objective:</strong> Reach<br>
+<strong>Audience:</strong> Surxondaryo, 18-40, Parents (children interests) + Youth (18-25 English learners)<br>
+<strong>Placement:</strong> Reels, Stories, Explore</p>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 28-32 soniya<br>
+<strong>Audio:</strong> Upbeat world music, Brahim's natural accent is the star<br>
+<strong>Editing:</strong> Dynamic cuts, street footage, warm color grading<br>
+<strong>Muhim:</strong> Brahim'ning PERSONALITY ko'rinsin — samimiy, iliq, professional. Bolalar bilan interaction GOLD.</p>
+</div>
+`
+},
+9: {
+title: "📚 IELTS Speaking 7.0 olish — Dilshod'dan 3 SIR",
+date: "9-Iyun, Seshanba",
+type: "EDU",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Dilshod kameraga: "Men examiner'larga 9.0 ko'rsatdim. Endi senga 3 ta SIR aytaman — 7.0 olish KAFOLATLANGAN." 3 barmoq ko'rsatadi.
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> Dilshod confident, professional muhit. "3 ta sir. 7.0 KAFOLAT." Hook matn ekranda.</li>
+<li><strong>Kadr 2 (4-12s):</strong> SIR #1 — "FILLER'lardan qutiling!" Yomon misol: "Um... well... you know..." Yaxshi misol: "That's a thought-provoking question. I'd say..."</li>
+<li><strong>Kadr 3 (12-20s):</strong> SIR #2 — "EXTEND methodi!" 1 gap emas — 3 gap! "Main point + Reason + Example". Real-time namuna.</li>
+<li><strong>Kadr 4 (20-28s):</strong> SIR #3 — "PARAPHRASE!" Examiner: "Do you like music?" — NOTO'G'RI: "Yes I like music" — TO'G'RI: "Absolutely! I'm quite passionate about melodies..."</li>
+<li><strong>Kadr 5 (28-33s):</strong> "Shu 3 tani qilsang — 7.0 MINIMUM. Men kafolat beraman."</li>
+<li><strong>Kadr 6 (33-37s):</strong> "Practice questions kerakmi? DM: 'SPEAKING'. Bepul yuboramiz." Logo.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Men IELTS Speaking'da 9.0 oldim. Examiner'lar meni 9.0 ball bilan baholadi. Endi sizga 3 ta sir aytaman — bularni qilsangiz 7.0 MINIMUM olasiz. Birinchi: filler'larni olib tashlang. Ikkinchi: har bir javobni EXTEND qiling. Uchinchi: PARAPHRASE — examiner so'zlarini takrorlamang. Shu 3 ta — bas."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Practice questions uchun DM yozing: 'SPEAKING' — bepul yuboramiz. Save qiling — keyin takrorlang! 🔥"
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 35-40 soniya<br>
+<strong>Audio:</strong> Light background music, clear voice<br>
+<strong>Editing:</strong> Numbered tips (1,2,3), good/bad examples with colors, text overlays<br>
+<strong>Muhim:</strong> SAVE-worthy content! Foydali va aniq bo'lsin. Yana ko'rib chiqish uchun saqlasinlar.</p>
+</div>
+`
+},
+10: {
+title: "🌟 Ota-ona: 'Bolam Elites'ga borgandan keyin...'",
+date: "10-Iyun, Chorshanba",
+type: "TRUST",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Ota-ona yuzida samimiy tabassum: "Bolam Elites'ga borgandan keyin... butunlay O'ZGARDI." Emotional music boshlandi.
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> Ota/Ona telefonda gapirmoqda (yoki kameraga qarab): "Bolam Elites'ga borgandan keyin..." Warm lighting, uy muhiti.</li>
+<li><strong>Kadr 2 (4-12s):</strong> "Avval ingliz tilidan qo'rqardi. Endi o'zi kitob o'qiyapti. Brahim bilan do'st bo'lib qoldi." Bolaning sinfda xursand surati.</li>
+<li><strong>Kadr 3 (12-18s):</strong> B-roll: Bolalar Brahim bilan o'yin o'ynayapti. Kulgi. English songs. Natural happy moments.</li>
+<li><strong>Kadr 4 (18-24s):</strong> Ota/Ona: "Eng yaxshi sarmoyam — Elites'ga yozilganim. Pedagog ustozlar. Native teacher. Professional muhit."</li>
+<li><strong>Kadr 5 (24-30s):</strong> Bola kameraga: "I love Elites! Brahim is the best!" Cute smile. 🥰</li>
+<li><strong>Kadr 6 (30-34s):</strong> "Bolangiz uchun eng yaxshi sarmoya. Elites Learning Center." Logo + CTA.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>Ota-ona: "Men ko'p joy ko'rdim. Lekin Elites'da — boshqacha. Professional ustozlar. Native teacher. Bolam xursand. Ingliz tilini sevib qoldi. Bu menga eng katta g'alaba."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Bolangiz uchun eng yaxshi sarmoya — ta'lim. DM yozing: 'KIDS' yoki bio linkdan ro'yxatdan o'ting."
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 30-35 soniya<br>
+<strong>Audio:</strong> Warm emotional music, natural voices<br>
+<strong>Editing:</strong> Soft filter, warm tones, genuine moments<br>
+<strong>Muhim:</strong> 100% REAL — scripted ko'rinmasin. Ota-ona o'z so'zlari bilan gapirsin. Phone video OK — samimiylik muhim.</p>
+</div>
+`
+},
+11: {
+title: "📚 5 XATO — o'zbeklar HAMMA qiladi",
+date: "11-Iyun, Payshanba",
+type: "EDU",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Dilshod jiddiy: "Bu 5 xatoni qilsang — examiner senga 5.0 dan OSHIRMAYDI. #3 ga e'tibor ber!" Bold text ekranda.
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-3s):</strong> Dilshod stern face. "5 ta XATO. Hamma qiladi. EXAMINER bu uchun ball kesadi."</li>
+<li><strong>Kadr 2 (3-8s):</strong> ❌ XATO #1: "I am AGREE" → ✅ "I AGREE" (Red X animation, then Green check)</li>
+<li><strong>Kadr 3 (8-13s):</strong> ❌ XATO #2: "I have 20 YEARS" → ✅ "I AM 20 years old" (age ≠ have!)</li>
+<li><strong>Kadr 4 (13-18s):</strong> ❌ XATO #3: "He DON'T like" → ✅ "He DOESN'T like" (Dilshod stressed face)</li>
+<li><strong>Kadr 5 (18-23s):</strong> ❌ XATO #4: "I am INTERESTING" → ✅ "I am INTERESTED" (-ed vs -ing!)</li>
+<li><strong>Kadr 6 (23-28s):</strong> ❌ XATO #5: "INFORMATIONS" → ✅ "INFORMATION" (uncountable!)</li>
+<li><strong>Kadr 7 (28-32s):</strong> "Nechta xato qilarkan eding? Save qil! Do'stingga yubor!"</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"5 ta xato — o'zbeklar hamma qiladi. Birinchi: 'I am agree' — YO'Q! 'I agree'! Ikkinchi: 'I have 20 years' — bu frantsuzcha! 'I AM 20'! Uchinchi: 'He don't' — 'He DOESN'T'! To'rtinchi: 'I am interesting' — bu 'men qiziqman' emas, 'men qiziqarliman'! 'INTERESTED' bo'lsin! Beshinchi: 'Informations' — 's' yo'q! 'Information' — uncountable!"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Save qil! Do'stingni tag qil! 🔥 Batafsil grammar kurs uchun — bio link."
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 28-32 soniya<br>
+<strong>Audio:</strong> Sound effects (buzz for wrong, ding for correct), upbeat music<br>
+<strong>Editing:</strong> Fast pace, red/green animations, bold typography, engaging transitions<br>
+<strong>Muhim:</strong> TEZKOR — 1 xato = 5 soniya max. Attention hold qilish uchun fast cuts.</p>
+</div>
+`
+},
+12: {
+title: "💰 BEPUL SINOV DARSI — bu Juma!",
+date: "12-Iyun, Juma",
+type: "SALES",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+"BEPUL." Katta matn. Pause. "Ha, to'g'ri o'qidingiz. Hech narsa to'lamaysiz. Faqat KELING." Dilshod jilmayadi.
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-3s):</strong> Bold text: "BEPUL SINOV DARSI" — zoom out reveal Dilshod turgan joyda.</li>
+<li><strong>Kadr 2 (3-8s):</strong> Dilshod: "Hech narsa to'lamaysiz. Faqat keling. Yoqsa — qolasiz. Yoqmasa — ketasiz. Bu oddiy."</li>
+<li><strong>Kadr 3 (8-14s):</strong> Oldingi open day footage — talabalar kulyapti, savol beryapti, Dilshod o'qityapti. Energetic montage.</li>
+<li><strong>Kadr 4 (14-20s):</strong> "Nimani olasiz: Real IELTS darsi, Darajangizni bilib olasiz, Strategy olasiz, Do'stlar topasiz."</li>
+<li><strong>Kadr 5 (20-25s):</strong> SCARCITY: "LEKIN — faqat 20 ta o'rin. Chunki sinfimiz kichik. O'z sifatimizni saqlaymiz."</li>
+<li><strong>Kadr 6 (25-30s):</strong> "DM yozing: 'FREE'. Yoki bio link. O'rningizni HOZIR band qiling!"</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Eshiting: Bu JUMA — bepul sinov darsi. Hech narsa to'lamaysiz. Real IELTS darsi. Dilshod bilan. 1.5 soat. Yoqsa qolasiz, yoqmasa ketasiz. Lekin: faqat 20 o'rin! O'z sifatimizni saqlaymiz. DM yozing 'FREE' — hoziroq!"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "O'rningizni band qiling! DM: 'FREE'. Faqat 20 o'rin! Bu Juma, 15:00. ELITES 1-filial."
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 27-32 soniya<br>
+<strong>Audio:</strong> Energetic, countdown-style music<br>
+<strong>Editing:</strong> Fast cuts, countdown timer graphic, scarcity numbers (20→15→10...)<br>
+<strong>Muhim:</strong> URGENCY va SCARCITY — "cheklangan" so'zini ta'kidlang. FOMO yarating!</p>
+</div>
+`
+},
+13: {
+title: "📱 STORY DAY — Open Day Recap",
+date: "13-Iyun, Shanba",
+type: "STORY",
+boost: null,
+body: `
+<div class="script-section">
+<h4>📱 STORIES REJASI (Shanba — Open Day Recap)</h4>
+
+<h4>Story #1 — Open Day Highlights:</h4>
+<p>Video montage: Talabalar kirib kelishi, Dilshod dars boshi, hamma engaged, kulgi momentlari. Matn: "Bugun AJOYIB bo'ldi! 🔥"</p>
+
+<h4>Story #2 — Student Selfies:</h4>
+<p>Yangi talabalar bilan selfie. Tag qiling. "Yangi ELITES oilasi a'zolari! Welcome! 🏆"</p>
+
+<h4>Story #3 — Fun Moments:</h4>
+<p>Dars davomidagi kulgili/cute momentlar. Blooper reel style. "Behind the scenes 😂"</p>
+
+<h4>Story #4 — New Student Welcome:</h4>
+<p>"Bugun 12 ta YANGI talaba qo'shildi! 🎉 Keyingi bepul dars — kelasi hafta. DM: 'FREE'"</p>
+
+<h4>Story #5 — Gratitude:</h4>
+<p>"Kelganlar uchun RAHMAT! Kelolmaganlar — xavotir olmang. Kelasi hafta yana imkoniyat bor! 💛"</p>
+
+<div class="cta-box">
+<strong>Maqsad:</strong> Social proof (odamlar kelayapti!), FOMO (siz ham kelishingiz mumkin edi), warmth.
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Vaqt:</strong> Open day bo'lgandan keyin — oradan 2-3 soat<br>
+<strong>Format:</strong> Video + photo mix, real-time energy<br>
+<strong>Muhim:</strong> IMMEDIATELY post qiling — "just happened" energy. Authentic bo'lsin.</p>
+</div>
+`
+},
+14: {
+title: "📱 STORY DAY — Polls & Recap",
+date: "14-Iyun, Yakshanba",
+type: "STORY",
+boost: null,
+body: `
+<div class="script-section">
+<h4>📱 STORIES REJASI (Yakshanba)</h4>
+
+<h4>Story #1 — This or That:</h4>
+<p>"IELTS yoki CEFR? 🤔" poll<br>"Online yoki Offline dars? 📚" poll<br>"Morning yoki Evening group? ⏰" poll</p>
+
+<h4>Story #2 — Week Stats:</h4>
+<p>"Bu hafta raqamlarda: 📊<br>5 ta reel ✅<br>45,000+ ko'rishlar 👁️<br>200+ yangi followers 🙌<br>12 yangi talaba 🎓"</p>
+
+<h4>Story #3 — Meme:</h4>
+<p>IELTS meme: "Writing Task 2 yozayotganda vs Reading passage o'qiyotganda" — funny comparison</p>
+
+<h4>Story #4 — Next Week Teaser:</h4>
+<p>"Kelasi hafta: PEDAGOGLAR nima uchun muhim? 🎓 + YANGI viral skit! 🎭 Stay tuned!"</p>
+
+<div class="cta-box">
+<strong>Maqsad:</strong> Engagement, community feel, next week anticipation, transparency (stats share).
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Vaqt:</strong> Kechqurun — relax mode<br>
+<strong>Design:</strong> Minimal, branded, easy to engage<br>
+<strong>Muhim:</strong> Stats share — transparency quradi. Odamlar "o'syapti" deb ishonadi.</p>
+</div>
+`
+},
+15: {
+title: "🏆 NEGA aynan PEDAGOGLAR o'qitishi kerak?",
+date: "15-Iyun, Dushanba",
+type: "BRAND",
+boost: "$5 — Engagement — Surxondaryo, 20-40, Education professionals — 3 kun",
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Split screen: Chapda — nervous talaba doska oldida qiynalmoqda (student-teacher). O'ngda — professional pedagog aniq tushuntirmoqda. "FARQNI ko'ryapsizmi?"
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> Split screen comparison. Amateur teacher vs Professional pedagog. Visual farq aniq.</li>
+<li><strong>Kadr 2 (4-10s):</strong> Dilshod: "Ko'pchilik markazlarda sizga KIM o'qitadi bilasizmi? 2-3 kurs TALABASI. Sertifikatsiz. Tajribasiz."</li>
+<li><strong>Kadr 3 (10-16s):</strong> "Bizda esa..." — Har bir teacher diploma ko'rsatadi. Close-up. "PEDAGOGIKA fanlari bo'yicha diplom."</li>
+<li><strong>Kadr 4 (16-22s):</strong> "Pedagog — faqat bilim emas, UNI QANDAY O'RGATISHNI biladi. Methodology. Psychology. Individual approach."</li>
+<li><strong>Kadr 5 (22-28s):</strong> Sinfda: pedagog individual attention bermoqda. Har bir talabaga alohida yondashish. Real footage.</li>
+<li><strong>Kadr 6 (28-33s):</strong> "Professional ta'lim — Elites'da. Pulini to'layotganingizda — KIM o'qitayotganini bilib to'lang." Logo.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Savol: bolangizga KIM o'qitayapti? Ko'p markazlar 2-kurs talabalarini o'qituvchi qilib qo'yadi. Arzon. Lekin natija? 0. Elites'da BARCHA o'qituvchilar — PEDAGOG. Diplom bor. Metodika bor. Tajriba bor. Bu investitsiya — vaqtingizga va pulingizga hurmat."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Professional ta'lim — Elites'da. DM yozing: 'INFO' — o'qituvchilarimiz haqida batafsil."
+</div>
+</div>
+
+<div class="target-box">
+<h4>🎯 TARGETING:</h4>
+<p><strong>Byudjet:</strong> $5 (3 kun)<br>
+<strong>Objective:</strong> Engagement (saves, shares)<br>
+<strong>Audience:</strong> Surxondaryo, 20-40, parents, education professionals, teachers<br>
+<strong>Placement:</strong> Reels, Feed</p>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 30-35 soniya<br>
+<strong>Audio:</strong> Confident, authoritative background music<br>
+<strong>Editing:</strong> Split screen, diploma close-ups, professional footage<br>
+<strong>Muhim:</strong> COMPETITOR'larga to'g'ridan-to'g'ri HUJUM — lekin elegant. Ism aytmasdan farqni ko'rsating.</p>
+</div>
+`
+},
+16: {
+title: "🎭 IELTS Speaking examiner bilan 😂",
+date: "16-Iyun, Seshanba",
+type: "VIRAL",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Exam room. Talaba nervously o'tiradi. "Examiner" kirib keladi — jiddiy yuz. Talaba ter to'kadi. 😰 Comedy zoom on face.
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-3s):</strong> Exam room setup. Talaba nervous. Examiner kirib keldi. Dramatic music. Talaba ter to'kadi 😂</li>
+<li><strong>Kadr 2 (3-8s):</strong> Examiner: "So... tell me about your HOMETOWN." Talaba: "My hometown is... is... very... (5 soniya sukut)... NICE." 😂</li>
+<li><strong>Kadr 3 (8-14s):</strong> Examiner: "What do you do in your FREE TIME?" Talaba: "I am... playing... phone..." (then whispers to camera: "Nima deyishni bilmayman!" 😅)</li>
+<li><strong>Kadr 4 (14-18s):</strong> Examiner weird question: "Describe a time you saw a RAINBOW." Talaba shocked face. "Rainbow?! Bu nimasi?!" 😂</li>
+<li><strong>Kadr 5 (18-24s):</strong> TRANSITION: "Elites'dan KEYIN" — same student, confident: "Well, that's a fascinating question! Let me tell you about..."  Examiner impressed 👏</li>
+<li><strong>Kadr 6 (24-28s):</strong> "Elites'da biz examiner'dan QO'RQMAYDIGAN qilamiz 💪" Logo + CTA</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>Before: "I am... ummm... my city... is... good..." 😰<br>
+After: "My hometown, Termiz, is a remarkable city situated in the southern part of Uzbekistan. What I find particularly fascinating about it is..." 😎<br>
+"Elites = NO FEAR of examiner!"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Senchi, examiner'dan qo'rqasanmi? 😂 Commentda yoz! IELTS Speaking practice uchun — DM: 'SPEAKING'"
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 25-30 soniya<br>
+<strong>Audio:</strong> Comedy sound effects, trending audio, dramatic → upbeat transition<br>
+<strong>Aktyor:</strong> 2 talaba — biri "examiner", biri "student". OVERACT comedy uchun OK<br>
+<strong>Setup:</strong> Stol, 2 stul, exam room vibe yarating<br>
+<strong>Muhim:</strong> RELATABLE + FUNNY = SHARE! Har bir IELTS talaba shu holatni biladi.</p>
+</div>
+`
+},
+17: {
+title: "📚 Writing Task 2: 7.0 KAFOLATLANGAN template",
+date: "17-Iyun, Chorshanba",
+type: "EDU",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Dilshod kameraga: "IELTS Writing'da 7.0 olish uchun BU BITTA template yetarli. 9.0 teacher tasdiqlaydi. SAVE QIL!" Template ekranda flash.
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-3s):</strong> Dilshod + Writing score "9.0 teacher" badge. "BITTA template — 7.0 KAFOLAT."</li>
+<li><strong>Kadr 2 (3-10s):</strong> INTRO template: "In today's world, [topic] has become a widely debated issue. While some people argue that..., others believe... This essay will discuss both views and provide my opinion."</li>
+<li><strong>Kadr 3 (10-17s):</strong> BODY 1: "On the one hand, [view 1]. Firstly, [reason]. For example, [example]. Therefore, [conclusion]."</li>
+<li><strong>Kadr 4 (17-24s):</strong> BODY 2: "On the other hand, [view 2]. The main reason is [reason]. To illustrate, [example]. As a result, [conclusion]."</li>
+<li><strong>Kadr 5 (24-30s):</strong> CONCLUSION: "In conclusion, while both sides have valid points, I firmly believe that [your opinion] because [strongest reason]."</li>
+<li><strong>Kadr 6 (30-35s):</strong> "PDF format kerakmi? DM: 'WRITING' — BEPUL yuboramiz! Save qil!" Logo.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"IELTS Writing Task 2 — eng ko'p ball yo'qotiladigan joy. Lekin bu template bilan — 7.0 MINIMUM. Intro — 2 ta view mention. Body 1 — birinchi view. Body 2 — ikkinchi view. Conclusion — o'z fikringiz. Shu. Oddiy. Lekin ISHLAYDI. Men 8.0 shu usulda oldim."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "PDF format uchun DM yozing: 'WRITING' — bepul yuboramiz! 📝 Save qiling — imtihonda ishlatiladi!"
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 32-37 soniya<br>
+<strong>Audio:</strong> Calm study music, clear narration<br>
+<strong>Editing:</strong> Template text animated on screen, highlighter effect, color coding<br>
+<strong>Muhim:</strong> SAVE machine! Bu reel eng ko'p SAVE oladigan turi. Text aniq, o'qib olinadigan bo'lsin.</p>
+</div>
+`
+},
+18: {
+title: "🏆 Brahim + Kids = MAGIC 🪄👶",
+date: "18-Iyun, Payshanba",
+type: "BRAND",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Kichkina bola (5-6 yosh) Brahim bilan ingliz tilida gapirmoqda. Perfect pronunciation. Bola kuladi. "WAIT — bu bola Termizda yashaydi?! 😱"
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> Bola Brahim bilan dialog: "What's your favorite color?" "Blue! Like the sky!" Bola kulgusi. ADORABLE.</li>
+<li><strong>Kadr 2 (4-10s):</strong> Brahim bolalar bilan o'yin o'ynayapti — "Simon Says" game. Bolalar kulishyapti va ENGLISH gapirmoqda.</li>
+<li><strong>Kadr 3 (10-16s):</strong> English song — bolalar Brahim bilan birga qo'shiq aytmoqda. "Head, shoulders, knees and toes!" Cute choreography.</li>
+<li><strong>Kadr 4 (16-22s):</strong> Bola kameraga: "I love English! Brahim teacher is funny!" Natural, unscripted moment.</li>
+<li><strong>Kadr 5 (22-28s):</strong> Brahim: "Kids learn best when they're HAPPY. No stress. Just fun. And suddenly — they speak English." Smile.</li>
+<li><strong>Kadr 6 (28-33s):</strong> Ota-onalar oynadan qarayapti, tabassum bilan. "5 yoshdan ingliz tili — native teacher bilan." Logo.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>Brahim: "At Elites, kids don't STUDY English — they PLAY in English. They sing, they dance, they laugh. And before you know it — they speak fluently. That's the magic of native teaching."<br>
+Subtitle: "Elites'da bolalar ingliz tilini O'YNAMAYDI — ingliz tilida O'YNAYDI."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "5 yoshdan ingliz tili — native teacher bilan. DM yozing: 'BOLAM' — bepul sinov darsi!"
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 30-35 soniya<br>
+<strong>Audio:</strong> Cheerful kids music, natural laughter, Brahim's warm voice<br>
+<strong>Editing:</strong> Warm tones, natural light, slow-mo kids laughing, hearts/stars effects<br>
+<strong>Muhim:</strong> CUTE FACTOR! Ota-onalar bu videoni ko'rib emotional bo'ladi. Real moments > scripted.</p>
+</div>
+`
+},
+19: {
+title: "🌟 1 KUN ELITES'DA — behind the scenes",
+date: "19-Iyun, Juma",
+type: "TRUST",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Door opening shot. "Hech kim ko'rmagan — ELITES ichidan 👀" Mystery vibe. Door opens to reveal bustling classroom.
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-3s):</strong> Eshik ochiladi — kamera kiradi. "ELITES ichidan — 1 kun." Vlog style begins.</li>
+<li><strong>Kadr 2 (3-8s):</strong> 07:30 — Dilshod keldi, tayyorgarlik. Doskaga yozmoqda. Kofe ichmoqda. "Ertalab 7:30 — kunimiz boshlanadi."</li>
+<li><strong>Kadr 3 (8-14s):</strong> 08:00 — Talabalar kela boshladi. Salomlashish. Energiya. Kulgi. "Good morning! Ready for today?"</li>
+<li><strong>Kadr 4 (14-20s):</strong> Dars — Dilshod o'qityapti. Talabalar faol. Savol-javob. "Bu atmosferani ko'ring — FAOL, JONLI."</li>
+<li><strong>Kadr 5 (20-26s):</strong> Break time — talabalar gaplashmoqda, o'yinlar, speaking practice corridor'da. "Break'da ham ingliz tili!"</li>
+<li><strong>Kadr 6 (26-32s):</strong> Kechqurun — oxirgi dars tugadi. Talabalar ketmoqda. "See you tomorrow!" Dilshod jilmaydi. "Bu bizning har kunimiz."</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Qiziq bo'ldimi? Elites'da har kun SHU muhit. Ertalab 7:30 dan kechqurun 9:00 gacha — ingliz tili yashaydi. Biz faqat o'qitmaymiz — biz MUHIT yaratamiz. Keling, o'zingiz ko'ring."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Bu muhitga qo'shilmoqchimisiz? DM yozing: 'VISIT' — biz sizni 1 kunga taklif qilamiz. BEPUL."
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 30-35 soniya<br>
+<strong>Audio:</strong> Upbeat montage music, real ambient sounds<br>
+<strong>Editing:</strong> Vlog style, timestamps on screen, fast montage, smooth transitions<br>
+<strong>Muhim:</strong> AUTHENTICITY — real unscripted moments. Kamera ko'tarilib yurilsin. "Fly on the wall" effect.</p>
+</div>
+`
+},
+20: {
+title: "📱 STORY DAY — Kids Cute Moments",
+date: "20-Iyun, Shanba",
+type: "STORY",
+boost: null,
+body: `
+<div class="script-section">
+<h4>📱 STORIES REJASI (Shanba — Kids Focus)</h4>
+
+<h4>Story #1 — Cute Kid Moment:</h4>
+<p>Bola Brahim bilan gapirmoqda. Bola noto'g'ri aytadi — lekin SO CUTE. Brahim samimiy reaksiya. ❤️ "Our little stars!"</p>
+
+<h4>Story #2 — Parent Reaction:</h4>
+<p>Ota-ona video review: "Bolam uyga kelib menga ingliz tilida gapirmoqchi bo'layapti! 🥹" Warm testimonial.</p>
+
+<h4>Story #3 — Brahim Funny Moment:</h4>
+<p>Brahim o'zbek so'z o'rganmoqchi — talabalar o'rgatmoqda. Noto'g'ri talaffuz — hamma kuladi 😂 "Even teacher makes mistakes!"</p>
+
+<h4>Story #4 — Class Photo:</h4>
+<p>Kids guruhi group photo. Qo'l silkitmoqda. "Wave to the camera! 👋" Adorable.</p>
+
+<h4>Story #5 — Parent CTA:</h4>
+<p>"Bolangiz uchun eng yaxshi sovg'a — BILIM. 🎁 Kids kursimiz haqida — DM: 'KIDS'"</p>
+
+<div class="cta-box">
+<strong>Maqsad:</strong> Ota-onalar uchun content. Emotional. Shareable. "Men ham bolam uchun shu joydani xohlayman" his qilish.
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Vaqt:</strong> Ertalab 10:00 — ota-onalar ko'radigan vaqt<br>
+<strong>Format:</strong> Cute video clips, warm filter<br>
+<strong>Muhim:</strong> Ota-onalar emotional content'ga reaksiya beradi. Bolalar = engagement machine.</p>
+</div>
+`
+},
+21: {
+title: "📱 STORY DAY — Week Recap & Polls",
+date: "21-Iyun, Yakshanba",
+type: "STORY",
+boost: null,
+body: `
+<div class="script-section">
+<h4>📱 STORIES REJASI (Yakshanba)</h4>
+
+<h4>Story #1 — Week Top Moments:</h4>
+<p>3 ta best moment from the week — quick video compilation. "Bu haftaning TOP 3 momenti! 🔥"</p>
+
+<h4>Story #2 — Engagement Poll:</h4>
+<p>"Qaysi kontent yoqdi? 🗳️"<br>🔘 Dilshod tips 🔘 Brahim + Kids 🔘 Viral skit 🔘 Behind scenes</p>
+
+<h4>Story #3 — Ask Me Anything:</h4>
+<p>"Elites haqida savollaringiz bormi? Yozing! 👇 Hamma savolga javob beramiz."</p>
+
+<h4>Story #4 — Next Week Teaser:</h4>
+<p>"Kelasi hafta: SAT KURSI e'loni! 🚀 + YANA viral skit! Notification on qiling!"</p>
+
+<div class="cta-box">
+<strong>Maqsad:</strong> Hafta yakunlash, audience feedback olish, next week hype, community feel.
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Vaqt:</strong> Kechqurun 19:00-21:00<br>
+<strong>Muhim:</strong> Audience feedback'ini tinglang! Poll natijalari keyingi hafta content'ini shakllantiradi.</p>
+</div>
+`
+},
+22: {
+title: "🏆 SAT tayyorgarlik — Surxondaryoda BIRINCHI! 🚀",
+date: "22-Iyun, Dushanba",
+type: "BRAND",
+boost: "$10 — Reach + Profile Visits — Surxondaryo+Toshkent, 16-25, Study abroad — 7 kun",
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Harvard, MIT, Yale logolari ekranda. "Chet elda o'qimoqchimisiz? IELTS YETARLI EMAS." Dramatic pause. "SAT kerak. Va biz uni Surxondaryoda BIRINCHI bo'lib OCHYAPMIZ."
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> Top university logos flash on screen. Dramatic music. "Chet elda o'qish — orzuingizmi?" Matn bold.</li>
+<li><strong>Kadr 2 (4-10s):</strong> "IELTS yetarli EMAS. Top universitetlar SAT so'raydi. SAT — American standardized test. Math + English."</li>
+<li><strong>Kadr 3 (10-16s):</strong> "Muammo: Surxondaryoda SAT tayyorlovchi BIRORTA ham joy yo'q edi. Toshkentga borishingiz kerak edi." Map animation.</li>
+<li><strong>Kadr 4 (16-22s):</strong> "ENDI — ELITES SAT ochyapti! Surxondaryoda BIRINCHI. Professional materiallar. Experienced teachers."</li>
+<li><strong>Kadr 5 (22-28s):</strong> SAT haqida tez ma'lumot: "SAT 1600 ball. 1400+ = top university. Biz sizni shu darajaga tayyorlaymiz."</li>
+<li><strong>Kadr 6 (28-34s):</strong> "Birinchi guruhga — 30% CHEGIRMA! Faqat 10 ta o'rin! DM: 'SAT' — hoziroq!"</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Chet elda o'qish istaysizmi? IELTS yetarli emas — TOP universitetlar SAT talab qiladi. Muammo — Surxondaryoda SAT prep yo'q edi. ENDI BOR. Elites — Surxondaryoda BIRINCHI SAT tayyorgarlik markazi. Birinchi guruh ochilmoqda. 30% chegirma — faqat dastlabki 10 o'quvchiga!"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "SAT haqida batafsil — DM yozing: 'SAT'. Birinchi guruhga 30% chegirma! Faqat 10 o'rin!"
+</div>
+</div>
+
+<div class="target-box">
+<h4>🎯 TARGETING:</h4>
+<p><strong>Byudjet:</strong> $10 (7 kun — uzunroq run)<br>
+<strong>Objective:</strong> Reach + Profile Visits<br>
+<strong>Audience:</strong> Surxondaryo + Toshkent (SAT interested), 16-25, Study abroad, Universities, American education<br>
+<strong>Placement:</strong> Reels, Explore, Stories</p>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 30-35 soniya<br>
+<strong>Audio:</strong> Modern, techy music — innovation/first-mover vibe<br>
+<strong>Editing:</strong> University logos, map animations, modern graphics, countdown urgency<br>
+<strong>Muhim:</strong> FIRST MOVER messaging — "BIRINCHI" so'zini 3 marta takrorlang. Urgency + Exclusivity.</p>
+</div>
+`
+},
+23: {
+title: "📚 Kuniga 20 so'z yodlash — Dilshod metodi",
+date: "23-Iyun, Seshanba",
+type: "EDU",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Dilshod: "Men IELTS tayyorlanayotganda kuniga 50 ta so'z yodlardim. Impossible deb o'ylaysizmi? Bu 4 ta qadamda HAMMA qila oladi."
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> Dilshod kitob/flashcard ko'rsatadi. "Kuniga 20 so'z. 1 oyda — 600 ta yangi so'z. Qanday?"</li>
+<li><strong>Kadr 2 (4-10s):</strong> QADAM 1 — CHUNKING: "20 so'zni 4 ta guruhga bo'ling. 5-5-5-5. Bir temada." Visual: so'zlar guruhlarga bo'linadi.</li>
+<li><strong>Kadr 3 (10-16s):</strong> QADAM 2 — ASSOCIATION: "Har bir so'zga RASM bog'lang. UBIQUITOUS = hammayoqda = kiyim yuvilgan arqon — HAMMA YOQDA osilyapti!" Kulguli rasm.</li>
+<li><strong>Kadr 4 (16-22s):</strong> QADAM 3 — SENTENCES: "Har bir so'z bilan GAP tuzing. O'zingiz ishlatmaguningizcha — yodda QOLMAYDI."</li>
+<li><strong>Kadr 5 (22-28s):</strong> QADAM 4 — SPACED REPETITION: "1 kun — 3 kun — 7 kun — 30 kun. SHU oraliqda takrorlang. Ilmiy isbotlangan."</li>
+<li><strong>Kadr 6 (28-33s):</strong> "30 kunlik vocabulary CHALLENGE! Sizga tayyor ro'yxat beramiz. DM: 'VOCAB'!" Logo.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Vocabulary — IELTS'ning kaliti. Men kuniga 50 ta so'z yodlardim. Sizga 20 ta yetarli. 4 qadam: Chunking — guruhlang. Association — rasm bog'lang. Sentences — gap tuzing. Spaced repetition — takrorlang. 30 kunda — 600 yangi so'z. Challenge boshlaysizmi?"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "30 kunlik vocabulary challenge! DM yozing: 'VOCAB' — sizga tayyor word list yuboramiz. BEPUL! 📖"
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 30-35 soniya<br>
+<strong>Audio:</strong> Study-friendly music, calm but confident<br>
+<strong>Editing:</strong> Doodle-style graphics, visual memory techniques, step-by-step animations<br>
+<strong>Muhim:</strong> ACTIONABLE — odamlar shu zahoti boshlashi mumkin. DM orqali word list berish = lead magnet!</p>
+</div>
+`
+},
+24: {
+title: "🎭 O'zbek bola chet el universitetida 😂",
+date: "24-Iyun, Chorshanba",
+type: "VIRAL",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+"O'zbek bola Harvard'da BIRINCHI kuni:" — bola xurjun ko'tarib university gate oldida turibdi. Osh pishirayotgan video call uyga 😂
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> "BIRINCHI KUN:" — Uzbek student campus'da. "Excuse me, where is library?" — confidence. Lekin... 😂</li>
+<li><strong>Kadr 2 (4-9s):</strong> Cafeteria: "What is THIS?" pointing at food. "Where is osh? Non bormi?" 😂 Cultural shock.</li>
+<li><strong>Kadr 3 (9-14s):</strong> Lecture: Professor speaks fast. Bola panic. "Wait, what chapter?!" Qo'shni: "Chapter 7!" Bola: "7?! Men hali 2-daman!" 😂</li>
+<li><strong>Kadr 4 (14-19s):</strong> Video call uyga: "Oyi, men yaxshiman... (yig'lamsiradi) ... bu yerda non 5 dollar ekan!" 😂</li>
+<li><strong>Kadr 5 (19-24s):</strong> 1 OY KEYIN: Same student — CONFIDENT, friends bilan, English fluent, presentation qilmoqda. "Adaptation complete." 💪</li>
+<li><strong>Kadr 6 (24-28s):</strong> "Elites'da tayyorlangan bola — hech qayerda QIYNALMAYDI. Chunki biz tayyorlaymiz." Logo.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>Day 1: "Oyi, bu nima bu? 😅 Non qani?!"<br>
+1 month later: "Hey guys, wanna grab some coffee and study for midterms?"<br>
+"Elites'da tayyorgarlik = chet elda moslashuvchanlik!"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Tag qil chet elda o'qimoqchi do'stingni! 😂 Ular bu videoni ko'rishi KERAK! DM: 'SAT' yoki 'IELTS'"
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 25-30 soniya<br>
+<strong>Audio:</strong> Trending comedy sound + inspirational transition<br>
+<strong>Props:</strong> Xurjun, fake university gate, books, laptop<br>
+<strong>Muhim:</strong> RELATABLE humor — "chet elga ketadiganlar" barchasi shu hisni biladi. TAG + SHARE!</p>
+</div>
+`
+},
+25: {
+title: "🌟 2-FILIAL TOUR: Biz o'smoqdamiz! 📍",
+date: "25-Iyun, Payshanba",
+type: "TRUST",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+"1 yil oldin — 1 ta xona." Eski rasm. "Bugun — 2 ta FILIAL. 700+ o'quvchi." Yangi bino. "Va bu faqat BOSHLANISHI." 🚀
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> Eski rasm/video — birinchi kichik sinf. "Biz bu yerdan boshladik." Then YANGI 2-filial wide shot.</li>
+<li><strong>Kadr 2 (4-10s):</strong> 2-filial TOUR boshlanadi: Kirish, reception, zamonaviy dizayn. "Bu bizning YANGI uyimiz."</li>
+<li><strong>Kadr 3 (10-16s):</strong> Sinfxonalar: Keng, yorug', zamonaviy doska, comfortable o'rindiqlar. "Har bir sinf — 15 o'quvchi MAX."</li>
+<li><strong>Kadr 4 (16-22s):</strong> Talabalar shu yerda o'qiyapti. Happy faces. Dilshod dars o'tayapti. Real atmosphere.</li>
+<li><strong>Kadr 5 (22-28s):</strong> Growth montage: "1 filial → 2 filial. 100 → 700 o'quvchi. 1 teacher → 10 teacher. O'SISH to'xtamaydi."</li>
+<li><strong>Kadr 6 (28-33s):</strong> "2-filialga eng yaqin SIZ bo'lishingiz mumkin. Manzil uchun DM: 'MANZIL'" Map animation. Logo.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"1 yil oldin bitta kichik xona edi. Endi — 2 ta zamonaviy filial. 700 dan ortiq o'quvchi. 10 ta professional o'qituvchi. Nima uchun o'sayapmiz? Chunki NATIJA beramiz. Natija — eng yaxshi reklama. Bu yo'l davom etadi. 3-filial? Tez orada..."</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "2-filialga eng yaqin SIZ bo'lishingiz mumkin! DM yozing: 'MANZIL' — joylashuvni yuboramiz. Yoki bio link."
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 30-35 soniya<br>
+<strong>Audio:</strong> Triumphant, growth-oriented music<br>
+<strong>Editing:</strong> Smooth walking tour, before/after, growth numbers animated<br>
+<strong>Muhim:</strong> GROWTH NARRATIVE — "o'syapmiz" = "yaxshi" degan ishora. Social proof through expansion.</p>
+</div>
+`
+},
+26: {
+title: "💰 Iyul INTENSIV — Early Bird 25% chegirma!",
+date: "26-Iyun, Juma",
+type: "SALES",
+boost: "$15 — Messages (DM) — Surxondaryo, 16-30, English learning — 5 kun",
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Timer ticking sound. "Iyul INTENSIV guruhlari ochilmoqda." Flash. "Hozir yozilsangiz — 25% CHEGIRMA." Katta "25%" matn. "Faqat 30-iyungacha!"
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> Countdown timer animation. "IYUL INTENSIV". Urgent music. "25% OFF — Early Bird!"</li>
+<li><strong>Kadr 2 (4-10s):</strong> Kurslar ro'yxati: "BEGINNER → IELTS → KIDS → SAT. Hammasi uchun yangi guruhlar!"</li>
+<li><strong>Kadr 3 (10-16s):</strong> Narx taqqoslash: "Normal: 450,000 → Early Bird: 337,500 so'm! 112,500 tejaysiz!"</li>
+<li><strong>Kadr 4 (16-22s):</strong> Quick testimonial clips: 3 ta talaba "Elites'ni tavsiya qilaman!" — 2 soniyadan.</li>
+<li><strong>Kadr 5 (22-26s):</strong> SCARCITY: "Har guruhda faqat 15 o'rin! 8 tasi ALLAQACHON band!" Numbers animation.</li>
+<li><strong>Kadr 6 (26-30s):</strong> "DM: 'IYUL'. Bio link. HOZIROQ! 30-iyundan keyin — bu narx YO'Q." Urgency!</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Iyul oyida YANGI guruhlar ochilmoqda! Beginner, IELTS, Kids, SAT — hammasi uchun. Hozir yozilsangiz — 25 foiz chegirma! Normal 450 ming — Early Bird faqat 337 ming! LEKIN: faqat 30-iyungacha. Va har guruhda 15 o'rin — 8 tasi allaqachon band! DM yozing 'IYUL' — HOZIROQ!"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "DM yozing: 'IYUL' yoki bio linkdan ro'yxatdan o'ting! Faqat 30-iyungacha. O'rinlar CHEKLANGAN!"
+</div>
+</div>
+
+<div class="target-box">
+<h4>🎯 TARGETING:</h4>
+<p><strong>Byudjet:</strong> $15 (5 kun — eng katta boost)<br>
+<strong>Objective:</strong> Messages (DM'ga yo'naltirish)<br>
+<strong>Audience:</strong> Surxondaryo, 16-30, English learning, IELTS, Education<br>
+<strong>Placement:</strong> Reels, Stories, Explore<br>
+<strong>Note:</strong> Eng muhim conversion reel — byudjet max!</p>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 27-32 soniya<br>
+<strong>Audio:</strong> Urgent, countdown music, ticking clock<br>
+<strong>Editing:</strong> Timer graphics, price comparison, scarcity numbers, fast pace<br>
+<strong>Muhim:</strong> URGENCY + SCARCITY = ACTION. Deadline aniq ko'rinsin. Narx farqi vizual bo'lsin.</p>
+</div>
+`
+},
+27: {
+title: "📱 STORY DAY — Countdown & Urgency",
+date: "27-Iyun, Shanba",
+type: "STORY",
+boost: null,
+body: `
+<div class="script-section">
+<h4>📱 STORIES REJASI (Shanba — Sales Support)</h4>
+
+<h4>Story #1 — Countdown Sticker:</h4>
+<p>"25% chegirmaga faqat 3 KUN QOLDI! ⏰" Countdown sticker to June 30. Urgency.</p>
+
+<h4>Story #2 — DM Screenshots (blurred):</h4>
+<p>DM'lar screenshot (ismlar blurred): "Ko'ryapsizmi? Odamlar YOZILYAPTI! Siz ham kech qolmang!" Social proof.</p>
+
+<h4>Story #3 — Spots Remaining:</h4>
+<p>"BEGINNER guruh: 4 ta o'rin qoldi! ⚠️<br>IELTS guruh: 6 ta o'rin qoldi!<br>KIDS: 3 ta o'rin! 😱<br>SAT: 8 ta o'rin."</p>
+
+<h4>Story #4 — Quick Testimonial:</h4>
+<p>30-soniya talaba video: "Men Elites'ga kelganim eng to'g'ri qarorim edi. Sizga ham tavsiya qilaman!" + swipe up link</p>
+
+<h4>Story #5 — Last Chance Reminder:</h4>
+<p>"Yakshanba — oxirgi kun o'ylab ko'rish uchun. Dushanba — HARAKAT QILISH uchun! DM: 'IYUL'"</p>
+
+<div class="cta-box">
+<strong>Maqsad:</strong> Sales support — reelni ko'rmaganlar uchun story'da urgency. FOMO + Social proof.
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Vaqt:</strong> Har 3 soatda yangi story — to'liq kun urgency<br>
+<strong>Design:</strong> Red urgency colors, countdown, bold numbers<br>
+<strong>Muhim:</strong> Bu hafta SALES hafta — har bir story conversion'ga yo'naltirilgan.</p>
+</div>
+`
+},
+28: {
+title: "📱 STORY DAY — Testimonials & Motivation",
+date: "28-Iyun, Yakshanba",
+type: "STORY",
+boost: null,
+body: `
+<div class="script-section">
+<h4>📱 STORIES REJASI (Yakshanba)</h4>
+
+<h4>Story #1 — Testimonial Repost:</h4>
+<p>O'quvchilar story'larda Elites'ni tag qilgan — REPOST! "Talabalarimiz nima deydi 👇" 3-4 ta repost.</p>
+
+<h4>Story #2 — Motivation Quote:</h4>
+<p>"Har bir katta natija — kichik QAROR'dan boshlanadi. Sizning qororingiz — BUGUN." — Dilshod Ismatov</p>
+
+<h4>Story #3 — Week Recap:</h4>
+<p>"Bu hafta natijalari:<br>✅ SAT kursi e'lon qilindi<br>✅ 50+ DM keldi<br>✅ 20+ yangi ro'yxatdan o'tdi<br>✅ Early bird 3 kunga uzaytirildi"</p>
+
+<h4>Story #4 — Tomorrow Preview:</h4>
+<p>"Ertaga: Dilshod LIVE e'loni! 📺 IELTS haqida BARCHA savollaringizga javob! Notification ON qiling!"</p>
+
+<div class="cta-box">
+<strong>Maqsad:</strong> Social proof (testimonials), anticipation (LIVE), weekly transparency.
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Vaqt:</strong> Kechqurun — relaxed Sunday vibe<br>
+<strong>Muhim:</strong> Testimonial repost = bepul social proof. Tag qilgan har bir talabani repost qiling!</p>
+</div>
+`
+},
+29: {
+title: "🏆 Dilshod'ga SAVOL BERING — LIVE e'lon!",
+date: "29-Iyun, Dushanba",
+type: "BRAND",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+Dilshod kameraga: "Siz so'radingiz — biz JAVOB beramiz!" Matn: "LIVE EFIR 📺" Bold. "Bu PAYSHANBA. 20:00. Dilshod Ismatov."
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-3s):</strong> Dilshod excited: "LIVE efir! Birinchi marta!" Bold announcement energy.</li>
+<li><strong>Kadr 2 (3-8s):</strong> "IELTS haqida HAMMA savollaringizga javob beraman. Reading. Listening. Writing. Speaking. HAMMA NARSA."</li>
+<li><strong>Kadr 3 (8-14s):</strong> DM screenshots (blurred): "Ko'p savol keldi: 'Qancha vaqt kerak?', '6.5 qiyin mi?', 'Qayerdan boshlash kerak?'" — Shu savollarga LIVE'da javob!</li>
+<li><strong>Kadr 4 (14-20s):</strong> "BONUS: LIVE oxirida — maxfiy IELTS resource beraman. Faqat live ko'rganlarga!" Gift box graphic.</li>
+<li><strong>Kadr 5 (20-26s):</strong> "QACHON: Bu Payshanba, 20:00 (kechqurun). Notification ON qiling! Reminder set qiling!"</li>
+<li><strong>Kadr 6 (26-30s):</strong> "Savollaringizni HOZIRDAN yozing! Comment yoki DM. Men BARCHASIGA javob beraman." Logo + countdown.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Assalomu alaykum! Ko'p savollar keldi — men BARCHASIGA javob bermoqchiman. Shuning uchun bu PAYSHANBA soat 20:00 da LIVE chiqaman! IELTS haqida — har qanday savol. Bonus: live oxirida maxfiy resource beraman — faqat ko'rganlarga! Notification on qiling va savollaringizni hozirdan yozing!"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Savollaringizni hozirdan yozing! Comment yoki DM. Payshanba 20:00 — LIVE! 📺 Notification ON!"
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 27-32 soniya<br>
+<strong>Audio:</strong> Hype/announcement music, energetic<br>
+<strong>Editing:</strong> Bold typography, countdown graphic, gift box animation, excitement<br>
+<strong>Muhim:</strong> ANTICIPATION yarating! "Bonus" — LIVE'ga kelish uchun sabab. Savollar comment'da = engagement boost.</p>
+</div>
+`
+},
+30: {
+title: "🌟 IYUN YAKUNI: Raqamlar gapiradi 📊",
+date: "30-Iyun, Seshanba",
+type: "TRUST",
+boost: null,
+body: `
+<div class="script-section">
+<h4>🎬 CINEMATIC SCRIPT</h4>
+
+<div class="hook-box">
+<strong>HOOK (0-3 soniya):</strong><br>
+"Bu oyda ELITES'da nima bo'ldi?" Bold matn. Numbers flying on screen. "RAQAMLAR gapiradi. 📊" Montage boshlanadi.
+</div>
+
+<h4>📋 KADRLAR REJASI:</h4>
+<ol>
+<li><strong>Kadr 1 (0-4s):</strong> "IYUN 2026 — NATIJALAR" title card. Dramatic reveal. Stats start appearing.</li>
+<li><strong>Kadr 2 (4-10s):</strong> Stats animated: "Yangi o'quvchilar: 85+ ✅ | Jami follower o'sishi: +1,500 ✅ | Bepul darslar: 3 ta ✅"</li>
+<li><strong>Kadr 3 (10-16s):</strong> Best moments montage: Dilshod darsda, Brahim bolalar bilan, open day, SAT e'lon, viral skit clips.</li>
+<li><strong>Kadr 4 (16-22s):</strong> "Top natijalar: 2 ta o'quvchi 6.5 oldi! 🎉 1 ta o'quvchi 7.0! 🏆 SAT guruh ochildi!"</li>
+<li><strong>Kadr 5 (22-28s):</strong> Team photo — barcha o'qituvchilar birga. "Bu jamoa uchun RAHMAT! 💛"</li>
+<li><strong>Kadr 6 (28-34s):</strong> Dilshod kameraga: "Iyul'da yanada KUCHLI bo'lamiz. Yangi guruhlar. Yangi natijalar. Qo'shilasizmi?" Logo + CTA.</li>
+</ol>
+
+<h4>🗣️ VOICEOVER/DIALOG:</h4>
+<p>"Iyun oyi tugadi. Nima erishdik? 85 ta yangi o'quvchi. 1500 ta yangi follower. 3 ta bepul open day. 2 ta o'quvchi 6.5 oldi. 1 ta — 7.0! SAT guruh ochildi. Bu faqat 1 oy! Iyul'da yanada kuchliroq bo'lamiz. Qo'shilasizmi? DM: 'IYUL'!"</p>
+
+<div class="cta-box">
+<strong>CTA:</strong> "Iyul'da yanada kuchli bo'lamiz! Qo'shilasizmi? DM yozing: 'IYUL' — yangi guruhlar boshlanmoqda!"
+</div>
+</div>
+
+<div class="tech-box">
+<h4>📌 TEXNIK MASLAHATLAR:</h4>
+<p><strong>Davomiylik:</strong> 30-35 soniya<br>
+<strong>Audio:</strong> Celebration music, triumphant, team vibe<br>
+<strong>Editing:</strong> Stats animations, confetti, montage of best clips, team shot end frame<br>
+<strong>Muhim:</strong> CELEBRATION + TRANSPARENCY = trust. Raqamlar ko'rsatish — professionalism. Oy yakunlash — tradition qiling!</p>
+</div>
+`
+}
+};
+
+function showScript(day) {
+    const data = scripts[day];
+    if (!data) return;
+    
+    let boostHtml = '';
+    if (data.boost) {
+        boostHtml = `<div class="target-box" style="margin-top:10px"><strong>💰 BOOST:</strong> ${data.boost}</div>`;
+    }
+    
+    const typeColors = {
+        'BRAND': 'badge-gold',
+        'EDU': 'badge-blue',
+        'TRUST': 'badge-green',
+        'VIRAL': 'badge-purple',
+        'SALES': 'badge-orange',
+        'STORY': 'badge-pink'
+    };
+    
+    const badgeClass = typeColors[data.type] || 'badge-gold';
+    
+    document.getElementById('modalContent').innerHTML = `
+        <h2>${data.title}</h2>
+        <div class="meta">
+            <span class="badge ${badgeClass}">${data.type}</span>
+            <span class="badge badge-gold">📅 ${data.date}</span>
+            <span class="badge badge-green">KUN ${day}/30</span>
+        </div>
+        ${boostHtml}
+        ${data.body}
+    `;
+    document.getElementById('modalOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeM() {
+    document.getElementById('modalOverlay').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeM();
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+
+// Active nav highlight on scroll
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+        }
+    });
+});
+</script>
+</body>
+</html>
