@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELITES — Iyun 2026 Kontent Kalendar</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fff;color:#1e293b;line-height:1.6;padding:20px}
+.container{max-width:1200px;margin:0 auto}
+header{text-align:center;padding:40px 20px;margin-bottom:30px}
+header h1{font-size:2.5rem;color:#1e40af;margin-bottom:8px;font-weight:700}
+header .subtitle{font-size:1.1rem;color:#64748b;margin-bottom:30px}
+.stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.stat-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 24px;text-align:center;min-width:140px}
+.stat-item .number{font-size:1.5rem;font-weight:700;color:#1e40af}
+.stat-item .label{font-size:0.85rem;color:#64748b}
+.weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:8px}
+.weekday{text-align:center;font-weight:600;font-size:0.85rem;color:#64748b;padding:8px}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:40px}
+.day-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:12px;cursor:pointer;transition:all .2s;min-height:110px;position:relative}
+.day-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.day-card.empty{background:transparent;border:none;cursor:default}
+.day-card.empty:hover{transform:none;box-shadow:none}
+.day-num{font-size:1.2rem;font-weight:700;margin-bottom:4px}
+.day-type{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:2px 6px;border-radius:4px;display:inline-block;margin-bottom:4px}
+.day-title{font-size:0.75rem;color:#475569;line-height:1.3}
+.boost-badge{position:absolute;top:8px;right:8px;background:#f59e0b;color:#fff;font-size:0.6rem;font-weight:700;padding:2px 5px;border-radius:4px}
+.type-brand{background:#dbeafe;color:#1e40af}
+.type-edu{background:#d1fae5;color:#059669}
+.type-trust{background:#fef3c7;color:#d97706}
+.type-viral{background:#ede9fe;color:#7c3aed}
+.type-sales{background:#fee2e2;color:#dc2626}
+.type-story{background:#f3f4f6;color:#6b7280}
+@media(max-width:768px){
+.calendar{grid-template-columns:repeat(2,1fr)}
+.weekdays{display:none}
+header h1{font-size:1.8rem}
+.stat-item{min-width:100px;padding:12px 16px}
+}
+@media(max-width:480px){
+.calendar{grid-template-columns:1fr}
+body{padding:10px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>ELITES Learning Center</h1>
+<p class="subtitle">Iyun 2026 — Kontent Kalendar | @elites_learning_center</p>
+<div class="stats">
+<div class="stat-item"><div class="number">30</div><div class="label">Kun</div></div>
+<div class="stat-item"><div class="number">22</div><div class="label">Reels</div></div>
+<div class="stat-item"><div class="number">8</div><div class="label">Story kunlar</div></div>
+<div class="stat-item"><div class="number">$55</div><div class="label">Boost byudjeti</div></div>
+<div class="stat-item"><div class="number">5,443</div><div class="label">Followers</div></div>
+</div>
+</header>
+<div class="weekdays"><div class="weekday">Dush</div><div class="weekday">Sesh</div><div class="weekday">Chor</div><div class="weekday">Pay</div><div class="weekday">Jum</div><div class="weekday">Shan</div><div class="weekday">Yak</div></div>
+<div class="calendar" id="calendar"></div>
+</div>
+<div id="modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;overflow-y:auto;padding:20px" onclick="if(event.target===this)closeModal()">
+<div id="modal" style="background:#fff;max-width:700px;margin:40px auto;border-radius:16px;padding:32px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.15)">
+<button onclick="closeModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#64748b">&times;</button>
+<div id="modal-content"></div>
+</div>
+</div>
+<script>
+var days = [
+{day:1,type:"brand",title:"Surxondaryoning eng kuchli ingliz tili markazi",boost:"$10",hook:"\"700 ta odam bitta markazni tanladi. Nima uchun?\"",content:"Montage - bir nechta sinfxonalar, turli o\u2018qituvchilar, mashg\u2018ulotdagi talabalar, natijalar taxtasi. Voiceover: \"30+ pedagog. 700+ o\u2018quvchi. 2 filial. IELTS 9.0 natija. Bu \u2014 ELITES.\"",cta:"\"Biz haqimizda batafsil \u2014 DM: ELITES\"",caption:"700+ odam bitta markazni tanladi. Nima uchun? \ud83c\udfc6\n\n30+ pedagog. 2 filial. IELTS 9.0 natija. 1 maqsad \u2014 SIZNING natijangiz.\\n\\nSurxondaryodagi eng kuchli ingliz tili markazi \u2014 ELITES.\\n\\n#ELITES #Termiz #IELTS #Surxondaryo #InglizTili #EnglishCenter",mobilograf:"Wide montage shots, tracking through corridors, bright lighting, upbeat music, text overlays for stats"},
+{day:2,type:"edu",title:"Examiner birinchi 30 sekundda 3 narsaga qaraydi",boost:null,hook:"\"Examiner sizni baholashni OLDIN boshlaydi. Qayerga qaraydi?\"",content:"O\u2018qituvchi doskada. 3 mezon: 1) Fluency (to\u2018xtab-to\u2018xtab gapirasizmi?), 2) Vocabulary (good o\u2018rniga remarkable, outstanding), 3) Coherence (firstly, moreover, in conclusion). Har biri tezkor misol bilan.",cta:"\"Save qiling \u2014 imtihonda esga tushadi!\"",caption:"Examiner birinchi 30 sekundda SIZNI baholaydi \ud83d\udc40\\n\\n3 mezon:\\n\u2705 Fluency\\n\u2705 Vocabulary\\n\u2705 Coherence\\n\\nSave qiling! \ud83d\udccc\\n\\n#IELTS #Speaking #ExamTips #ELITES #Termiz #Surxondaryo",mobilograf:"Medium shot, teacher at whiteboard, tripod, ring light, text overlays for each criterion"},
+{day:3,type:"brand",title:"30+ o\u2018qituvchi. Hammasi PEDAGOG diplomli.",boost:"$7",hook:"\"Boshqa joylarda 2-kurs talaba dars beradi. Bizda esa...\"",content:"Quick montage - 8-10 o\u2018qituvchi har biri kameraga 2 sekund qo\u2018l silkiydi/iljayadi. Ism + malaka ko\u2018rsatiladi. Yakunida: \"Farq \u2014 O\u2018QITUVCHIDA. ELITES.\"",cta:"\"Professional teacherlardan o\u2018qing \u2014 DM: INFO\"",caption:"2-kurs talaba emas. PROFESSIONAL PEDAGOG. \u2705\\n\\n30+ o\u2018qituvchi \u2014 har biri diplom, tajriba va natijaga ega.\\n\\n#ELITES #Teachers #Pedagog #Termiz #QualityEducation #Surxondaryo",mobilograf:"Close-up portraits, same framing each teacher, quick cuts, corporate music, name lower thirds"},
+{day:4,type:"trust",title:"4.0 dan 7.0 ga \u2014 5 oyda",boost:null,hook:"\"5 oy oldin inglizcha gapira olmasdim. Hozir IELTS 7.0.\"",content:"Haqiqiy o\u2018quvchi testimonial. Eski natija (4.0) \u2192 nima yordam berdi (tizim, kichik guruhlar) \u2192 yangi natija (7.0) sertifikat bilan.",cta:"\"Siz ham tayyor bo\u2018ling \u2014 DM: BOSHLASH\"",caption:"4.0 \u2192 7.0 \u2728 5 oyda.\\n\\nBu magiya emas \u2014 bu TIZIM.\\n\\nKeyingi navbat \u2014 sizda! \ud83d\udcaa\\n\\n#IELTSResult #Success #ELITES #Termiz #Surxondaryo #StudyEnglish",mobilograf:"Medium close-up student, natural light, handheld for authenticity, certificate zoom insert"},
+{day:5,type:"viral",title:"Ingliz bilmaganlar vs ELITES o\u2018quvchilari",boost:null,hook:"\"'Tell me about yourself' \u2014 2 xil javob:\"",content:"Split/comparison. Yomon javob (duduqlanish, xatolar) vs Zo\u2018r javob (ravon, ishonchli). Kulgili + o\u2018rgatuvchi. Relatable.",cta:"\"Qaysi tarafdasiz? \ud83d\ude02 Commentda yozing!\"",caption:"'Tell me about yourself'\\n\\n\u274c vs \u2705\\n\\nQaysi tarafdasiz? \ud83d\ude02\\n\\n#EnglishFunny #IELTS #ELITES #Termiz #Surxondaryo #LearnEnglish",mobilograf:"Same framing both people, statik, split screen in edit, comedy sound effects"},
+{day:6,type:"story",title:"Hafta oxiri Stories #1",boost:null,stories:["Grammar quiz \u2014 Quiz sticker bilan: 'Which is correct? She have/has a book?'","Poll: 'Qaysi skill eng qiyin? \ud83e\udd14' \u2014 Speaking / Writing / Reading / Listening","O\u2018qituvchi kulgili behind-scenes moment \u2014 staffroomda","Countdown sticker: Dushanba yangi video! \u23f0","Motivatsiya quote ELITES branding bilan: 'Your English level today is not your English level forever.'"]},
+{day:7,type:"story",title:"Hafta oxiri Stories #2",boost:null,stories:["Haftaning eng yaxshi Reel repost","O\u2018quvchi shoutout \u2014 eng aktiv talaba","Behind-scenes: mobilograf ishlayapti","Teaser: 'Kelasi hafta \u2014 9.0 TIZIM haqida...' \ud83d\udc40","Sunday English tip: 'Don\u2019t say VERY GOOD, say EXCELLENT'"]},
+{day:8,type:"brand",title:"IELTS 9.0 \u2014 bu 1 kishi emas, bu TIZIM",boost:"$8",hook:"\"Surxondaryoda 9.0 natija bor. Lekin bu 1 kishining ishi emas...\"",content:"TIZIMNI ko\u2018rsating: metodologiya \u2192 kichik guruhlar \u2192 testing \u2192 feedback \u2192 NATIJA (9.0). Bir nechta o\u2018qituvchi bir xil usullardan foydalanadi. 9.0 = tizim isboti, shaxsiy brend emas.",cta:"\"Shu tizimda o\u2018qing \u2014 DM: TIZIM\"",caption:"IELTS 9.0 \ud83c\udfc6\\n\\nBu 1 kishi emas. Bu \u2014 TIZIM.\\n\\n\u2705 Professional metodologiya\\n\u2705 Kichik guruhlar\\n\u2705 Haftalik nazorat\\n\u2705 Individual feedback\\n\\nNatija \u2014 TIZIM.\\n\\n#IELTS9 #System #ELITES #Termiz #Surxondaryo #BestCenter",mobilograf:"Wide classroom shots, tracking through center, bright/clean, animated flowchart in post, inspiring music"},
+{day:9,type:"edu",title:"Writing\u2018da 6.0 dan 7.0 ga \u2014 1 ta sir",boost:null,hook:"\"Writing\u2018da ko\u2018pchilik 1 xato qiladi. Tuzatsangiz \u2014 ball oshadi.\"",content:"SIR = MISOLLAR. Zaif paragraf (misolsiz) vs kuchli paragraf (aniq misol bilan). Shablon: Opinion + Because + For example + Therefore.",cta:"\"Template PDF \u2014 DM: WRITING\"",caption:"Writing 6.0 da qolyapsizmi? \ud83d\udcdd\\n\\n1 ta sir \u2014 MISOL keltiring!\\n\\nTemplate:\\n\ud83d\udd39 Opinion + Because + For example + Therefore\\n\\nDM: WRITING \u2014 PDF yuboramiz\\n\\n#IELTSWriting #Tips #ELITES #Termiz #Surxondaryo #BandScore7",mobilograf:"Medium shot teacher + whiteboard, statik, zoom on examples, text highlighting red/green"},
+{day:10,type:"trust",title:"Ota-onalar bizga nima uchun ishonadi?",boost:null,hook:"\"700+ ota-ona bolalarini bizga topshirgan. Nima uchun?\"",content:"3 ta ota-ona kliplari (har biri 5 sek, UGC): 'Professional', 'Natija ko\u2018ryapmiz', 'Bolam o\u2018zgardi'. Keyin ko\u2018rsating: diplomlar, kichik guruhlar, progress tizimi.",cta:"\"Farzandingiz kelajagi \u2014 DM: BOLAM\"",caption:"700+ ota-ona ishonchi \ud83d\ude4f\\n\\n\u2705 Professional pedagog\\n\u2705 Kichik guruhlar\\n\u2705 Haftalik progress report\\n\\nFarzandingizga eng yaxshisini bering.\\n\\n#Parents #ELITES #Kids #Termiz #Surxondaryo #ChildEducation",mobilograf:"Parent UGC (their phones) + center wide shots, warm tones, soft music"},
+{day:11,type:"edu",title:"So\u2018z yodlashning ilmiy usuli",boost:null,hook:"\"Kuniga 30 ta so\u2018z yodlash mumkin. Miya bilan ishlash kerak.\"",content:"Spaced Repetition tushuntiriladi: Forgetting Curve \u2192 yechim (Day 1\u21923\u21927\u219230). 5 daqiqalik kunlik mashq. Amaliy.",cta:"\"30 kunlik so\u2018z ro\u2018yxati \u2014 DM: SOZLAR\"",caption:"Kuniga 30 so\u2018z = oyiga 900! \ud83e\udde0\\n\\nSpaced Repetition:\\n\ud83d\udcc5 Day 1 \u2192 Day 3 \u2192 Day 7 \u2192 Day 30\\n\\nDM: SOZLAR \u2014 tayyor list\\n\\n#Vocabulary #StudyHacks #IELTS #ELITES #Termiz #Surxondaryo",mobilograf:"Teacher + whiteboard/visual, statik, calendar graphic overlay, timer sounds in edit"},
+{day:12,type:"sales",title:"Bepul sinov darsi \u2014 bu juma",boost:null,hook:"\"Bitta darsimizga keling. Bepul. Yoqmasa \u2014 hech narsa to\u2018lamaysiz.\"",content:"Energik taklif. Haqiqiy darslardan klipler. Hech qanday majburiyat. 15 ta joy cheklangan. Shu juma 15:00.",cta:"\"Joyingizni band qiling \u2014 DM: SINOV\"",caption:"\ud83c\udd93 BEPUL SINOV DARSI \u2014 bu JUMA!\\n\\n\u2705 Hech qanday majburiyat\\n\u2705 Max 15 kishi\\n\u2705 Real dars tajribasi\\n\\nDM: SINOV\\n\\n#FreeTrial #ELITES #Termiz #LearnEnglish #Surxondaryo #FreeClass",mobilograf:"Dynamic handheld, classroom energy, bright/warm, upbeat music, countdown graphic"},
+{day:13,type:"story",title:"Open Day Stories",boost:null,stories:["Open day guruh surati: '18 kishi keldi!' \ud83c\udf89","O\u2018quvchilar reaksiyalari: 'Zo\u2018r ekan!' \ud83d\ude0d","Statistika: '18 keldi, 12 yozildi!' \ud83d\udcca","Kulgili dars momenti \ud83d\ude02","'Keyingisi kelasi Juma!' + countdown sticker \u23f0"]},
+{day:14,type:"story",title:"Yakshanba Stories",boost:null,stories:["This or That poll: IELTS vs General English","Hafta statistikasi screenshot \ud83d\udcca","Relatable English learner meme \ud83d\ude02","Teaser: 'Kelasi hafta \u2014 NATIVE SPEAKER!' \ud83c\uddf2\ud83c\udde6","Motivatsiya quote + ELITES branding"]},
+{day:15,type:"brand",title:"Native speaker \u2014 Termizda. Ha, haqiqiy.",boost:"$5",hook:"\"Termizda native English speaker borligini bilasizmi?\"",content:"Brahim inglizcha gapiradi (5 sek) \u2192 o\u2018zbekcha salomlashadi \u2192 bolalar bilan sinfxona, inglizcha javob berishadi \u2192 qiziqarli o\u2018rganish momentlari. Bu ELITES TAQDIM ETADI.",cta:"\"Native speaker bilan dars \u2014 DM: NATIVE\"",caption:"Native English speaker \ud83c\uddf2\ud83c\udde6 \u2014 Termizda, ELITES'da!\\n\\nHaqiqiy accent. Real muhit. Bolalar va kattalar uchun.\\n\\nFaqat ELITES'da. \ud83d\udc99\\n\\n#NativeSpeaker #ELITES #Termiz #Speaking #Surxondaryo #KidsEnglish",mobilograf:"Handheld in classroom, natural, warm light, subtitles for English parts, cheerful music"},
+{day:16,type:"edu",title:"Listening\u2018da vaqt yetmaydi? 4 texnika",boost:null,hook:"\"40 savol, 30 minut. Vaqt yetmaydi? Chunki...\"",content:"4 texnika: 1) Savollarni audio OLDIN o\u2018qing, 2) Kalit so\u2018zlarni chizing, 3) Javob turini taxmin qiling, 4) Aniq so\u2018z emas, sinonimlarni eshiting.",cta:"\"Listening kursimiz \u2014 DM: LISTEN\"",caption:"IELTS Listening vaqt yetmaydi? \u23f1\ufe0f\\n\\n4 texnika:\\n1\ufe0f\u20e3 Savolni OLDIN o\u2018qi\\n2\ufe0f\u20e3 Kalit so\u2018zlar\\n3\ufe0f\u20e3 Javob turini taxmin qil\\n4\ufe0f\u20e3 Sinonim eshit\\n\\nSave! \ud83d\udccc\\n\\n#Listening #IELTS #Tips #ELITES #Termiz #Surxondaryo",mobilograf:"Medium shot, teacher + screen/paper example, statik, highlight effects, timer graphic"},
+{day:17,type:"trust",title:"Grant yutgan o\u2018quvchimiz",boost:null,hook:"\"Bu yigit Elites'dan keyin chet elga GRANT oldi.\"",content:"O\u2018quvchi gapiradi: 8 oy o\u2018qidi, IELTS 7.5 oldi, grant yutdi. JAMOAga minnatdorchilik bildiradi. Qabul xatini ko\u2018rsatadi.",cta:"\"Siz ham xohlaysizmi? DM: GRANT\"",caption:"ELITES \u2192 IELTS 7.5 \u2192 GRANT! \ud83c\udf93\u2708\ufe0f\\n\\nO\u2018quvchimiz natijasi \u2014 bizning g\u2018ururimiz.\\n\\nKeyingisi \u2014 siz!\\n\\n#Grant #StudyAbroad #IELTS #ELITES #Termiz #Surxondaryo",mobilograf:"Medium student close-up, natural light, handheld, document zoom, inspiring music"},
+{day:18,type:"brand",title:"SAT \u2014 Surxondaryoda faqat ELITES\u2018da",boost:null,hook:"\"Chet elda o\u2018qish uchun IELTS yetarli emas. Yana 1 narsa kerak.\"",content:"SAT nima, nima uchun kerak, Surxondaryoda boshqa hech qayerda yo\u2018q, ELITES = birinchi. Sinfxona, materiallarni ko\u2018rsating.",cta:"\"SAT haqida \u2014 DM: SAT\"",caption:"SAT \u2014 Surxondaryoda FAQAT ELITES'da! \ud83c\uddfa\ud83c\uddf8\\n\\nAmerika universitetlari = SAT kerak.\\nBiz \u2014 birinchimiz.\\n\\n#SAT #StudyInUSA #ELITES #Termiz #Surxondaryo #FirstEver",mobilograf:"Wide SAT class, materials close-up, academic feel, professional music"},
+{day:19,type:"viral",title:"O\u2018qituvchilar break\u2018da nima qiladi? \ud83d\ude02",boost:null,hook:"\"O\u2018qituvchilarimiz break\u2018ini ko\u2018rdingizmi? \ud83d\udc40\"",content:"Kulgili \u2014 o\u2018qituvchilar staffroomda tongue twisterlar, grammatika hazillari, kulishadi. Jamoa ruhini, haqiqiy odamlarni ko\u2018rsatadi.",cta:"\"Bu jamoada o\u2018qing! Follow \ud83d\udc9b\"",caption:"O\u2018qituvchilarimiz break\u2018da \ud83d\ude02\\n\\nOddiy odamlar emas \ud83e\udd2a\\n\\nShu jamoada o\u2018qish boshqacha \ud83d\udc9b\\n\\n#BehindTheScenes #Teachers #Funny #ELITES #Termiz #Surxondaryo",mobilograf:"Handheld documentary style, natural staffroom light, quick cuts, funny sound effects"},
+{day:20,type:"story",title:"Hafta oxiri Stories #3",boost:null,stories:["Kids class Brahim bilan yoqimli moment \ud83d\udc76\ud83c\uddf2\ud83c\udde6","Ota-ona DM screenshot (ism blurred) minnatdorchilik bildiradi \ud83d\ude4f","Poll: 'Necha yoshda boshlash kerak?' \ud83e\udd14","Behind-scenes: suratga tushirilmoqda \ud83c\udfa5","Haftaning eng yaxshi Reel repost \ud83d\udd01"]},
+{day:21,type:"story",title:"Yakshanba Stories #3",boost:null,stories:["O\u2018quvchi story repost (bizni tag qilgan)","Qiziqarli inglizcha fakt \ud83d\udca1","'Qaysi teacher?' quiz suratlar bilan \ud83e\udd14","Teaser: '2-FILIAL haqida xabar!' \ud83c\udfe2","Yakshanba motivatsiya \ud83d\udcaa"]},
+{day:22,type:"brand",title:"2-filial ochildi. Sig\u2018mayapmiz.",boost:"$10",hook:"\"1 yilda shunchalik o\u2018sdikki \u2014 1 bino yetmay qoldi.\"",content:"Yangi filial tur. Resepshn, sinfxonalar, jihozlar. O\u2018sish narrativi: kichik boshlang\u2018ich \u2192 2 filial, 700+ o\u2018quvchi. 'O\u2018sish = sifat isboti.'",cta:"\"2-filialda joy bor \u2014 DM: FILIAL\"",caption:"2-FILIAL OCHILDI! \ud83c\udfe2\ud83c\udf89\\n\\n700+ o\u2018quvchi sig\u2018mayapti!\\n\\nBu o\u2018sish \u2014 SIFAT isboti.\\n\\nDM: FILIAL\\n\\n#NewBranch #Growth #ELITES #Termiz #Surxondaryo #BestCenter",mobilograf:"Gimbal walk-through, all lights on, bright/inviting, growth numbers animated, triumphant music"},
+{day:23,type:"edu",title:"'I think' \u2014 examiner zerikkan. Nima deyish kerak?",boost:null,hook:"\"'I think' \u2014 examiner zerikkan bu so\u2018zdan. Boshqa variant:\"",content:"6 alternativa: From my perspective, I'd argue, It seems to me, I'm inclined to believe, To my mind, I'm of the opinion. Har biri kontekstda. '1 o\u2018zgarish = +0.5 band'",cta:"\"Speaking kursimiz \u2014 DM: SPEAKING\"",caption:"'I think' \u2014 examiner ZERIKKAN \ud83d\ude44\\n\\nAlternativalar:\\n\ud83d\udd39 From my perspective\\n\ud83d\udd39 I'd argue that\\n\ud83d\udd39 It seems to me\\n\ud83d\udd39 I'm inclined to believe\\n\\n1 o\u2018zgarish = +0.5 ball!\\n\\nSave! \ud83d\udccc\\n\\n#Speaking #IELTS #Tips #ELITES #Termiz #Surxondaryo",mobilograf:"Close-up teacher, ring light, text overlays for each alternative, 'level up' sound"},
+{day:24,type:"trust",title:"3 oylik natijalar \u2014 raqamlar",boost:null,hook:"\"So\u2018nggi 3 oyda nima bo\u2018ldi? RAQAMLAR:\"",content:"Ekran + voiceover statistika bilan: 47 ta o\u2018quvchi 6.5+, 23 ta 7.0+, 8 grant, SAT boshlandi, 2-filial, 180+ yangi o\u2018quvchi. Chiroyli kinetic typography.",cta:"\"Natija \u2014 DM: NATIJA\"",caption:"3 oyda ELITES \ud83d\udcca\\n\\n\ud83c\udfc6 47 ta 6.5+\\n\ud83c\udfc6 23 ta 7.0+\\n\ud83c\udfc6 8 grant\\n\ud83c\udfc6 2-filial\\n\\nRaqamlar gapiradi.\\n\\n#Results #IELTS #ELITES #Termiz #Surxondaryo #StudentSuccess",mobilograf:"Screen recording + b-roll intercuts, number animations, achievement sounds"},
+{day:25,type:"brand",title:"Kichik guruh = katta natija",boost:null,hook:"\"100 kishilik guruhda natija oladimi? YO\u2018Q.\"",content:"Katta guruh (e\u2018tiborsiz) vs ELITES kichik guruh (max 15, hamma gapiradi, individual feedback) solishtirish. Haqiqiy 15 kishilik sinfni ko\u2018rsating.",cta:"\"Kichik guruhda o\u2018qing \u2014 DM: GURUH\"",caption:"100 kishi = 0 e\u2018tibor \u274c\\n15 kishi = NATIJA \u2705\\n\\nELITES = max 15 kishi.\\n\\n\u2705 Individual e\u2018tibor\\n\u2705 Hamma gapiradi\\n\u2705 Haftalik feedback\\n\\nDM: GURUH\\n\\n#SmallGroups #Quality #ELITES #Termiz #Surxondaryo #PersonalAttention",mobilograf:"Wide showing 15-person engaged class, slow pan, warm bright lighting, comparison graphic"},
+{day:26,type:"sales",title:"IYUL INTENSIV \u2014 25% chegirma, 3 kun!",boost:"$15",hook:"\"Shu yoz o\u2018rganmasangiz \u2014 yana 1 yil yo\u2018qotasiz.\"",content:"Kuchli urgency. Iyul intensiv: kunlik 2 soat, max 15, to\u2018liq IELTS prep. Narx: 450K \u2192 340K (25% off). Faqat 3 kun qoldi. Joylar cheklangan.",cta:"\"Hoziroq \u2014 DM: IYUL\"",caption:"\ud83d\udd25 IYUL INTENSIV \u2014 25% CHEGIRMA!\\n\\n\u23f0 3 kun qoldi!\\n\ud83d\udcc5 1-iyuldan\\n\ud83d\udc65 Max 15 kishi\\n\ud83d\udcb0 340,000 (450K o\u2018rniga)\\n\\nDM: IYUL \ud83d\udd25\\n\\n#Intensive #Discount #IELTS #ELITES #Termiz #Surxondaryo",mobilograf:"Fast dynamic cuts, high energy, countdown timer, price animation, urgency music"},
+{day:27,type:"story",title:"Chegirma Stories",boost:null,stories:["Countdown sticker: '3 kun!' \u23f0\ud83d\udd25","DM hajmi isboti (blurred): '34 ta DM!' \ud83d\udce9","Joylar grafik: '6/15 joy qoldi!' \u26a0\ufe0f","O\u2018quvchi testimonial 10-sek klip \ud83c\udf1f","Yakuniy CTA: 'Oxirgi kun ertaga!' \ud83d\udea8"]},
+{day:28,type:"story",title:"Yakshanba Stories #4",boost:null,stories:["O\u2018quvchidan testimonial repost","Sunday English tip: 'Don\u2019t say I WANT, say I WOULD LIKE'","Kulgili jamoa surati \ud83d\ude04","Minnatdorchilik: '5,443 follower \u2014 rahmat!' \ud83d\ude4f","Dushanba teaser: 'ELITES jamoasi \u2014 30+ professional'"]},
+{day:29,type:"brand",title:"ELITES jamoasi \u2014 30+ professional, 1 maqsad",boost:null,hook:"\"Bularning hammasi 1 narsani xohlaydi: SIZNING natijangiz.\"",content:"Qiziqarli jamoa tanishtirish \u2014 har bir o\u2018qituvchi 2 sek: ism + 1 so\u2018z (Dilshod-NATIJA, Madina-ENERGIYA, Brahim-FUN, va h.k.). Tez kesishlar, energetik. Yakunida: guruh surati 'Biz \u2014 ELITES!'",cta:"\"Jamoaga qo\u2018shiling \u2014 DM: JOIN\"",caption:"30+ professional. 1 jamoa. 1 maqsad \u2014 SIZNING natijangiz! \ud83d\udc99\\n\\nBiz \u2014 ELITES! \ud83c\udfc6\\n\\nQaysi teacher yoqdi? \ud83d\udc47\\n\\n#Team #ELITES #Teachers #Termiz #Surxondaryo #MeetTheTeam",mobilograf:"Same framing each teacher, quick cuts, final wide group shot, upbeat music, name lower thirds"},
+{day:30,type:"trust",title:"Iyun natijalari \u2014 minnatdormiz",boost:null,hook:"\"Bu oy \u2014 ELITES tarixidagi eng yaxshi oy.\"",content:"Oy recap statistika ekranda: 67 yangi o\u2018quvchi, 12 ta 7.0+, 150K reach, 800+ yangi follower. Eng yaxshi momentlar montaji. Rahmat xabari. Iyulni tease qiling.",cta:"\"Iyulda kuchli \u2014 DM: IYUL\"",caption:"IYUN 2026 \ud83c\udfc6\\n\\n\ud83d\udcca 67 yangi o\u2018quvchi\\n\ud83d\udcca 12 ta 7.0+\\n\ud83d\udcca 150K reach\\n\\nRahmat! \ud83d\ude4f\ud83d\udc99\\nIyulda yanada kuchli! \ud83d\ude80\\n\\n#Results #ELITES #Termiz #Surxondaryo #ThankYou #Monthly",mobilograf:"Stats screen recording + month's best clips montage, celebration music, confetti effect"}
+];
+
+var typeColors={brand:"#1e40af",edu:"#059669",trust:"#d97706",viral:"#7c3aed",sales:"#dc2626",story:"#6b7280"};
+var typeLabels={brand:"Brand",edu:"Edu",trust:"Trust",viral:"Viral",sales:"Sales",story:"Story"};
+var dayNames=["Dush","Sesh","Chor","Pay","Jum","Shan","Yak"];
+
+function renderCalendar(){
+var cal=document.getElementById("calendar");
+var html="";
+for(var i=0;i<0;i++){html+='<div class="day-card empty"></div>';}
+for(var d=0;d<days.length;d++){
+var item=days[d];
+var color=typeColors[item.type];
+html+='<div class="day-card" onclick="openModal('+d+')">';
+if(item.boost){html+='<span class="boost-badge">'+item.boost+'</span>';}
+html+='<div class="day-num" style="color:'+color+'">'+item.day+'</div>';
+html+='<span class="day-type type-'+item.type+'">'+typeLabels[item.type]+'</span>';
+html+='<div class="day-title">'+item.title+'</div>';
+html+='</div>';
+}
+cal.innerHTML=html;
+}
+
+function openModal(idx){
+var item=days[idx];
+var color=typeColors[item.type];
+var html='<div style="margin-bottom:16px"><span style="background:'+color+';color:#fff;padding:4px 12px;border-radius:6px;font-size:0.8rem;font-weight:600">'+typeLabels[item.type].toUpperCase()+'</span>';
+if(item.boost){html+=' <span style="background:#f59e0b;color:#fff;padding:4px 10px;border-radius:6px;font-size:0.8rem;font-weight:600">BOOST '+item.boost+'</span>';}
+html+='</div>';
+html+='<h2 style="font-size:1.5rem;color:#1e293b;margin-bottom:4px">Kun '+item.day+'</h2>';
+html+='<h3 style="font-size:1.1rem;color:'+color+';margin-bottom:20px;font-weight:500">'+item.title+'</h3>';
+if(item.type==="story"){
+html+='<div style="margin-bottom:16px"><strong style="color:#1e293b">Stories:</strong></div>';
+for(var s=0;s<item.stories.length;s++){
+html+='<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px;margin-bottom:8px"><span style="color:'+color+';font-weight:600">Story '+(s+1)+':</span> '+item.stories[s]+'</div>';
+}
+}else{
+html+='<div style="background:#eff6ff;border-left:4px solid '+color+';padding:16px;border-radius:0 8px 8px 0;margin-bottom:16px"><strong style="color:#1e293b">Hook (birinchi 3 sekund):</strong><br><span style="font-size:1.1rem;color:'+color+'">'+item.hook+'</span></div>';
+html+='<div style="margin-bottom:16px"><strong style="color:#1e293b">Kontent:</strong><p style="margin-top:6px;color:#475569">'+item.content+'</p></div>';
+html+='<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px;margin-bottom:16px"><strong style="color:#059669">CTA:</strong> '+item.cta+'</div>';
+html+='<div style="margin-bottom:16px"><strong style="color:#1e293b">Caption (copy-paste tayyor):</strong><pre style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px;margin-top:6px;white-space:pre-wrap;font-family:inherit;font-size:0.9rem;color:#475569">'+item.caption.replace(/\\n/g,"\n")+'</pre></div>';
+html+='<div style="background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:12px"><strong style="color:#d97706">Mobilograf uchun:</strong><p style="margin-top:4px;color:#475569">'+item.mobilograf+'</p></div>';
+}
+document.getElementById("modal-content").innerHTML=html;
+document.getElementById("modal-overlay").style.display="block";
+document.body.style.overflow="hidden";
+}
+
+function closeModal(){
+document.getElementById("modal-overlay").style.display="none";
+document.body.style.overflow="auto";
+}
+
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal();});
+renderCalendar();
+</script>
+</body>
+</html>
